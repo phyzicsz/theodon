@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.phyzicsz</groupId>
+    <artifactId>theodon</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Theodon</name>
+    
+    <inceptionYear>2019</inceptionYear>
+    <description>A framefork for building simulation tools</description>
+    
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <scm>
+        <url>scm:git:git@github.com:phyzicsz/theodon.git</url>
+        <connection>scm:git:git@github.com:phyzicsz/theodon.git</connection>
+        <developerConnection>scm:git:git@github.com:phyzicsz/theodon.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/phyzicsz/theodon/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <name>phyzicsz</name>
+            <url>https://github.com/phyzicsz</url>
+            <timezone>-6</timezone>
+        </developer>
+    </developers>
+   
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.compiler.showWarnings>true</java.compiler.showWarnings>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        
+        <!-- dependancies -->
+        <google.errorprone.version>2.3.3</google.errorprone.version>
+        <log4j2.version>2.11.2</log4j2.version>
+        <roaster.version>2.20.8.Final</roaster.version>
+        <slf4j.version>1.7.26</slf4j.version>
+        
+        <!-- test dependancies -->
+        <junit.version>4.12</junit.version>
+        
+        <!-- maven build dependancies -->
+        <maven.plugin.compiler.version>3.8.0</maven.plugin.compiler.version>
+        <maven.surefire.plugin.version>3.0.0-M3</maven.surefire.plugin.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j2.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.plugin.compiler.version}</version>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                    <showWarnings>${java.compiler.showWarnings}</showWarnings>
+                    <!--                    <fork>true</fork>
+                    <compilerArgs>
+                        <arg>-XDcompilePolicy=simple</arg>
+                        <arg>-Xplugin:ErrorProne</arg>
+                        <arg>-J-Xbootclasspath/p:${settings.localRepository}/com/google/errorprone/javac/${javac.version}/javac-${javac.version}.jar</arg>
+                    </compilerArgs>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>com.google.errorprone</groupId>
+                            <artifactId>error_prone_core</artifactId>
+                            <version>${google.errorprone.version}</version>
+                        </path>
+                    </annotationProcessorPaths>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <modules>
+        <module>dis-codegen-plugin</module>
+    </modules>
+   
+</project>

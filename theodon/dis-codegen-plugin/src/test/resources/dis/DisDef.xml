@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<classes>
+    <class name="AcousticEmitter" inheritsFrom="root" comment="information about a specific UA emmtter. Section 6.2.2.">
+        <attribute name="acousticSystemName" comment="the system for a particular UA emitter, and an enumeration">
+            <primitive type="unsigned short"/>
+        </attribute>
+
+        <attribute name="acousticFunction" comment="The function of the acoustic system">
+            <primitive type="unsigned byte"/>
+        </attribute>
+
+        <attribute name="acousticIDNumber" comment="The UA emitter identification number relative to a specific system">
+            <primitive type="unsigned byte"/>
+        </attribute>
+
+    </class>
+</classes>
+
