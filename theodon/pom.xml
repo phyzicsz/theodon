@@ -46,6 +46,7 @@
         
         <!-- dependancies -->
         <google.errorprone.version>2.3.3</google.errorprone.version>
+        <jackson.version>2.9.8</jackson.version>
         <log4j2.version>2.11.2</log4j2.version>
         <roaster.version>2.20.8.Final</roaster.version>
         <slf4j.version>1.7.26</slf4j.version>
@@ -90,7 +91,7 @@
                     <source>${java.source.version}</source>
                     <target>${java.target.version}</target>
                     <showWarnings>${java.compiler.showWarnings}</showWarnings>
-                    <!--                    <fork>true</fork>
+<!--                    <fork>true</fork>
                     <compilerArgs>
                         <arg>-XDcompilePolicy=simple</arg>
                         <arg>-Xplugin:ErrorProne</arg>
@@ -105,11 +106,11 @@
                     </annotationProcessorPaths>-->
                 </configuration>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
     

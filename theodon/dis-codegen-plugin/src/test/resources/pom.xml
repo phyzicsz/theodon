@@ -20,14 +20,14 @@
                 <artifactId>dis-codegen-plugin</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <configuration>
-                    <inputPath>src/test/resources/dis</inputPath>
-                    <outputPath>/tmp/dis</outputPath>
+                    <sourceDirectory>src/test/resources/dis</sourceDirectory>
+                    <outputDirectory>/tmp/dis</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>compile</phase>
+                        <id>idl</id>
                         <goals>
-                            <goal>generate</goal>
+                            <goal>idl-protocol</goal>
                         </goals>
                     </execution>
                 </executions>

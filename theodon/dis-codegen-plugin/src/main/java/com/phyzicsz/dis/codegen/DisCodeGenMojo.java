@@ -18,40 +18,51 @@ package com.phyzicsz.dis.codegen;
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.plugins.annotations.Parameter;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
 /**
  *
  * @author phyzicsz
+ * 
+ * @goal idl-protocol
+ * @requiresDependencyResolution runtime
+ * @phase generate-sources
+ * @threadSafe
  */
-@Mojo(name = "generate")
 public class DisCodeGenMojo extends AbstractMojo {
 
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(CodeGenerator.class);
-    
-    @Parameter
-    private File inputPath;
 
-    @Parameter
-    private File outputPath;
+    /**
+     * The source directory of DIS IDL files. This directory is added to the
+     * classpath at schema compiling time. All files can therefore be referenced
+     * as classpath resources following the directory structure under the source
+     * directory.
+     *
+     * @parameter property="sourceDirectory"
+     * default-value="${basedir}/src/main/dis"
+     */
+    private File sourceDirectory;
+
+    /**
+     * @parameter property="outputDirectory"
+     * default-value="${project.build.directory}/generated-sources/dis"
+     */
+    private File outputDirectory;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         try {
             new CodeGenerator(
-                    inputPath,
-                    outputPath)
+                    sourceDirectory,
+                    outputDirectory)
                     .generate();
         } catch (CodeGenerationConfigurationException ex) {
             LOGGER.error("Configuration Error:", ex);
-        } catch (IOException | ParserConfigurationException | SAXException ex) {
+        } catch (IOException  ex) {
             LOGGER.error("Runtime Error:", ex);
         }
 

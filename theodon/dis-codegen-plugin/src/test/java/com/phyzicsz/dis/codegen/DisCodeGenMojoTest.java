@@ -16,7 +16,8 @@
 package com.phyzicsz.dis.codegen;
 
 import java.io.File;
-import org.apache.maven.plugin.testing.MojoRule;
+import org.apache.maven.plugin.testing.AbstractMojoTestCase;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,13 +30,11 @@ import org.junit.Rule;
  *
  * @author phyzicsz
  */
-public class DisCodeGenMojoTest {
+public class DisCodeGenMojoTest extends AbstractMojoTestCase {
 
     public DisCodeGenMojoTest() {
     }
 
-    @Rule
-    public MojoRule rule = new MojoRule();
 
     /**
      * Test of execute method, of class DisCodeGenMojo.
@@ -47,9 +46,10 @@ public class DisCodeGenMojoTest {
         assertNotNull( pom );
         assertTrue( pom.exists() );
         
-        DisCodeGenMojo myMojo = (DisCodeGenMojo) rule.lookupMojo("generate", pom);
-        assertNotNull(myMojo);
-        myMojo.execute();
+        DisCodeGenMojo mojo = (DisCodeGenMojo) lookupMojo("idl-protocol", pom);
+        
+        assertNotNull(mojo);
+        mojo.execute();
     }
 
 }
