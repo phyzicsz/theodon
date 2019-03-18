@@ -18,12 +18,20 @@ package com.phyzicsz.dis.codegen;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
 import com.phyzicsz.dis.codegen.model.DisClass;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,9 +70,13 @@ public class CodeGenerator {
             for(Path file: files){
                 Optional<DisClass> opt = map(file);
                 opt.ifPresent(idl -> {
-                    roaster.roast(idl);
+                    String classString = roaster.roast(idl);
+                    try {
+                        writeFile(outputPath,idl.getPackageName(),classString, idl.getName());
+                    } catch (IOException ex) {
+                        LOGGER.error("Error Writing File: ", ex);
+                    }
                 });
-
             }
         }else{
             
@@ -79,5 +91,22 @@ public class CodeGenerator {
             LOGGER.error("Error mapping IDL", ex);
         }
         return Optional.ofNullable(idl);
+    }
+    
+    private void writeFile(File outputPath, String packageName, String content, String fileName) throws UnsupportedEncodingException, IOException{
+        Path file = outputPath.toPath();
+        String[] splits = packageName.split("\\.");
+        for(String split: splits){
+            file = Paths.get(file.toString(), split);
+        }
+        file.toFile().mkdirs();
+        file = Paths.get(file.toString(), fileName + ".java");
+        try (Writer writer = new BufferedWriter(
+                new OutputStreamWriter(
+                        new FileOutputStream(file.toString()), "utf-8"))) {
+            writer.write(content);
+        }
+        
+        
     }
 }

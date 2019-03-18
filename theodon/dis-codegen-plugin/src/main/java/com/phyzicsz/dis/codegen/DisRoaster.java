@@ -18,6 +18,8 @@ package com.phyzicsz.dis.codegen;
 import com.phyzicsz.dis.codegen.model.DisAttribute;
 import com.phyzicsz.dis.codegen.model.DisClass;
 import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import org.jboss.forge.roaster.Roaster;
 import org.jboss.forge.roaster.model.source.JavaClassSource;
 import org.jboss.forge.roaster.model.source.MethodSource;
@@ -28,7 +30,9 @@ import org.jboss.forge.roaster.model.source.MethodSource;
  */
 public class DisRoaster {
 
-    public void roast(DisClass idl) {
+    private Map<String, String> typeMap = new LinkedHashMap<>();
+
+    public String roast(DisClass idl) {
         
         //roast class
         final JavaClassSource javaClass = Roaster.create(JavaClassSource.class);
@@ -41,51 +45,114 @@ public class DisRoaster {
 
         //roast properties
         for(DisAttribute attr: idl.getAttributes()) {
+            
+            //add the field
             Class type = typeMapper(attr.getType());
-//            javaClass.addProperty(type, attr.getName())
-//                    .setMutable(false); 
             javaClass.addField()
                     .setName(attr.getName())
-                    .setType(attr.getType())
+                    .setType(type)
                     .setPrivate()
                     .setStatic(false)
                     .setFinal(false);
             
+            //add immutable getter
             MethodSource<JavaClassSource> method = javaClass.addMethod()
                     .setConstructor(false)
                     .setPublic()
                     .setName(attr.getName())
                     .setReturnType(type)
-                    .setBody(fluentImmutableMethod(attr.getName()));
+                    .setBody(immutableGetter(attr.getName()));
             method.getJavaDoc().setFullText(attr.getComment());
-            method.addParameter(type, attr.getName());
-                    
+            
+            //save the raw type later for the serializers
+            typeMap.put(attr.getName(),attr.getType());
         }
         
-        String classString = javaClass.toString();
-        int i = 0;
+        String serializerBody = byteBufferSerializer(typeMap);
+        MethodSource<JavaClassSource> serializer = javaClass.addMethod()
+                    .setConstructor(false)
+                    .setPublic()
+                    .setName("serialize")
+                    .setReturnType("void")
+                    .setBody(serializerBody);
+        serializer.addParameter("java.nio.ByteBuffer", "buffer");
+        
+        String deserializerBody = byteBufferDeserializer(typeMap);
+        MethodSource<JavaClassSource> deserializer = javaClass.addMethod()
+                    .setConstructor(false)
+                    .setPublic()
+                    .setName("deserialize")
+                    .setReturnType("void")
+                    .setBody(deserializerBody);
+        deserializer.addParameter("ByteBuffer", "buffer");
 
+        return javaClass.toString();
     }
 
     Class typeMapper(final String type){
-        if("string".equals(type)){
-            return String.class;
-        }else if("int".equals(type)){
+        if("unsigned short".equals(type)){
             return Integer.class;
+        }else if("unsigned byte".equals(type)){
+            return Short.class;
         }
         else{
             return Object.class;
         }
     }
     
-    private String fluentImmutableMethod(final String field){
+    private String immutableGetter(final String field){
+        return new StringBuilder()
+                .append("return ")
+                .append(field)
+                .append(";")
+                .toString();
+    }
+    
+    private String byteBufferSerializer(Map<String, String> typeMap){
         StringBuilder sb = new StringBuilder();
-        sb.append("this.")
-                .append(field)
-                .append(" = ")
-                .append(field)
-                .append(";\n")
-                .append("return this;");
+        for(Map.Entry<String,String> entry: typeMap.entrySet()){
+            final String name = entry.getKey();
+            final String type = entry.getValue();
+            
+            if(type.equals("unsigned short")){
+                sb.append("buffer.putShort(")
+                        .append(name)
+                        .append(".shortValue()")
+                        .append(");")
+                        .append("\n");
+            }
+            if(type.equals("unsigned byte")){
+                sb.append("buffer.put(")
+                        .append(name)
+                        .append(".byteValue()")
+                        .append(");")
+                        .append("\n");
+            }
+        }
+        return sb.toString();
+    }
+    
+     private String byteBufferDeserializer(Map<String, String> typeMap){
+        StringBuilder sb = new StringBuilder();
+        for(Map.Entry<String,String> entry: typeMap.entrySet()){
+            final String name = entry.getKey();
+            final String type = entry.getValue();
+            
+            if(type.equals("unsigned short")){
+                sb.append(name)
+                        .append(" = ")
+                        .append("(int)")
+                        .append("(buffer.getShort() & 0xFFFF);")
+                        .append("\n");
+            }
+            if(type.equals("unsigned byte")){
+                sb.append(name)
+                        .append(" = ")
+                        .append("(short)")
+                        .append("(buffer.get() & 0xFF);")
+                        .append("\n");
+            }
+        }
         return sb.toString();
     }
 }
