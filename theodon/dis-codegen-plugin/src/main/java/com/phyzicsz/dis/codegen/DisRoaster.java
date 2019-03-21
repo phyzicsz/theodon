@@ -30,7 +30,7 @@ import org.jboss.forge.roaster.model.source.MethodSource;
  */
 public class DisRoaster {
 
-    private Map<String, String> typeMap = new LinkedHashMap<>();
+    private final Map<String, String> typeMap = new LinkedHashMap<>();
 
     public String roast(DisClass idl) {
         
@@ -47,7 +47,7 @@ public class DisRoaster {
         for(DisAttribute attr: idl.getAttributes()) {
             
             //add the field
-            Class type = typeMapper(attr.getType());
+            String type = typeMapper(attr.getType());
             javaClass.addField()
                     .setName(attr.getName())
                     .setType(type)
@@ -89,14 +89,14 @@ public class DisRoaster {
         return javaClass.toString();
     }
 
-    Class typeMapper(final String type){
+    String typeMapper(final String type){
         if("unsigned short".equals(type)){
-            return Integer.class;
+            return "Integer";
         }else if("unsigned byte".equals(type)){
-            return Short.class;
+            return "Short";
         }
         else{
-            return Object.class;
+            return type;
         }
     }
     
@@ -121,11 +121,15 @@ public class DisRoaster {
                         .append(");")
                         .append("\n");
             }
-            if(type.equals("unsigned byte")){
+            else if(type.equals("unsigned byte")){
                 sb.append("buffer.put(")
                         .append(name)
                         .append(".byteValue()")
                         .append(");")
+                        .append("\n");
+            }else {
+                sb.append(name)
+                        .append(".serialize(buffer);")
                         .append("\n");
             }
         }
@@ -145,11 +149,15 @@ public class DisRoaster {
                         .append("(buffer.getShort() & 0xFFFF);")
                         .append("\n");
             }
-            if(type.equals("unsigned byte")){
+            else if(type.equals("unsigned byte")){
                 sb.append(name)
                         .append(" = ")
                         .append("(short)")
                         .append("(buffer.get() & 0xFF);")
+                        .append("\n");
+            }else {
+                sb.append(name)
+                        .append(".deserialize(buffer);")
                         .append("\n");
             }
         }

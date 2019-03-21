@@ -1,0 +1,24 @@
+{
+    "package":"com.phyzicsz.dis",
+    "name":"AcousticEmitter",
+    "parent":"root",
+    "comment":"information about a specific UA emmtter. Section 6.2.2.",
+    "attributes":[
+        {
+            "name":"acousticSystemName",
+            "comment":"the system for a particular UA emitter, and an enumeration",
+            "type":"unsigned short"
+        },
+        {
+            "name":"acousticFunction",
+            "comment":"The function of the acoustic system",
+            "type":"unsigned byte"
+        },
+        {
+            "name":"acousticIDNumber",
+            "comment":"The UA emitter identification number relative to a specific system",
+            "type":"unsigned byte"
+        }
+    ]
+}
+
