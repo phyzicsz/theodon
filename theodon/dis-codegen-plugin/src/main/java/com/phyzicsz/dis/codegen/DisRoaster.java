@@ -94,6 +94,14 @@ public class DisRoaster {
             return "Integer";
         }else if("unsigned byte".equals(type)){
             return "Short";
+        }else if("unsigned int".equals(type)){
+            return "Long";
+        }else if("int".equals(type)){
+            return "Integer";
+        }else if("float".equals(type)){
+            return "Float";
+        }else if("double".equals(type)){
+            return "Double";
         }
         else{
             return type;
@@ -127,6 +135,27 @@ public class DisRoaster {
                         .append(".byteValue()")
                         .append(");")
                         .append("\n");
+            }else if(type.equals("unsigned int")){
+                sb.append("buffer.putInt(")
+                        .append(name)
+                        .append(".intValue()")
+                        .append(");")
+                        .append("\n");
+            }else if(type.equals("int")){
+                sb.append("buffer.putInt(")
+                        .append(name)
+                        .append(");")
+                        .append("\n");
+            }else if(type.equals("float")){
+                sb.append("buffer.putFloat(")
+                        .append(name)
+                        .append(");")
+                        .append("\n");
+            }else if(type.equals("double")){
+                sb.append("buffer.putDouble(")
+                        .append(name)
+                        .append(");")
+                        .append("\n");
             }else {
                 sb.append(name)
                         .append(".serialize(buffer);")
@@ -154,6 +183,27 @@ public class DisRoaster {
                         .append(" = ")
                         .append("(short)")
                         .append("(buffer.get() & 0xFF);")
+                        .append("\n");
+            }else if(type.equals("unsigned int")){
+                sb.append(name)
+                        .append(" = ")
+                        .append("(long)")
+                        .append("buffer.getInt();")
+                        .append("\n");
+            }else if(type.equals("int")){
+                sb.append(name)
+                        .append(" = ")
+                        .append("buffer.getInt();")
+                        .append("\n");
+            }else if(type.equals("float")){
+                sb.append(name)
+                        .append(" = ")
+                        .append("buffer.getFloat();")
+                        .append("\n");
+            }else if(type.equals("double")){
+                sb.append(name)
+                        .append(" = ")
+                        .append("buffer.getDouble();")
                         .append("\n");
             }else {
                 sb.append(name)

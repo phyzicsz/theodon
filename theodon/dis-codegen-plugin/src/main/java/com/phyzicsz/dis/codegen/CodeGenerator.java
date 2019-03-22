@@ -65,11 +65,13 @@ public class CodeGenerator {
             Files.walkFileTree(inputPath.toPath(), collector);
             List<Path> files = collector.getFiles();
             for(Path file: files){
+                LOGGER.error("Mapping file {}: ", file);
                 Optional<DisClass> opt = map(file);
                 opt.ifPresent(idl -> {
                     String classString = new DisRoaster().roast(idl);
                     classString = insertHeader(classString);
                     try {
+                        LOGGER.error("Writing file {}: ", file);
                         writeFile(outputPath,idl.getPackageName(),classString, idl.getName());
                     } catch (IOException ex) {
                         LOGGER.error("Error Writing File: ", ex);
