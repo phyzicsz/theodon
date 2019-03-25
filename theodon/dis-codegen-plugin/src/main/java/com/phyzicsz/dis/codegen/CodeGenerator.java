@@ -28,6 +28,7 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -41,59 +42,73 @@ public class CodeGenerator {
     private static final Logger LOGGER = LoggerFactory.getLogger(CodeGenerator.class);
     final File inputPath;
     final File outputPath;
+    final File testOutputPath;
     private final ObjectMapper mapper = new ObjectMapper();
     
-    public CodeGenerator(final File inputPath, final File outputPath){
+    public CodeGenerator(final File inputPath, final File outputPath,final File testOutputPath){
         this.inputPath = inputPath;
         this.outputPath = outputPath;
+        this.testOutputPath = testOutputPath;
+               
     }
     
     public CodeGenerator generate() throws CodeGenerationConfigurationException, IOException{
+        //clear the generated sources
+        //clearGeneratedSources(outputPath);
+        //clearGeneratedSources(testOutputPath);
         
-        load();
-        return this;
-        
+        //create all of the mappings
+        DisMapper mapper = new DisMapper();
+        List<DisClass> classes = mapper.mapper(inputPath);
+          
+        //generate the Java sources
+        generateClasses(classes);
+        generateTestClasses(classes);
+        return this; 
     }
     
-    private void load() throws CodeGenerationConfigurationException, IOException{
-        if(null == inputPath || null == outputPath){
-            throw new CodeGenerationConfigurationException("Directories cannot be undefined");
+    private void generateClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
+        if(null == outputPath){
+            throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
         }
         
-        if(inputPath.isDirectory()){
-            FileCollector collector = new FileCollector();
-            Files.walkFileTree(inputPath.toPath(), collector);
-            List<Path> files = collector.getFiles();
-            for(Path file: files){
-                LOGGER.error("Mapping file {}: ", file);
-                Optional<DisClass> opt = map(file);
-                opt.ifPresent(idl -> {
-                    String classString = new DisRoaster().roast(idl);
-                    classString = insertHeader(classString);
-                    try {
-                        LOGGER.error("Writing file {}: ", file);
-                        writeFile(outputPath,idl.getPackageName(),classString, idl.getName());
-                    } catch (IOException ex) {
-                        LOGGER.error("Error Writing File: ", ex);
-                    }
-                });
+        for (DisClass disClass : classes) {
+            String classString = new DisClassGenerator()
+                    .generate(disClass);
+            classString = insertHeader(classString);
+            try {
+                LOGGER.error("Writing file {}: ", disClass.getName());
+                writeClassFile(outputPath, disClass.getPackageName(), classString, disClass.getName());
+            } catch (IOException ex) {
+                LOGGER.error("Error Writing File: ", ex);
             }
-        }else{
-            
         }
+        
     }
     
-    private Optional<DisClass> map(Path file){
-        DisClass idl = null;
-        try {
-            idl = mapper.readValue(file.toFile(), DisClass.class);
-        } catch (IOException ex) {
-            LOGGER.error("Error mapping IDL", ex);
+    private void generateTestClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
+        if(null == outputPath){
+            throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
         }
-        return Optional.ofNullable(idl);
+        
+        
+        
+        for (DisClass disClass : classes) {
+            String classString = new DisTestClassGenerator()
+                    .generate(disClass);
+            classString = insertHeader(classString);
+            try {
+                LOGGER.error("Writing file {}: ", disClass.getName());
+                writeClassFile(testOutputPath, disClass.getPackageName(), classString, disClass.getName()+"Test");
+            } catch (IOException ex) {
+                LOGGER.error("Error Writing File: ", ex);
+            }
+        }
+        
     }
+
     
-    private void writeFile(File outputPath, String packageName, String content, String fileName) throws UnsupportedEncodingException, IOException{
+    private void writeClassFile(File outputPath, String packageName, String content, String fileName) throws UnsupportedEncodingException, IOException{
         Path file = outputPath.toPath();
         String[] splits = packageName.split("\\.");
         for(String split: splits){
@@ -125,5 +140,15 @@ public class CodeGenerator {
                 .append("\n")
                 .append(content);
         return sb.toString();
+    }
+    
+    private void clearGeneratedSources(File directory) throws IOException{
+        Path path = directory.toPath();
+        Files.walk(path)
+                .sorted(Comparator.reverseOrder())
+                .map(Path::toFile)
+                .forEach(File::delete);
+
+        path.toFile().mkdirs();
     }
 }

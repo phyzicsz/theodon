@@ -22,6 +22,7 @@
                 <configuration>
                     <sourceDirectory>src/test/resources/dis</sourceDirectory>
                     <outputDirectory>target/generated-sources/src</outputDirectory>
+                    <testOutputDirectory>src/test/java</testOutputDirectory>
                 </configuration>
                 <executions>
                     <execution>

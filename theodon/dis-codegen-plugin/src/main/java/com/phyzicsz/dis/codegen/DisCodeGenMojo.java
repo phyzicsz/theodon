@@ -52,13 +52,20 @@ public class DisCodeGenMojo extends AbstractMojo {
      * default-value="${project.build.directory}/generated-sources/dis"
      */
     private File outputDirectory;
+    
+    /**
+     * @parameter property="testOutputDirectory"
+     * default-value="${project.directory}/src/test/java"
+     */
+    private File testOutputDirectory;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         try {
             new CodeGenerator(
                     sourceDirectory,
-                    outputDirectory)
+                    outputDirectory,
+                    testOutputDirectory)
                     .generate();
         } catch (CodeGenerationConfigurationException ex) {
             LOGGER.error("Configuration Error:", ex);
