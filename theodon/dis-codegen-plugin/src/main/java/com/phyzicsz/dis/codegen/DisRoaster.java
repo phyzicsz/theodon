@@ -21,9 +21,11 @@ import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.jboss.forge.roaster.Roaster;
-import org.jboss.forge.roaster.model.source.FieldSource;
 import org.jboss.forge.roaster.model.source.JavaClassSource;
 import org.jboss.forge.roaster.model.source.MethodSource;
+import org.jboss.forge.roaster.model.source.PropertySource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -31,6 +33,8 @@ import org.jboss.forge.roaster.model.source.MethodSource;
  */
 public class DisRoaster {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(DisRoaster.class);
+    
     private final Map<String, String> typeMap = new LinkedHashMap<>();
 
     public String roast(DisClass idl) {
@@ -41,29 +45,22 @@ public class DisRoaster {
                 .setName(idl.getName())
                 .addInterface(Serializable.class)
                 .getJavaDoc().setFullText(idl.getComment());
+        javaClass.addImport("java.util.Objects");
 
         //roast properties
         for (DisAttribute attr : idl.getAttributes()) {
 
             //add the field
             String type = typeMapper(attr.getType());
-            FieldSource<JavaClassSource> fieldSource = javaClass.addField()
-                    .setName(attr.getName())
-                    .setType(type)
-                    .setPrivate()
-                    .setStatic(false)
-                    .setFinal(false);
-            if ((null != attr.getInitialValue()) && (!attr.getInitialValue().isEmpty())) {
-                fieldSource.setLiteralInitializer(attr.getInitialValue());
+            
+            PropertySource<JavaClassSource> propertySource = javaClass
+                    .addProperty(type, attr.getName())
+                    .setMutable(true);
+            if(!attr.getComment().isEmpty()){
+                propertySource.getField()
+                        .getJavaDoc()
+                        .setFullText(attr.getComment());
             }
-            //add immutable getter
-            MethodSource<JavaClassSource> method = javaClass.addMethod()
-                    .setConstructor(false)
-                    .setPublic()
-                    .setName(attr.getName())
-                    .setReturnType(type)
-                    .setBody(immutableGetter(attr.getName()));
-            method.getJavaDoc().setFullText(attr.getComment());
 
             //save the raw type later for the serializers
             typeMap.put(attr.getName(), attr.getType());
@@ -86,6 +83,17 @@ public class DisRoaster {
                 .setReturnType("void")
                 .setBody(deserializerBody);
         deserializer.addParameter("ByteBuffer", "buffer");
+        
+        HashCodeGenerator hashCode = new HashCodeGenerator();
+        String hashCodeBody = hashCode.generate(idl);
+        LOGGER.info(hashCodeBody);
+        MethodSource<JavaClassSource> hashCodeSource = javaClass.addMethod()
+                .setConstructor(false)
+                .setPublic()
+                .setName("hashCode")
+                .setReturnType("int")
+                .setBody(hashCodeBody);
+         hashCodeSource.addAnnotation("Override");
 
         return javaClass.toString();
     }
@@ -119,14 +127,6 @@ public class DisRoaster {
                     return type;
             }
         }
-    }
-
-    private String immutableGetter(final String field) {
-        return new StringBuilder()
-                .append("return ")
-                .append(field)
-                .append(";")
-                .toString();
     }
 
     private String byteBufferSerializer(Map<String, String> typeMap) {
