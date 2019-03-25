@@ -31,13 +31,13 @@ import org.slf4j.LoggerFactory;
  *
  * @author phyzicsz
  */
-public class DisRoaster {
+public class DisClassGenerator {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DisRoaster.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DisClassGenerator.class);
     
     private final Map<String, String> typeMap = new LinkedHashMap<>();
 
-    public String roast(DisClass idl) {
+    public String generate(DisClass idl) {
 
         //roast class
         final JavaClassSource javaClass = Roaster.create(JavaClassSource.class);
