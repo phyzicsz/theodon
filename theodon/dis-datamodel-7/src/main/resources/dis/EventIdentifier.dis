@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EventIdentifier",
+  "parent" : "root",
+  "comment" : "Identifies an event in the world. Use this format for every PDU EXCEPT the LiveEntityPdu. Section 6.2.34.",
+  "attributes" : [ {
+    "name" : "simulationAddress",
+    "comment" : "Site and application IDs",
+    "type" : "SimulationAddress"
+  }, {
+    "name" : "eventNumber",
+    "comment" : "",
+    "type" : "unsigned short"
+  } ]
+}

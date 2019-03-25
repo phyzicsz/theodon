@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ResupplyReceivedPdu",
+  "parent" : "LogisticsFamilyPdu",
+  "comment" : "Section 7.4.4. Receipt of supplies is communicated by issuing Resupply Received PDU. COMPLETE",
+  "attributes" : [ {
+    "name" : "receivingEntityID",
+    "comment" : "Entity that is receiving service.  Shall be represented by Entity Identifier record (see 6.2.28)",
+    "type" : "EntityID"
+  }, {
+    "name" : "supplyingEntityID",
+    "comment" : "Entity that is supplying.  Shall be represented by Entity Identifier record (see 6.2.28)",
+    "type" : "EntityID"
+  }, {
+    "name" : "numberOfSupplyTypes",
+    "comment" : "How many supplies are taken by receiving entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding1",
+    "comment" : "padding",
+    "type" : "short"
+  }, {
+    "name" : "padding2",
+    "comment" : "padding",
+    "type" : "byte"
+  }, {
+    "name" : "supplies",
+    "comment" : "Type and amount of supplies for each specified supply type.  See 6.2.85 for supply quantity record.",
+    "type" : "SupplyQuantity"
+  } ]
+}

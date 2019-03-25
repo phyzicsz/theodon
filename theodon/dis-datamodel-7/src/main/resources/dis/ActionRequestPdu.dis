@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ActionRequestPdu",
+  "parent" : "SimulationManagementFamilyPdu",
+  "comment" : "Section 7.5.7. Request from simulation manager to a managed entity to perform a specified action. COMPLETE",
+  "attributes" : [ {
+    "name" : "requestID",
+    "comment" : "identifies the request being made by the simulaton manager",
+    "type" : "unsigned int"
+  }, {
+    "name" : "actionID",
+    "comment" : "identifies the particular action being requested(see Section 7 of SISO-REF-010).",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfFixedDatumRecords",
+    "comment" : "Number of fixed datum records",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatumRecords",
+    "comment" : "Number of variable datum records",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatums",
+    "comment" : "variable length list of fixed datums",
+    "type" : "FixedDatum"
+  }, {
+    "name" : "variableDatums",
+    "comment" : "variable length list of variable length datums",
+    "type" : "VariableDatum"
+  } ]
+}

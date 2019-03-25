@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "Expendable",
+  "parent" : "root",
+  "comment" : "An entity's expendable (chaff, flares, etc) information. Section 6.2.36",
+  "attributes" : [ {
+    "name" : "expendable",
+    "comment" : "Type of expendable",
+    "type" : "EntityType"
+  }, {
+    "name" : "station",
+    "comment" : "",
+    "type" : "unsigned int"
+  }, {
+    "name" : "quantity",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "expendableStatus",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding",
+    "comment" : "",
+    "type" : "unsigned byte"
+  } ]
+}

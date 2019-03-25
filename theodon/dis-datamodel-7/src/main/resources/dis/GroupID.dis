@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "GroupID",
+  "parent" : "root",
+  "comment" : "Unique designation of a group of entities contained in the isGroupOfPdu. Represents a group of entities rather than a single entity. Section 6.2.43",
+  "attributes" : [ {
+    "name" : "simulationAddress",
+    "comment" : "Simulation address (site and application number)",
+    "type" : "EntityType"
+  }, {
+    "name" : "groupNumber",
+    "comment" : "group number",
+    "type" : "unsigned short"
+  } ]
+}

@@ -1,0 +1,55 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "IntercomControlPdu",
+  "parent" : "RadioCommunicationsFamilyPdu",
+  "comment" : " Detailed inofrmation about the state of an intercom device and the actions it is requestion         of another intercom device, or the response to a requested action. Required manual intervention to fix the intercom parameters,        which can be of varialbe length. Section 7.7.5 UNFINSISHED",
+  "attributes" : [ {
+    "name" : "controlType",
+    "comment" : "control type",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "communicationsChannelType",
+    "comment" : "control type",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "sourceEntityID",
+    "comment" : "Source entity ID",
+    "type" : "EntityID"
+  }, {
+    "name" : "sourceCommunicationsDeviceID",
+    "comment" : "The specific intercom device being simulated within an entity.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "sourceLineID",
+    "comment" : "Line number to which the intercom control refers",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "transmitPriority",
+    "comment" : "priority of this message relative to transmissons from other intercom devices",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "transmitLineState",
+    "comment" : "current transmit state of the line",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "command",
+    "comment" : "detailed type requested.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "masterEntityID",
+    "comment" : "eid of the entity that has created this intercom channel.",
+    "type" : "EntityID"
+  }, {
+    "name" : "masterCommunicationsDeviceID",
+    "comment" : "specific intercom device that has created this intercom channel",
+    "type" : "unsigned short"
+  }, {
+    "name" : "intercomParametersLength",
+    "comment" : "number of intercom parameters",
+    "type" : "unsigned int"
+  }, {
+    "name" : "intercomParameters",
+    "comment" : "^^^This is wrong the length of the data field is variable. Using a long for now.",
+    "type" : "IntercomCommunicationsParameters"
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "RemoveEntityReliablePdu",
+  "parent" : "SimulationManagementWithReliabilityFamilyPdu",
+  "comment" : "Section 5.3.12.2: Removal of an entity , reliable. COMPLETE",
+  "attributes" : [ {
+    "name" : "requiredReliabilityService",
+    "comment" : "level of reliability service used for this transaction",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "pad1",
+    "comment" : "padding",
+    "type" : "unsigned short"
+  }, {
+    "name" : "pad2",
+    "comment" : "padding",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "requestID",
+    "comment" : "Request ID",
+    "type" : "unsigned int"
+  } ]
+}

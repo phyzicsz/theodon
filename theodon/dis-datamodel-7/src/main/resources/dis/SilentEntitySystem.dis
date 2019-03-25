@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SilentEntitySystem",
+  "parent" : "root",
+  "comment" : "information abou an enitity not producing espdus. Section 6.2.79",
+  "attributes" : [ {
+    "name" : "numberOfEntities",
+    "comment" : "number of the type specified by the entity type field",
+    "type" : "unsigned short"
+  }, {
+    "name" : "numberOfAppearanceRecords",
+    "comment" : "number of entity appearance records that follow",
+    "type" : "unsigned short"
+  }, {
+    "name" : "entityType",
+    "comment" : "Entity type",
+    "type" : "EntityType"
+  }, {
+    "name" : "appearanceRecordList",
+    "comment" : "Variable length list of appearance records",
+    "type" : "FourByteChunk"
+  } ]
+}

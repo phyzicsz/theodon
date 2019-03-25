@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "StopFreezeReliablePdu",
+  "parent" : "SimulationManagementWithReliabilityFamilyPdu",
+  "comment" : "Section 5.3.12.4: Stop freeze simulation, relaible. COMPLETE",
+  "attributes" : [ {
+    "name" : "realWorldTime",
+    "comment" : "time in real world for this operation to happen",
+    "type" : "ClockTime"
+  }, {
+    "name" : "reason",
+    "comment" : "Reason for stopping/freezing simulation",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "frozenBehavior",
+    "comment" : "internal behvior of the simulation while frozen",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "requiredReliablityService",
+    "comment" : "reliablity level",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "pad1",
+    "comment" : "padding",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "requestID",
+    "comment" : "Request ID",
+    "type" : "unsigned int"
+  } ]
+}

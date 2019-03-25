@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SimulationManagementFamilyPdu",
+  "parent" : "Pdu",
+  "comment" : "Section 7.5 Abstract superclass for PDUs relating to the simulation itself. COMPLETE",
+  "attributes" : [ {
+    "name" : "originatingEntityID",
+    "comment" : "Entity that is sending message",
+    "type" : "EntityID"
+  }, {
+    "name" : "receivingEntityID",
+    "comment" : "Entity that is intended to receive message",
+    "type" : "EntityID"
+  } ]
+}

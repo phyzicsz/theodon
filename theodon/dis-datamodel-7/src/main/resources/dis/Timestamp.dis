@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "Timestamp",
+  "parent" : "",
+  "comment" : "LSB is absolute or relative timestamp. Scale is 2^31 - 1 divided into one hour.",
+  "attributes" : [ {
+    "name" : "timestamp",
+    "comment" : "timestamp",
+    "type" : "unsigned int"
+  } ]
+}

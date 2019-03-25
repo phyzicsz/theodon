@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "UAFundamentalParameter",
+  "parent" : "root",
+  "comment" : "Regeneration parameters for active emission systems that are variable throughout a scenario. Section 6.2.91",
+  "attributes" : [ {
+    "name" : "activeEmissionParameterIndex",
+    "comment" : "Which database record shall be used. An enumeration from EBV document",
+    "type" : "unsigned short"
+  }, {
+    "name" : "scanPattern",
+    "comment" : "The type of scan pattern, If not used, zero. An enumeration from EBV document",
+    "type" : "unsigned short"
+  }, {
+    "name" : "beamCenterAzimuthHorizontal",
+    "comment" : "center azimuth bearing of th emain beam. In radians.",
+    "type" : "float"
+  }, {
+    "name" : "azimuthalBeamwidthHorizontal",
+    "comment" : "Horizontal beamwidth of th emain beam Meastued at the 3dB down point of peak radiated power. In radians.",
+    "type" : "float"
+  }, {
+    "name" : "beamCenterDepressionElevation",
+    "comment" : "center of the d/e angle of th emain beam relative to the stablised de angle of the target. In radians.",
+    "type" : "float"
+  }, {
+    "name" : "beamwidthDownElevation",
+    "comment" : "vertical beamwidth of the main beam. Meastured at the 3dB down point of peak radiated power. In radians.",
+    "type" : "float"
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "PduContainer",
+  "parent" : "root",
+  "comment" : "Used for XML compatability. A container that holds PDUs",
+  "attributes" : [ {
+    "name" : "numberOfPdus",
+    "comment" : "Number of PDUs in the container list",
+    "type" : "int"
+  }, {
+    "name" : "pdus",
+    "comment" : "List of PDUs",
+    "type" : "Pdu"
+  } ]
+}

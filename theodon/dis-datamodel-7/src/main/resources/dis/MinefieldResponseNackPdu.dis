@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "MinefieldResponseNackPdu",
+  "parent" : "MinefieldFamilyPdu",
+  "comment" : "proivde the means to request a retransmit of a minefield data pdu. Section 7.9.5 COMPLETE",
+  "attributes" : [ {
+    "name" : "minefieldID",
+    "comment" : "Minefield ID",
+    "type" : "EntityID"
+  }, {
+    "name" : "requestingEntityID",
+    "comment" : "entity ID making the request",
+    "type" : "EntityID"
+  }, {
+    "name" : "requestID",
+    "comment" : "request ID",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "numberOfMissingPdus",
+    "comment" : "how many pdus were missing",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "missingPduSequenceNumbers",
+    "comment" : "PDU sequence numbers that were missing",
+    "type" : "EightByteChunk"
+  } ]
+}

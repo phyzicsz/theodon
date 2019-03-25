@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "CommentReliablePdu",
+  "parent" : "SimulationManagementWithReliabilityFamilyPdu",
+  "comment" : "Section 5.3.12.12: Arbitrary messages. Only reliable this time. Neds manual intervention     to fix padding in variable datums. UNFINISHED",
+  "attributes" : [ {
+    "name" : "numberOfFixedDatumRecords",
+    "comment" : "Fixed datum record count",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatumRecords",
+    "comment" : "variable datum record count",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatumRecords",
+    "comment" : "Fixed datum records",
+    "type" : "FixedDatum"
+  }, {
+    "name" : "variableDatumRecords",
+    "comment" : "Variable datum records",
+    "type" : "VariableDatum"
+  } ]
+}

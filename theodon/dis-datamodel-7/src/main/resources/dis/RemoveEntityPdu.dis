@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "RemoveEntityPdu",
+  "parent" : "SimulationManagementFamilyPdu",
+  "comment" : "Section 7.5.3 The removal of an entity from an exercise shall be communicated with a Remove Entity PDU. COMPLETE",
+  "attributes" : [ {
+    "name" : "requestID",
+    "comment" : "This field shall identify the specific and unique start/resume request being made by the SM",
+    "type" : "unsigned int"
+  } ]
+}

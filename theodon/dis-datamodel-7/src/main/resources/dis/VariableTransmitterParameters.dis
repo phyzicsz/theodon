@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "VariableTransmitterParameters",
+  "parent" : "root",
+  "comment" : "Relates to radios. NOT COMPLETE. Section 6.2.94",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "Type of VTP. Enumeration from EBV",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordLength",
+    "comment" : "Length, in bytes",
+    "type" : "unsigned int"
+  } ]
+}

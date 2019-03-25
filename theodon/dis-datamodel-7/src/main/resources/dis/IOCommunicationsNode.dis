@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "IOCommunicationsNode",
+  "parent" : "root",
+  "comment" : "A communications node that is part of a simulted communcations network. Section 6.2.49.2",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordLength",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "communcationsNodeType",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "communicationsNodeID",
+    "comment" : "",
+    "type" : "CommunicationsNodeID"
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SupplyQuantity",
+  "parent" : "root",
+  "comment" : " A supply, and the amount of that supply. Section 6.2.86",
+  "attributes" : [ {
+    "name" : "supplyType",
+    "comment" : "Type of supply",
+    "type" : "EntityType"
+  }, {
+    "name" : "quantity",
+    "comment" : "the number of units of a supply type. ",
+    "type" : "float"
+  } ]
+}

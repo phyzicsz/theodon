@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "PduStatus",
+  "parent" : "root",
+  "comment" : "PDU Status. These are a series of bit fields. Represented here as just a byte. Section 6.2.67",
+  "attributes" : [ {
+    "name" : "pduStatus",
+    "comment" : "Bit fields. The semantics of the bit fields depend on the PDU type",
+    "type" : "unsigned byte"
+  } ]
+}

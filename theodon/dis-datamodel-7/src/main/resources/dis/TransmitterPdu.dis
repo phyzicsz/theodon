@@ -1,0 +1,91 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "TransmitterPdu",
+  "parent" : "RadioCommunicationsFamilyPdu",
+  "comment" : "Detailed information about a radio transmitter. This PDU requires manually written code to complete, since the modulation parameters are of variable length. Section 7.7.2 UNFINISHED",
+  "attributes" : [ {
+    "name" : "radioReferenceID",
+    "comment" : "ID of the entitythat is the source of the communication",
+    "type" : "EntityID"
+  }, {
+    "name" : "radioNumber",
+    "comment" : "particular radio within an entity",
+    "type" : "unsigned short"
+  }, {
+    "name" : "radioEntityType",
+    "comment" : "Type of radio",
+    "type" : "EntityType"
+  }, {
+    "name" : "transmitState",
+    "comment" : "transmit state",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "inputSource",
+    "comment" : "input source",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "variableTransmitterParameterCount",
+    "comment" : "count field",
+    "type" : "unsigned short"
+  }, {
+    "name" : "antennaLocation",
+    "comment" : "Location of antenna",
+    "type" : "Vector3Double"
+  }, {
+    "name" : "relativeAntennaLocation",
+    "comment" : "relative location of antenna",
+    "type" : "Vector3Float"
+  }, {
+    "name" : "antennaPatternType",
+    "comment" : "antenna pattern type",
+    "type" : "unsigned short"
+  }, {
+    "name" : "antennaPatternCount",
+    "comment" : "atenna pattern length",
+    "type" : "unsigned short"
+  }, {
+    "name" : "frequency",
+    "comment" : "frequency",
+    "type" : "unsigned long"
+  }, {
+    "name" : "transmitFrequencyBandwidth",
+    "comment" : "transmit frequency Bandwidth",
+    "type" : "float"
+  }, {
+    "name" : "power",
+    "comment" : "transmission power",
+    "type" : "float"
+  }, {
+    "name" : "modulationType",
+    "comment" : "modulation",
+    "type" : "ModulationType"
+  }, {
+    "name" : "cryptoSystem",
+    "comment" : "crypto system enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "cryptoKeyId",
+    "comment" : "crypto system key identifer",
+    "type" : "unsigned short"
+  }, {
+    "name" : "modulationParameterCount",
+    "comment" : "how many modulation parameters we have",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding2",
+    "comment" : "padding2",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding3",
+    "comment" : "padding3",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "modulationParametersList",
+    "comment" : "variable length list of modulation parameters",
+    "type" : "Vector3Float"
+  }, {
+    "name" : "antennaPatternList",
+    "comment" : "variable length list of antenna pattern records",
+    "type" : "Vector3Float"
+  } ]
+}

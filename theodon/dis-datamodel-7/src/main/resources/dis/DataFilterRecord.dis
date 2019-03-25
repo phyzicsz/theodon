@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "DataFilterRecord",
+  "parent" : "",
+  "comment" : "identify which of the optional data fields are contained in the Minefield Data PDU or requested in the Minefield Query PDU. This is a 32-bit record. For each field, true denotes that the data is requested or present and false denotes that the data is neither requested nor present. Section 6.2.16",
+  "attributes" : [ {
+    "name" : "bitFlags",
+    "comment" : "Bitflags field",
+    "type" : "unsigned int"
+  } ]
+}

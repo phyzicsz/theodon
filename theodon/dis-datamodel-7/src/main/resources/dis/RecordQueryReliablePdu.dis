@@ -1,0 +1,39 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "RecordQueryReliablePdu",
+  "parent" : "SimulationManagementWithReliabilityFamilyPdu",
+  "comment" : "Section 5.3.12.13: A request for one or more records of data from an entity. COMPLETE",
+  "attributes" : [ {
+    "name" : "requestID",
+    "comment" : "request ID",
+    "type" : "unsigned int"
+  }, {
+    "name" : "requiredReliabilityService",
+    "comment" : "level of reliability service used for this transaction",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "pad1",
+    "comment" : "padding. The spec is unclear and contradictory here.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "pad2",
+    "comment" : "padding",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "eventType",
+    "comment" : "event type",
+    "type" : "unsigned short"
+  }, {
+    "name" : "time",
+    "comment" : "time",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfRecords",
+    "comment" : "numberOfRecords",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordIDs",
+    "comment" : "record IDs",
+    "type" : "FourByteChunk"
+  } ]
+}

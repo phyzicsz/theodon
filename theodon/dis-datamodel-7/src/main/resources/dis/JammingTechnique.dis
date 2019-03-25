@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "JammingTechnique",
+  "parent" : "root",
+  "comment" : "Jamming technique. Section 6.2.49",
+  "attributes" : [ {
+    "name" : "kind",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "category",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "subcategory",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "specific",
+    "comment" : "",
+    "type" : "unsigned byte"
+  } ]
+}

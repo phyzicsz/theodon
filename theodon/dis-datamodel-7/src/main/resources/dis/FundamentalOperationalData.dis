@@ -1,0 +1,47 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "FundamentalOperationalData",
+  "parent" : "root",
+  "comment" : "Basic operational data for IFF. Section 6.2.40.",
+  "attributes" : [ {
+    "name" : "systemStatus",
+    "comment" : "system status",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "dataField1",
+    "comment" : "data field 1",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "informationLayers",
+    "comment" : "eight boolean fields",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "dataField2",
+    "comment" : "enumeration",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "parameter1",
+    "comment" : "parameter, enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "parameter2",
+    "comment" : "parameter, enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "parameter3",
+    "comment" : "parameter, enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "parameter4",
+    "comment" : "parameter, enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "parameter5",
+    "comment" : "parameter, enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "parameter6",
+    "comment" : "parameter, enumeration",
+    "type" : "unsigned short"
+  } ]
+}

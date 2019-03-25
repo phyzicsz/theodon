@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "CreateEntityPdu",
+  "parent" : "SimulationManagementFamilyPdu",
+  "comment" : "Section 7.5.2. Create a new entity. COMPLETE",
+  "attributes" : [ {
+    "name" : "requestID",
+    "comment" : "Identifier for the request.  See 6.2.75",
+    "type" : "unsigned int"
+  } ]
+}

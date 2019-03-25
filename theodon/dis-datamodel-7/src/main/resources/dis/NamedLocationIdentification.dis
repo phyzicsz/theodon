@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "NamedLocationIdentification",
+  "parent" : "root",
+  "comment" : "Information about the discrete positional relationship of the part entity with respect to the its host entity Section 6.2.62 ",
+  "attributes" : [ {
+    "name" : "stationName",
+    "comment" : "the station name within the host at which the part entity is located. If the part entity is On Station, this field shall specify the representation of the part’s location data fields. This field shall be specified by a 16-bit enumeration ",
+    "type" : "unsigned short"
+  }, {
+    "name" : "stationNumber",
+    "comment" : "the number of the particular wing station, cargo hold etc., at which the part is attached. ",
+    "type" : "unsigned short"
+  } ]
+}

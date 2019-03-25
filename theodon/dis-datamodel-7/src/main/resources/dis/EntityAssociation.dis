@@ -1,0 +1,43 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EntityAssociation",
+  "parent" : "root",
+  "comment" : "Association or disassociation of two entities.  Section 6.2.94.4.3",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "changeIndicator",
+    "comment" : "Indicates if this VP has changed since last issuance",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "associationStatus",
+    "comment" : "Indicates association status between two entities; 8 bit enum",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "associationType",
+    "comment" : "Type of association; 8 bit enum",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "entityID",
+    "comment" : "Object ID of entity associated with this entity",
+    "type" : "EntityID"
+  }, {
+    "name" : "ownStationLocation",
+    "comment" : "Station location on one's own entity. EBV doc.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "physicalConnectionType",
+    "comment" : "Type of physical connection. EBV doc",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "groupMemberType",
+    "comment" : "Type of member the entity is within th egroup",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "groupNumber",
+    "comment" : "Group if any to which the entity belongs",
+    "type" : "unsigned short"
+  } ]
+}

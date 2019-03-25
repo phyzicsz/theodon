@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "DataQueryDatumSpecification",
+  "parent" : "root",
+  "comment" : "List of fixed and variable datum ID records. Section 6.2.17 ",
+  "attributes" : [ {
+    "name" : "numberOfFixedDatums",
+    "comment" : "Number of fixed datum IDs",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatums",
+    "comment" : "Number of variable datum IDs",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatumIDList",
+    "comment" : "variable length list fixed datum IDs",
+    "type" : "UnsignedDISInteger"
+  }, {
+    "name" : "variableDatumIDList",
+    "comment" : "variable length list variable datum IDs",
+    "type" : "UnsignedDISInteger"
+  } ]
+}

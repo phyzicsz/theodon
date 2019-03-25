@@ -1,0 +1,7 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "LogisticsFamilyPdu",
+  "parent" : "Pdu",
+  "comment" : " Abstract superclass for logistics PDUs. Section 7.4 COMPLETE",
+  "attributes" : [ ]
+}

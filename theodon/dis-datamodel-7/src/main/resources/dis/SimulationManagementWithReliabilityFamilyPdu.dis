@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SimulationManagementWithReliabilityFamilyPdu",
+  "parent" : "Pdu",
+  "comment" : "Section 5.3.12: Abstract superclass for reliable simulation management PDUs",
+  "attributes" : [ {
+    "name" : "originatingEntityID",
+    "comment" : "Object originatig the request",
+    "type" : "EntityID"
+  }, {
+    "name" : "receivingEntityID",
+    "comment" : "Object with which this point object is associated",
+    "type" : "EntityID"
+  } ]
+}

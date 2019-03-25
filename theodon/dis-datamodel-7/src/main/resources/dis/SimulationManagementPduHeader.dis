@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SimulationManagementPduHeader",
+  "parent" : "root",
+  "comment" : "First part of a simulation management (SIMAN) PDU and SIMAN-Reliability (SIMAN-R) PDU. Sectionn 6.2.81",
+  "attributes" : [ {
+    "name" : "pduHeader",
+    "comment" : "Conventional PDU header",
+    "type" : "PduHeader"
+  }, {
+    "name" : "originatingID",
+    "comment" : "IDs the simulation or entity, etiehr a simulation or an entity. Either 6.2.80 or 6.2.28",
+    "type" : "SimulationIdentifier"
+  }, {
+    "name" : "receivingID",
+    "comment" : "simulation, all simulations, a special ID, or an entity. See 5.6.5 and 5.12.4",
+    "type" : "SimulationIdentifier"
+  } ]
+}

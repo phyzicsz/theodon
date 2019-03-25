@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EntityDamageStatusPdu",
+  "parent" : "WarfareFamilyPdu",
+  "comment" : "shall be used to communicate detailed damage information sustained by an entity regardless of the source of the damage Section 7.3.5  COMPLETE",
+  "attributes" : [ {
+    "name" : "damagedEntityID",
+    "comment" : "Field shall identify the damaged entity (see 6.2.28), Section 7.3.4 COMPLETE",
+    "type" : "EntityID"
+  }, {
+    "name" : "padding1",
+    "comment" : "Padding.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding2",
+    "comment" : "Padding.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "numberOfDamageDescription",
+    "comment" : "field shall specify the number of Damage Description records, Section 7.3.5",
+    "type" : "unsigned short"
+  }, {
+    "name" : "damageDescriptionRecords",
+    "comment" : "Fields shall contain one or more Damage Description records (see 6.2.17) and may contain other Standard Variable records, Section 7.3.5",
+    "type" : "DirectedEnergyDamage"
+  } ]
+}

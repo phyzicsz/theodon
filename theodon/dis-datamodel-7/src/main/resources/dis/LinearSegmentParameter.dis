@@ -1,0 +1,51 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "LinearSegmentParameter",
+  "parent" : "root",
+  "comment" : "The specification of an individual segment of a linear segment synthetic environment object in a Linear Object State PDU Section 6.2.52",
+  "attributes" : [ {
+    "name" : "segmentNumber",
+    "comment" : "the individual segment of the linear segment ",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "segmentModification",
+    "comment" : " whether a modification has been made to the point object’s location or orientation",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "generalSegmentAppearance",
+    "comment" : "general dynamic appearance attributes of the segment. This record shall be defined as a 16-bit record of enumerations. The values defined for this record are included in Section 12 of SISO-REF-010.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "specificSegmentAppearance",
+    "comment" : "This field shall specify specific dynamic appearance attributes of the segment. This record shall be defined as a 32-bit record of enumerations.",
+    "type" : "unsigned int"
+  }, {
+    "name" : "segmentLocation",
+    "comment" : "This field shall specify the location of the linear segment in the simulated world and shall be represented by a World Coordinates record ",
+    "type" : "Vector3Double"
+  }, {
+    "name" : "segmentOrientation",
+    "comment" : "orientation of the linear segment about the segment location and shall be represented by a Euler Angles record ",
+    "type" : "EulerAngles"
+  }, {
+    "name" : "segmentLength",
+    "comment" : "length of the linear segment, in meters, extending in the positive X direction",
+    "type" : "float"
+  }, {
+    "name" : "segmentWidth",
+    "comment" : "The total width of the linear segment, in meters, shall be specified by a 16-bit unsigned integer. One-half of the width shall extend in the positive Y direction, and one-half of the width shall extend in the negative Y direction.",
+    "type" : "float"
+  }, {
+    "name" : "segmentHeight",
+    "comment" : "The height of the linear segment, in meters, above ground shall be specified by a 16-bit unsigned integer.",
+    "type" : "float"
+  }, {
+    "name" : "segmentDepth",
+    "comment" : "The depth of the linear segment, in meters, below ground level ",
+    "type" : "float"
+  }, {
+    "name" : "padding",
+    "comment" : "padding",
+    "type" : "unsigned int"
+  } ]
+}

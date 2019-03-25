@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "MunitionDescriptor",
+  "parent" : "root",
+  "comment" : "Represents the firing or detonation of a munition. Section 6.2.19.2",
+  "attributes" : [ {
+    "name" : "munitionType",
+    "comment" : "What munition was used in the burst",
+    "type" : "EntityType"
+  }, {
+    "name" : "warhead",
+    "comment" : "type of warhead enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "fuse",
+    "comment" : "type of fuse used enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "quantity",
+    "comment" : "how many of the munition were fired",
+    "type" : "unsigned short"
+  }, {
+    "name" : "rate",
+    "comment" : "rate at which the munition was fired",
+    "type" : "unsigned short"
+  } ]
+}

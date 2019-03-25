@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "RecordSpecificationElement",
+  "parent" : "root",
+  "comment" : "Synthetic record, made up from section 6.2.72. This is used to acheive a repeating variable list element.",
+  "attributes" : [ {
+    "name" : "recordID",
+    "comment" : "the data structure used to convey the parameter values of the record for each record. 32 bit enumeration.",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordSetSerialNumber",
+    "comment" : "the serial number of the first record in the block of records",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordLength",
+    "comment" : " the length, in bits, of the record. Note, bits, not bytes.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "recordCount",
+    "comment" : " the number of records included in the record set ",
+    "type" : "unsigned short"
+  }, {
+    "name" : "recordValues",
+    "comment" : "the concatenated records of the format specified by the Record ID field. The length of this field is the Record Length multiplied by the Record Count, in units of bits. ^^^This is wrong--variable sized data records, bit values. THis MUST be patched after generation.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "pad4",
+    "comment" : "Padding of 0 to 31 unused bits as required for 32-bit alignment of the Record Set field. ^^^This is wrong--variable sized padding. MUST be patched post-code generation",
+    "type" : "unsigned byte"
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "AttachedParts",
+  "parent" : "root",
+  "comment" : "Removable parts that may be attached to an entity.  Section 6.2.93.3",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "detachedIndicator",
+    "comment" : "0 = attached, 1 = detached. See I.2.3.1 for state transition diagram",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "partAttachedTo",
+    "comment" : "the identification of the articulated part to which this articulation parameter is attached. This field shall be specified by a 16-bit unsigned integer. This field shall contain the value zero if the articulated part is attached directly to the entity.",
+    "type" : "unsigned short"
+  }, {
+    "name" : "parameterType",
+    "comment" : "The location or station to which the part is attached",
+    "type" : "unsigned int"
+  }, {
+    "name" : "parameterValue",
+    "comment" : "The definition of the 64 bits shall be determined based on the type of parameter specified in the Parameter Type field ",
+    "type" : "unsigned long"
+  } ]
+}

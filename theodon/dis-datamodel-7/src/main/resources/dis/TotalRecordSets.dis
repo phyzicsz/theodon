@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "TotalRecordSets",
+  "parent" : "root",
+  "comment" : "Total number of record sets contained in a logical set of one or more PDUs. Used to transfer ownership, etc Section 6.2.88",
+  "attributes" : [ {
+    "name" : "totalRecordSets",
+    "comment" : "Total number of record sets",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding",
+    "comment" : "padding",
+    "type" : "unsigned short"
+  } ]
+}

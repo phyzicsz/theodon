@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "IntercomCommunicationsParameters",
+  "parent" : "root",
+  "comment" : "Intercom communcations parameters. Section 6.2.47.  This requires hand coding",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "Type of intercom parameters record",
+    "type" : "unsigned short"
+  }, {
+    "name" : "recordLength",
+    "comment" : "length of record",
+    "type" : "unsigned short"
+  }, {
+    "name" : "recordSpecificField",
+    "comment" : "This is a placeholder.",
+    "type" : "unsigned int"
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EntityTypeVP",
+  "parent" : "root",
+  "comment" : "Association or disassociation of two entities.  Section 6.2.94.5",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "changeIndicator",
+    "comment" : "Indicates if this VP has changed since last issuance",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "entityType",
+    "comment" : "",
+    "type" : "EntityType"
+  }, {
+    "name" : "padding",
+    "comment" : "padding",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding1",
+    "comment" : "padding",
+    "type" : "unsigned int"
+  } ]
+}

@@ -1,0 +1,35 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "IFFFundamentalParameterData",
+  "parent" : "root",
+  "comment" : "Fundamental IFF atc data. Section 6.2.45",
+  "attributes" : [ {
+    "name" : "erp",
+    "comment" : "ERP",
+    "type" : "float"
+  }, {
+    "name" : "frequency",
+    "comment" : "frequency",
+    "type" : "float"
+  }, {
+    "name" : "pgrf",
+    "comment" : "pgrf",
+    "type" : "float"
+  }, {
+    "name" : "pulseWidth",
+    "comment" : "Pulse width",
+    "type" : "float"
+  }, {
+    "name" : "burstLength",
+    "comment" : "Burst length",
+    "type" : "unsigned int"
+  }, {
+    "name" : "applicableModes",
+    "comment" : "Applicable modes enumeration",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "systemSpecificData",
+    "comment" : "System-specific data",
+    "type" : "unsigned byte"
+  } ]
+}

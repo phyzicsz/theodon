@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "IffDataSpecification",
+  "parent" : "root",
+  "comment" : "Requires hand coding to be useful. Section 6.2.43",
+  "attributes" : [ {
+    "name" : "numberOfIffDataRecords",
+    "comment" : "Number of iff records",
+    "type" : "unsigned short"
+  }, {
+    "name" : "iffDataRecords",
+    "comment" : "IFF data records",
+    "type" : "IFFData"
+  } ]
+}

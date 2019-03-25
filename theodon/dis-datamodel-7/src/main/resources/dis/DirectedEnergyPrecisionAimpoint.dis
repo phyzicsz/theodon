@@ -1,0 +1,67 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "DirectedEnergyPrecisionAimpoint",
+  "parent" : "root",
+  "comment" : "DE Precision Aimpoint Record. Section 6.2.20.3",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "Type of Record",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordLength",
+    "comment" : "Length of Record",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding",
+    "comment" : "Padding",
+    "type" : "unsigned short"
+  }, {
+    "name" : "targetSpotLocation",
+    "comment" : "Position of Target Spot in World Coordinates.",
+    "type" : "Vector3Double"
+  }, {
+    "name" : "targetSpotEntityLocation",
+    "comment" : "Position (meters) of Target Spot relative to Entity Position.",
+    "type" : "Vector3Float"
+  }, {
+    "name" : "targetSpotVelocity",
+    "comment" : "Velocity (meters/sec) of Target Spot.",
+    "type" : "Vector3Float"
+  }, {
+    "name" : "targetSpotAcceleration",
+    "comment" : "Acceleration (meters/sec/sec) of Target Spot.",
+    "type" : "Vector3Float"
+  }, {
+    "name" : "targetEntityID",
+    "comment" : "Unique ID of the target entity.",
+    "type" : "EntityID"
+  }, {
+    "name" : "targetComponentID",
+    "comment" : "Target Component ID ENUM, same as in DamageDescriptionRecord.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "beamSpotType",
+    "comment" : "Spot Shape ENUM.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "beamSpotCrossSectionSemiMajorAxis",
+    "comment" : "Beam Spot Cross Section Semi-Major Axis.",
+    "type" : "float"
+  }, {
+    "name" : "beamSpotCrossSectionSemiMinorAxis",
+    "comment" : "Beam Spot Cross Section Semi-Major Axis.",
+    "type" : "float"
+  }, {
+    "name" : "beamSpotCrossSectionOrientationAngle",
+    "comment" : "Beam Spot Cross Section Orientation Angle.",
+    "type" : "float"
+  }, {
+    "name" : "peakIrradiance",
+    "comment" : "Peak irradiance",
+    "type" : "float"
+  }, {
+    "name" : "padding2",
+    "comment" : "padding",
+    "type" : "unsigned int"
+  } ]
+}

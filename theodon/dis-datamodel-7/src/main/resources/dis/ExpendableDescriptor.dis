@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ExpendableDescriptor",
+  "parent" : "root",
+  "comment" : "Burst of chaff or expendible device. Section 6.2.19.4",
+  "attributes" : [ {
+    "name" : "expendableType",
+    "comment" : "Type of the object that exploded",
+    "type" : "EntityType"
+  }, {
+    "name" : "padding",
+    "comment" : "Padding",
+    "type" : "long"
+  } ]
+}

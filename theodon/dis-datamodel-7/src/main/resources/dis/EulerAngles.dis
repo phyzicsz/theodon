@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EulerAngles",
+  "parent" : "root",
+  "comment" : "Three floating point values representing an orientation, psi, theta, and phi, aka the euler angles, in radians. Section 6.2.33",
+  "attributes" : [ {
+    "name" : "psi",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "theta",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "phi",
+    "comment" : "",
+    "type" : "float"
+  } ]
+}

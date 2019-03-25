@@ -1,0 +1,167 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "FastEntityStatePdu",
+  "parent" : "EntityInformationFamilyPdu",
+  "comment" : "Represents the postion and state of one entity in the world. This is identical in function to entity state pdu, but generates less garbage to collect in the Java world. Section 7.2.2. COMPLETE",
+  "attributes" : [ {
+    "name" : "site",
+    "comment" : "The site ID",
+    "type" : "unsigned short"
+  }, {
+    "name" : "application",
+    "comment" : "The application ID",
+    "type" : "unsigned short"
+  }, {
+    "name" : "entity",
+    "comment" : "the entity ID",
+    "type" : "unsigned short"
+  }, {
+    "name" : "forceId",
+    "comment" : "what force this entity is affiliated with, eg red, blue, neutral, etc",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "numberOfVariableParameters",
+    "comment" : "How many variable (nee articulation) parameters are in the variable length list",
+    "type" : "byte"
+  }, {
+    "name" : "entityKind",
+    "comment" : "Kind of entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "domain",
+    "comment" : "Domain of entity (air, surface, subsurface, space, etc)",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "country",
+    "comment" : "country to which the design of the entity is attributed",
+    "type" : "unsigned short"
+  }, {
+    "name" : "category",
+    "comment" : "category of entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "subcategory",
+    "comment" : "subcategory of entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "specific",
+    "comment" : "specific info based on subcategory field",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "extra",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "altEntityKind",
+    "comment" : "Kind of entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "altDomain",
+    "comment" : "Domain of entity (air, surface, subsurface, space, etc)",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "altCountry",
+    "comment" : "country to which the design of the entity is attributed",
+    "type" : "unsigned short"
+  }, {
+    "name" : "altCategory",
+    "comment" : "category of entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "altSubcategory",
+    "comment" : "subcategory of entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "altSpecific",
+    "comment" : "specific info based on subcategory field",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "altExtra",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "xVelocity",
+    "comment" : "X velo",
+    "type" : "float"
+  }, {
+    "name" : "yVelocity",
+    "comment" : "y Value",
+    "type" : "float"
+  }, {
+    "name" : "zVelocity",
+    "comment" : "Z value",
+    "type" : "float"
+  }, {
+    "name" : "xLocation",
+    "comment" : "X value",
+    "type" : "double"
+  }, {
+    "name" : "yLocation",
+    "comment" : "y Value",
+    "type" : "double"
+  }, {
+    "name" : "zLocation",
+    "comment" : "Z value",
+    "type" : "double"
+  }, {
+    "name" : "psi",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "theta",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "phi",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "entityAppearance",
+    "comment" : "a series of bit flags that are used to help draw the entity, such as smoking, on fire, etc.",
+    "type" : "int"
+  }, {
+    "name" : "deadReckoningAlgorithm",
+    "comment" : "enumeration of what dead reckoning algorighm to use",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "otherParameters",
+    "comment" : "other parameters to use in the dead reckoning algorithm",
+    "type" : "byte"
+  }, {
+    "name" : "xAcceleration",
+    "comment" : "X value",
+    "type" : "float"
+  }, {
+    "name" : "yAcceleration",
+    "comment" : "y Value",
+    "type" : "float"
+  }, {
+    "name" : "zAcceleration",
+    "comment" : "Z value",
+    "type" : "float"
+  }, {
+    "name" : "xAngularVelocity",
+    "comment" : "X value",
+    "type" : "float"
+  }, {
+    "name" : "yAngularVelocity",
+    "comment" : "y Value",
+    "type" : "float"
+  }, {
+    "name" : "zAngularVelocity",
+    "comment" : "Z value",
+    "type" : "float"
+  }, {
+    "name" : "marking",
+    "comment" : "characters that can be used for debugging, or to draw unique strings on the side of entities in the world",
+    "type" : "byte"
+  }, {
+    "name" : "capabilities",
+    "comment" : "a series of bit flags",
+    "type" : "int"
+  }, {
+    "name" : "variableParameters",
+    "comment" : "variable length list of variable parameters. In earlier versions of DIS these were known as articulation parameters",
+    "type" : "VariableParameter"
+  } ]
+}

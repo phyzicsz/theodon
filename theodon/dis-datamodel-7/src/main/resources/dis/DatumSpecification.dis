@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "DatumSpecification",
+  "parent" : "root",
+  "comment" : "List of fixed and variable datum records. Section 6.2.18 ",
+  "attributes" : [ {
+    "name" : "numberOfFixedDatums",
+    "comment" : "Number of fixed datums",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatums",
+    "comment" : "Number of variable datums",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatumList",
+    "comment" : "variable length list fixed datums",
+    "type" : "FixedDatum"
+  }, {
+    "name" : "variableDatumList",
+    "comment" : "variable length list variable datums. See 6.2.93",
+    "type" : "VariableDatum"
+  } ]
+}

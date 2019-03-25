@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EngineFuel",
+  "parent" : "root",
+  "comment" : "Information about an entity's engine fuel. Section 6.2.24.",
+  "attributes" : [ {
+    "name" : "fuelQuantity",
+    "comment" : "Fuel quantity, units specified by next field",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fuelMeasurementUnits",
+    "comment" : "Units in which the fuel is measured",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "fuelType",
+    "comment" : "Type of fuel",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "fuelLocation",
+    "comment" : "Location of fuel as related to entity. See section 14 of EBV document",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding",
+    "comment" : "padding",
+    "type" : "unsigned byte"
+  } ]
+}

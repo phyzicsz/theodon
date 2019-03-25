@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EEFundamentalParameterData",
+  "parent" : "root",
+  "comment" : "Contains electromagnetic emmission regeneration parameters that are variable throught a scenario. Section 6.2.22.",
+  "attributes" : [ {
+    "name" : "frequency",
+    "comment" : "center frequency of the emission in hertz.",
+    "type" : "float"
+  }, {
+    "name" : "frequencyRange",
+    "comment" : "Bandwidth of the frequencies corresponding to the fequency field.",
+    "type" : "float"
+  }, {
+    "name" : "effectiveRadiatedPower",
+    "comment" : "Effective radiated power for the emission in DdBm. For a radar noise jammer, indicates the peak of the transmitted power.",
+    "type" : "float"
+  }, {
+    "name" : "pulseRepetitionFrequency",
+    "comment" : "Average repetition frequency of the emission in hertz.",
+    "type" : "float"
+  }, {
+    "name" : "pulseWidth",
+    "comment" : "Average pulse width  of the emission in microseconds.",
+    "type" : "float"
+  } ]
+}

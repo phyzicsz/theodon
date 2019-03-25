@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EightByteChunk",
+  "parent" : "root",
+  "comment" : "64 bit piece of data",
+  "attributes" : [ {
+    "name" : "otherParameters",
+    "comment" : "Eight bytes of arbitrary data",
+    "type" : "byte"
+  } ]
+}

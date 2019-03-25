@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "BeamStatus",
+  "parent" : "root",
+  "comment" : "Information related to the status of a beam. This is contained in the beam status field of the electromagnitec emission PDU. The first bit determines whether the beam is active (0) or deactivated (1). Section 6.2.12.",
+  "attributes" : [ {
+    "name" : "beamState",
+    "comment" : "First bit zero means beam is active, first bit = 1 means deactivated. The rest is padding.",
+    "type" : "unsigned byte"
+  } ]
+}

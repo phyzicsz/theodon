@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "StandardVariableSpecification",
+  "parent" : "root",
+  "comment" : "Does not work, and causes failure in anything it is embedded in. Section 6.2.83",
+  "attributes" : [ {
+    "name" : "numberOfStandardVariableRecords",
+    "comment" : "Number of static variable records",
+    "type" : "unsigned short"
+  }, {
+    "name" : "standardVariables",
+    "comment" : "variable length list of standard variables, The class type and length here are WRONG and will cause the incorrect serialization of any class in whihc it is embedded.",
+    "type" : "SimulationManagementPduHeader"
+  } ]
+}

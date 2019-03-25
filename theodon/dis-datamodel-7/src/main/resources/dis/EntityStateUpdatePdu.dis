@@ -1,0 +1,39 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EntityStateUpdatePdu",
+  "parent" : "EntityInformationFamilyPdu",
+  "comment" : "Nonstatic information about a particular entity may be communicated by issuing an Entity State Update PDU. Section 7.2.5. COMPLETE",
+  "attributes" : [ {
+    "name" : "entityID",
+    "comment" : "This field shall identify the entity issuing the PDU, and shall be represented by an Entity Identifier record (see 6.2.28).",
+    "type" : "EntityID"
+  }, {
+    "name" : "padding1",
+    "comment" : "Padding",
+    "type" : "byte"
+  }, {
+    "name" : "numberOfVariableParameters",
+    "comment" : "This field shall specify the number of variable parameters present. This field shall be represented by an 8-bit unsigned integer (see Annex I).",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "entityLinearVelocity",
+    "comment" : "This field shall specify an entity’s linear velocity. The coordinate system for an entity’s linear velocity depends on the dead reckoning algorithm used. This field shall be represented by a Linear Velocity Vector record [see 6.2.95 item c)]).",
+    "type" : "Vector3Float"
+  }, {
+    "name" : "entityLocation",
+    "comment" : "This field shall specify an entity’s physical location in the simulated world and shall be represented by a World Coordinates record (see 6.2.97).",
+    "type" : "Vector3Double"
+  }, {
+    "name" : "entityOrientation",
+    "comment" : "This field shall specify an entity’s orientation and shall be represented by an Euler Angles record (see 6.2.33).",
+    "type" : "EulerAngles"
+  }, {
+    "name" : "entityAppearance",
+    "comment" : "This field shall specify the dynamic changes to the entity’s appearance attributes. This field shall be represented by an Entity Appearance record (see 6.2.26).",
+    "type" : "unsigned int"
+  }, {
+    "name" : "variableParameters",
+    "comment" : "This field shall specify the parameter values for each Variable Parameter record that is included (see 6.2.93 and Annex I).",
+    "type" : "VariableParameter"
+  } ]
+}

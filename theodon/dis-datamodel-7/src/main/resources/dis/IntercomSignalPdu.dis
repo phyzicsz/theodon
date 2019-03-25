@@ -1,0 +1,39 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "IntercomSignalPdu",
+  "parent" : "RadioCommunicationsFamilyPdu",
+  "comment" : " Actual transmission of intercome voice data. Section 7.7.5. COMPLETE",
+  "attributes" : [ {
+    "name" : "entityID",
+    "comment" : "entity ID",
+    "type" : "EntityID"
+  }, {
+    "name" : "communicationsDeviceID",
+    "comment" : "ID of communications device",
+    "type" : "unsigned short"
+  }, {
+    "name" : "encodingScheme",
+    "comment" : "encoding scheme",
+    "type" : "unsigned short"
+  }, {
+    "name" : "tdlType",
+    "comment" : "tactical data link type",
+    "type" : "unsigned short"
+  }, {
+    "name" : "sampleRate",
+    "comment" : "sample rate",
+    "type" : "unsigned int"
+  }, {
+    "name" : "dataLength",
+    "comment" : "data length",
+    "type" : "unsigned short"
+  }, {
+    "name" : "samples",
+    "comment" : "samples",
+    "type" : "unsigned short"
+  }, {
+    "name" : "data",
+    "comment" : "data bytes",
+    "type" : "OneByteChunk"
+  } ]
+}

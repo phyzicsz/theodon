@@ -1,0 +1,55 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ArealObjectStatePdu",
+  "parent" : "SyntheticEnvironmentFamilyPdu",
+  "comment" : "Information about the addition/modification of an oobject that is geometrically anchored to the terrain with a set of three or more points that come to a closure. Section 7.10.6 COMPLETE",
+  "attributes" : [ {
+    "name" : "objectID",
+    "comment" : "Object in synthetic environment",
+    "type" : "EntityID"
+  }, {
+    "name" : "referencedObjectID",
+    "comment" : "Object with which this point object is associated",
+    "type" : "EntityID"
+  }, {
+    "name" : "updateNumber",
+    "comment" : "unique update number of each state transition of an object",
+    "type" : "unsigned short"
+  }, {
+    "name" : "forceID",
+    "comment" : "force ID",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "modifications",
+    "comment" : "modifications enumeration",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "objectType",
+    "comment" : "Object type",
+    "type" : "EntityType"
+  }, {
+    "name" : "specificObjectAppearance",
+    "comment" : "Object appearance",
+    "type" : "unsigned int"
+  }, {
+    "name" : "generalObjectAppearance",
+    "comment" : "Object appearance",
+    "type" : "unsigned short"
+  }, {
+    "name" : "numberOfPoints",
+    "comment" : "Number of points",
+    "type" : "unsigned short"
+  }, {
+    "name" : "requesterID",
+    "comment" : "requesterID",
+    "type" : "SimulationAddress"
+  }, {
+    "name" : "receivingID",
+    "comment" : "receiver ID",
+    "type" : "SimulationAddress"
+  }, {
+    "name" : "objectLocation",
+    "comment" : "location of object",
+    "type" : "Vector3Double"
+  } ]
+}

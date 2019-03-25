@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EventIdentifierLiveEntity",
+  "parent" : "root",
+  "comment" : "Identifies an event in the world. Use this format for ONLY the LiveEntityPdu. Section 6.2.34.",
+  "attributes" : [ {
+    "name" : "siteNumber",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "applicationNumber",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "eventNumber",
+    "comment" : "",
+    "type" : "unsigned short"
+  } ]
+}

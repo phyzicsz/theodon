@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "StopFreezePdu",
+  "parent" : "SimulationManagementFamilyPdu",
+  "comment" : "Section 7.5.5. Stop or freeze an enity (or exercise). COMPLETE",
+  "attributes" : [ {
+    "name" : "realWorldTime",
+    "comment" : "real-world(UTC) time at which the entity shall stop or freeze in the exercise",
+    "type" : "ClockTime"
+  }, {
+    "name" : "reason",
+    "comment" : "Reason the simulation was stopped or frozen (see section 7 of SISO-REF-010) represented by an 8-bit enumeration",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "frozenBehavior",
+    "comment" : "Internal behavior of the entity(or simulation) and its appearance while frozen to the other participants",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding1",
+    "comment" : "padding",
+    "type" : "short"
+  }, {
+    "name" : "requestID",
+    "comment" : "Request ID that is unique",
+    "type" : "unsigned int"
+  } ]
+}

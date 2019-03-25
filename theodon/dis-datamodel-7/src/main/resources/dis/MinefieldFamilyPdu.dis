@@ -1,0 +1,7 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "MinefieldFamilyPdu",
+  "parent" : "Pdu",
+  "comment" : " Abstract superclass for PDUs relating to minefields. Section 7.9",
+  "attributes" : [ ]
+}

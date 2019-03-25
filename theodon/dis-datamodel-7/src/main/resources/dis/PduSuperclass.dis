@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "PduSuperclass",
+  "parent" : "root",
+  "comment" : "The superclass for all PDUs, including classic and Live Entity (LE) PDUs. This incorporates the PduHeader record, section 7.2.2",
+  "attributes" : [ {
+    "name" : "protocolVersion",
+    "comment" : "The version of the protocol. 5=DIS-1995, 6=DIS-1998, 7=DIS-2009.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "exerciseID",
+    "comment" : "Exercise ID",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "pduType",
+    "comment" : "Type of pdu, unique for each PDU class",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "protocolFamily",
+    "comment" : "value that refers to the protocol family, eg SimulationManagement, et",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "timestamp",
+    "comment" : "Timestamp value",
+    "type" : "unsigned int"
+  }, {
+    "name" : "length",
+    "comment" : "Length, in bytes, of the PDU",
+    "type" : "unsigned short"
+  } ]
+}

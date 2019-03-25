@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "TrackJamData",
+  "parent" : "root",
+  "comment" : " Track-Jam data Section 6.2.89",
+  "attributes" : [ {
+    "name" : "entityID",
+    "comment" : "the entity tracked or illumated, or an emitter beam targeted with jamming",
+    "type" : "EntityID"
+  }, {
+    "name" : "emitterNumber",
+    "comment" : "Emitter system associated with the entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "beamNumber",
+    "comment" : "Beam associated with the entity",
+    "type" : "unsigned byte"
+  } ]
+}

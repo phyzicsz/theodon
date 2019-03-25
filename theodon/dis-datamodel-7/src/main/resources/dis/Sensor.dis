@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "Sensor",
+  "parent" : "root",
+  "comment" : "An entity's sensor information.  Section 6.2.77.",
+  "attributes" : [ {
+    "name" : "sensorTypeSource",
+    "comment" : " the source of the Sensor Type field ",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "sensorOnOffStatus",
+    "comment" : "the on/off status of the sensor",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "sensorType",
+    "comment" : "the sensor type and shall be represented by a 16-bit enumeration. ",
+    "type" : "unsigned short"
+  }, {
+    "name" : "station",
+    "comment" : " the station to which the sensor is assigned. A zero value shall indi- cate that this Sensor record is not associated with any particular station and represents the total quan- tity of this sensor for this entity. If this field is non-zero, it shall either reference an attached part or an articulated part",
+    "type" : "unsigned int"
+  }, {
+    "name" : "quantity",
+    "comment" : "quantity of the sensor ",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding",
+    "comment" : "padding",
+    "type" : "unsigned short"
+  } ]
+}

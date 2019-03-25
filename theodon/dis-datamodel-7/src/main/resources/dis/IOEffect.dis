@@ -1,0 +1,43 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "IOEffect",
+  "parent" : "root",
+  "comment" : "Effect of IO on an entity. Section 6.2.49.3",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordLength",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "ioStatus",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "ioLinkType",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "ioEffect",
+    "comment" : "",
+    "type" : "EntityID"
+  }, {
+    "name" : "ioEffectDutyCycle",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "ioEffectDuration",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "ioProcess",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding",
+    "comment" : "",
+    "type" : "unsigned short"
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "Pdu",
+  "parent" : "PduSuperclass",
+  "comment" : "Adds some fields to the the classic PDU",
+  "attributes" : [ {
+    "name" : "pduStatus",
+    "comment" : "PDU Status Record. Described in 6.2.67. This field is not present in earlier DIS versions ",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding",
+    "comment" : "zero-filled array of padding",
+    "type" : "unsigned byte"
+  } ]
+}

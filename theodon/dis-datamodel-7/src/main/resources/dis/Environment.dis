@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "Environment",
+  "parent" : "root",
+  "comment" : "Incomplete environment record; requires hand coding to fix. Section 6.2.31.1",
+  "attributes" : [ {
+    "name" : "environmentType",
+    "comment" : "type",
+    "type" : "unsigned int"
+  }, {
+    "name" : "length",
+    "comment" : "length, in bits, of the record",
+    "type" : "unsigned short"
+  }, {
+    "name" : "index",
+    "comment" : "identifies the sequntially numbered record index",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding",
+    "comment" : "padding",
+    "type" : "unsigned byte"
+  } ]
+}

@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ActionResponsePdu",
+  "parent" : "SimulationManagementFamilyPdu",
+  "comment" : "Section 7.5.8. response to an action request PDU. COMPLETE",
+  "attributes" : [ {
+    "name" : "requestID",
+    "comment" : "Request ID that is unique",
+    "type" : "unsigned int"
+  }, {
+    "name" : "requestStatus",
+    "comment" : "Status of response",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfFixedDatumRecords",
+    "comment" : "Number of fixed datum records",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatumRecords",
+    "comment" : "Number of variable datum records",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatums",
+    "comment" : "variable length list of fixed datums",
+    "type" : "FixedDatum"
+  }, {
+    "name" : "variableDatums",
+    "comment" : "variable length list of variable length datums",
+    "type" : "VariableDatum"
+  } ]
+}

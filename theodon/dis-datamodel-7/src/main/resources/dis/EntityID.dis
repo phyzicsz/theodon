@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EntityID",
+  "parent" : "root",
+  "comment" : "more laconically named EntityIdentifier",
+  "attributes" : [ {
+    "name" : "siteID",
+    "comment" : "Site ID",
+    "type" : "unsigned short"
+  }, {
+    "name" : "applicationID",
+    "comment" : "application number ID",
+    "type" : "unsigned short"
+  }, {
+    "name" : "entityID",
+    "comment" : "Entity number ID",
+    "type" : "unsigned short"
+  } ]
+}

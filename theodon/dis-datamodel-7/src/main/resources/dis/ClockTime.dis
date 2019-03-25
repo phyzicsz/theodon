@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ClockTime",
+  "parent" : "root",
+  "comment" : "Time measurements that exceed one hour are represented by this record. The first field is the hours since the unix epoch (Jan 1 1970, used by most Unix systems and java) and the second field the timestamp units since the top of the hour. Section 6.2.14",
+  "attributes" : [ {
+    "name" : "hour",
+    "comment" : "Hours since midnight, 1970, UTC",
+    "type" : "unsigned int"
+  }, {
+    "name" : "timePastHour",
+    "comment" : "Time past the hour, in timestamp form",
+    "type" : "Timestamp"
+  } ]
+}

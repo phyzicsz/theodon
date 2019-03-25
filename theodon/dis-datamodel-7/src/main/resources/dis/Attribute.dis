@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "Attribute",
+  "parent" : "root",
+  "comment" : "Used to convey information for one or more attributes. Attributes conform to the standard variable record format of 6.2.82. Section 6.2.10. NOT COMPLETE",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "",
+    "type" : "unsigned int"
+  }, {
+    "name" : "recordLength",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "recordSpecificFields",
+    "comment" : "",
+    "type" : "unsigned long"
+  } ]
+}

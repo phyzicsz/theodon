@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "VariableParameter",
+  "parent" : "root",
+  "comment" : "specification of additional information associated with an entity or detonation, not otherwise accounted for in a PDU 6.2.94.1",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "variableParameterFields1",
+    "comment" : "Variable parameter data fields. Two doubles minus one byte",
+    "type" : "double"
+  }, {
+    "name" : "variableParameterFields2",
+    "comment" : "Variable parameter data fields. ",
+    "type" : "unsigned int"
+  }, {
+    "name" : "variableParameterFields3",
+    "comment" : "Variable parameter data fields. ",
+    "type" : "unsigned short"
+  }, {
+    "name" : "variableParameterFields4",
+    "comment" : "Variable parameter data fields. ",
+    "type" : "unsigned byte"
+  } ]
+}

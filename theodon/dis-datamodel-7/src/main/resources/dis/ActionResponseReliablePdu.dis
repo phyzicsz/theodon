@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ActionResponseReliablePdu",
+  "parent" : "SimulationManagementWithReliabilityFamilyPdu",
+  "comment" : "Section 5.3.12.7: Response from an entity to an action request PDU. COMPLETE",
+  "attributes" : [ {
+    "name" : "requestID",
+    "comment" : "request ID",
+    "type" : "unsigned int"
+  }, {
+    "name" : "responseStatus",
+    "comment" : "status of response",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfFixedDatumRecords",
+    "comment" : "Fixed datum record count",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatumRecords",
+    "comment" : "variable datum record count",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatumRecords",
+    "comment" : "Fixed datum records",
+    "type" : "FixedDatum"
+  }, {
+    "name" : "variableDatumRecords",
+    "comment" : "Variable datum records",
+    "type" : "VariableDatum"
+  } ]
+}

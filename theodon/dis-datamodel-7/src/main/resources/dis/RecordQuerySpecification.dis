@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "RecordQuerySpecification",
+  "parent" : "root",
+  "comment" : "The identification of the records being queried 6.2.72",
+  "attributes" : [ {
+    "name" : "numberOfRecords",
+    "comment" : "",
+    "type" : "unsigned int"
+  }, {
+    "name" : "records",
+    "comment" : "variable length list of 32 bit records",
+    "type" : "FourByteChunk"
+  } ]
+}

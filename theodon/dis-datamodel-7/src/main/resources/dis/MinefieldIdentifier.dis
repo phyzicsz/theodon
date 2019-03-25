@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "MinefieldIdentifier",
+  "parent" : "root",
+  "comment" : "The unique designation of a minefield Section 6.2.56 ",
+  "attributes" : [ {
+    "name" : "simulationAddress",
+    "comment" : "",
+    "type" : "SimulationAddress"
+  }, {
+    "name" : "minefieldNumber",
+    "comment" : "",
+    "type" : "unsigned short"
+  } ]
+}

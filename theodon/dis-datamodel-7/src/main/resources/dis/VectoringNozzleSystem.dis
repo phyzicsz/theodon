@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "VectoringNozzleSystem",
+  "parent" : "root",
+  "comment" : "Operational data for describing the vectoring nozzle systems Section 6.2.96",
+  "attributes" : [ {
+    "name" : "horizontalDeflectionAngle",
+    "comment" : "In degrees",
+    "type" : "float"
+  }, {
+    "name" : "verticalDeflectionAngle",
+    "comment" : "In degrees",
+    "type" : "float"
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "RepairResponsePdu",
+  "parent" : "LogisticsFamilyPdu",
+  "comment" : "Section 7.4.7. Sent after repair complete PDU. COMPLETE",
+  "attributes" : [ {
+    "name" : "receivingEntityID",
+    "comment" : "Entity that requested repairs.  See 6.2.28",
+    "type" : "EntityID"
+  }, {
+    "name" : "repairingEntityID",
+    "comment" : "Entity that is repairing.  See 6.2.28",
+    "type" : "EntityID"
+  }, {
+    "name" : "repairResult",
+    "comment" : "Result of repair operation",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding1",
+    "comment" : "padding",
+    "type" : "short"
+  }, {
+    "name" : "padding2",
+    "comment" : "padding",
+    "type" : "byte"
+  } ]
+}

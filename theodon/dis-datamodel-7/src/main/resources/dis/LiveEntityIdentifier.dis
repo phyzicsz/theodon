@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "LiveEntityIdentifier",
+  "parent" : "root",
+  "comment" : "The unique designation of each entity in an event or exercise that is contained in a Live Entity PDU. Section 6.2.54 ",
+  "attributes" : [ {
+    "name" : "liveSimulationAddress",
+    "comment" : "Live Simulation Address record (see 6.2.54) ",
+    "type" : "LiveSimulationAddress"
+  }, {
+    "name" : "entityNumber",
+    "comment" : "Live entity number ",
+    "type" : "unsigned short"
+  } ]
+}

@@ -1,0 +1,35 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "GridAxis",
+  "parent" : "root",
+  "comment" : "Grid axis record for fixed data. Section 6.2.41",
+  "attributes" : [ {
+    "name" : "domainInitialXi",
+    "comment" : "coordinate of the grid origin or initial value",
+    "type" : "double"
+  }, {
+    "name" : "domainFinalXi",
+    "comment" : "coordinate of the endpoint or final value",
+    "type" : "double"
+  }, {
+    "name" : "domainPointsXi",
+    "comment" : "The number of grid points along the Xi domain axis for the enviornmental state data",
+    "type" : "unsigned short"
+  }, {
+    "name" : "interleafFactor",
+    "comment" : "interleaf factor along the domain axis.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "axisType",
+    "comment" : "type of grid axis",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "numberOfPointsOnXiAxis",
+    "comment" : "Number of grid locations along Xi axis",
+    "type" : "unsigned short"
+  }, {
+    "name" : "initialIndex",
+    "comment" : "initial grid point for the current pdu",
+    "type" : "unsigned short"
+  } ]
+}

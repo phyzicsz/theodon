@@ -1,0 +1,63 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "BlankingSector",
+  "parent" : "root",
+  "comment" : "The Blanking Sector attribute record may be used to convey persistent areas within a scan volume where emitter power for a specific active emitter beam is reduced to an insignificant value. Section 6.2.21.2",
+  "attributes" : [ {
+    "name" : "recordType",
+    "comment" : "",
+    "type" : "int"
+  }, {
+    "name" : "recordLength",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "emitterNumber",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "beamNumber",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "stateIndicator",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding2",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "leftAzimuth",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "rightAzimuth",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "lowerElevation",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "upperElevation",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "residualPower",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "padding3",
+    "comment" : "",
+    "type" : "int"
+  }, {
+    "name" : "padding4",
+    "comment" : "",
+    "type" : "int"
+  } ]
+}

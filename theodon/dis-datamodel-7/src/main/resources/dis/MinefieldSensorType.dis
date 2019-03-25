@@ -1,0 +1,11 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "MinefieldSensorType",
+  "parent" : "root",
+  "comment" : "Information about a minefield sensor. Section 6.2.57",
+  "attributes" : [ {
+    "name" : "sensorType",
+    "comment" : "sensor type. bit fields 0-3 are the type category, 4-15 are teh subcategory",
+    "type" : "unsigned short"
+  } ]
+}

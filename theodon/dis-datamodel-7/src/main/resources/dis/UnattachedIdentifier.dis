@@ -1,0 +1,15 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "UnattachedIdentifier",
+  "parent" : "root",
+  "comment" : "The unique designation of one or more unattached radios in an event or exercise Section 6.2.91",
+  "attributes" : [ {
+    "name" : "simulationAddress",
+    "comment" : "See 6.2.79",
+    "type" : "SimulationAddress"
+  }, {
+    "name" : "referenceNumber",
+    "comment" : "Reference number",
+    "type" : "unsigned short"
+  } ]
+}

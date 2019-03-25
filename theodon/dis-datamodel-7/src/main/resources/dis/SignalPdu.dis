@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SignalPdu",
+  "parent" : "RadioCommunicationsFamilyPdu",
+  "comment" : " Detailed information about a radio transmitter. This PDU requires manually written code to complete. The encodingScheme field can be used in multiple        ways, which requires hand-written code to finish. Section 7.7.3. UNFINISHED",
+  "attributes" : [ {
+    "name" : "encodingScheme",
+    "comment" : "encoding scheme used, and enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "tdlType",
+    "comment" : "tdl type",
+    "type" : "unsigned short"
+  }, {
+    "name" : "sampleRate",
+    "comment" : "sample rate",
+    "type" : "unsigned int"
+  }, {
+    "name" : "dataLength",
+    "comment" : "length od data",
+    "type" : "short"
+  }, {
+    "name" : "samples",
+    "comment" : "number of samples",
+    "type" : "short"
+  }, {
+    "name" : "data",
+    "comment" : "list of eight bit values",
+    "type" : "OneByteChunk"
+  } ]
+}

@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "DataQueryPdu",
+  "parent" : "SimulationManagementFamilyPdu",
+  "comment" : "Section 7.5.9. Request for data from an entity. COMPLETE",
+  "attributes" : [ {
+    "name" : "requestID",
+    "comment" : "ID of request",
+    "type" : "unsigned int"
+  }, {
+    "name" : "timeInterval",
+    "comment" : "time issues between issues of Data PDUs. Zero means send once only.",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfFixedDatumRecords",
+    "comment" : "Number of fixed datum records",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatumRecords",
+    "comment" : "Number of variable datum records",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatums",
+    "comment" : "variable length list of fixed datums",
+    "type" : "FixedDatum"
+  }, {
+    "name" : "variableDatums",
+    "comment" : "variable length list of variable length datums",
+    "type" : "VariableDatum"
+  } ]
+}

@@ -1,0 +1,43 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "LinearObjectStatePdu",
+  "parent" : "SyntheticEnvironmentFamilyPdu",
+  "comment" : ": Information abut the addition or modification of a synthecic enviroment object that      is anchored to the terrain with a single point and has size or orientation. Section 7.10.5 COMPLETE",
+  "attributes" : [ {
+    "name" : "objectID",
+    "comment" : "Object in synthetic environment",
+    "type" : "EntityID"
+  }, {
+    "name" : "referencedObjectID",
+    "comment" : "Object with which this point object is associated",
+    "type" : "EntityID"
+  }, {
+    "name" : "updateNumber",
+    "comment" : "unique update number of each state transition of an object",
+    "type" : "unsigned short"
+  }, {
+    "name" : "forceID",
+    "comment" : "force ID",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "numberOfSegments",
+    "comment" : "number of linear segment parameters",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "requesterID",
+    "comment" : "requesterID",
+    "type" : "SimulationAddress"
+  }, {
+    "name" : "receivingID",
+    "comment" : "receiver ID",
+    "type" : "SimulationAddress"
+  }, {
+    "name" : "objectType",
+    "comment" : "Object type",
+    "type" : "ObjectType"
+  }, {
+    "name" : "linearSegmentParameters",
+    "comment" : "Linear segment parameters",
+    "type" : "LinearSegmentParameter"
+  } ]
+}

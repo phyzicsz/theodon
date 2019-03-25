@@ -1,0 +1,43 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "DataQueryReliablePdu",
+  "parent" : "SimulationManagementWithReliabilityFamilyPdu",
+  "comment" : "Section 5.3.12.8: request for data from an entity. COMPLETE",
+  "attributes" : [ {
+    "name" : "requiredReliabilityService",
+    "comment" : "level of reliability service used for this transaction",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "pad1",
+    "comment" : "padding",
+    "type" : "unsigned short"
+  }, {
+    "name" : "pad2",
+    "comment" : "padding",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "requestID",
+    "comment" : "request ID",
+    "type" : "unsigned int"
+  }, {
+    "name" : "timeInterval",
+    "comment" : "time interval between issuing data query PDUs",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfFixedDatumRecords",
+    "comment" : "Fixed datum record count",
+    "type" : "unsigned int"
+  }, {
+    "name" : "numberOfVariableDatumRecords",
+    "comment" : "variable datum record count",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fixedDatumRecords",
+    "comment" : "Fixed datum records",
+    "type" : "FixedDatum"
+  }, {
+    "name" : "variableDatumRecords",
+    "comment" : "Variable datum records",
+    "type" : "VariableDatum"
+  } ]
+}

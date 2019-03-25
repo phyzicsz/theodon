@@ -1,0 +1,35 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "EngineFuelReload",
+  "parent" : "root",
+  "comment" : "For each type or location of engine fuell, this record specifies the type, location, fuel measurement units, and reload quantity and maximum quantity. Section 6.2.25.",
+  "attributes" : [ {
+    "name" : "standardQuantity",
+    "comment" : "standard quantity of fuel loaded",
+    "type" : "unsigned int"
+  }, {
+    "name" : "maximumQuantity",
+    "comment" : "maximum quantity of fuel loaded",
+    "type" : "unsigned int"
+  }, {
+    "name" : "standardQuantityReloadTime",
+    "comment" : "seconds normally required to to reload standard qty",
+    "type" : "unsigned int"
+  }, {
+    "name" : "maximumQuantityReloadTime",
+    "comment" : "seconds normally required to to reload maximum qty",
+    "type" : "unsigned int"
+  }, {
+    "name" : "fuelMeasurmentUnits",
+    "comment" : "Units of measure",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "fuelLocation",
+    "comment" : "fuel  location as related to the entity",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding",
+    "comment" : "padding",
+    "type" : "unsigned byte"
+  } ]
+}

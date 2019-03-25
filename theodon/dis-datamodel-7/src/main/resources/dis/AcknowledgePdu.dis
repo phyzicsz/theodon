@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "AcknowledgePdu",
+  "parent" : "SimulationManagementFamilyPdu",
+  "comment" : "Section 7.5.6. Acknowledge the receipt of a start/resume, stop/freeze, or RemoveEntityPDU. COMPLETE",
+  "attributes" : [ {
+    "name" : "acknowledgeFlag",
+    "comment" : "type of message being acknowledged",
+    "type" : "unsigned short"
+  }, {
+    "name" : "responseFlag",
+    "comment" : "Whether or not the receiving entity was able to comply with the request",
+    "type" : "unsigned short"
+  }, {
+    "name" : "requestID",
+    "comment" : "Request ID that is unique",
+    "type" : "unsigned int"
+  } ]
+}

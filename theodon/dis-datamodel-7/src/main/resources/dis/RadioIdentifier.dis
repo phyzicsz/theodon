@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "RadioIdentifier",
+  "parent" : "root",
+  "comment" : "The unique designation of an attached or unattached radio in an event or exercise Section 6.2.70",
+  "attributes" : [ {
+    "name" : "siteNumber",
+    "comment" : " site",
+    "type" : "unsigned short"
+  }, {
+    "name" : "applicationNumber",
+    "comment" : "application number",
+    "type" : "unsigned short"
+  }, {
+    "name" : "referenceNumber",
+    "comment" : " reference number",
+    "type" : "unsigned short"
+  }, {
+    "name" : "radioNumber",
+    "comment" : " Radio number",
+    "type" : "unsigned short"
+  } ]
+}

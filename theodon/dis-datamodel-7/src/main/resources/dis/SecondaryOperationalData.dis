@@ -1,0 +1,19 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SecondaryOperationalData",
+  "parent" : "root",
+  "comment" : "Additional operational data for an IFF emitting system and the number of IFF Fundamental Parameter Data records Section 6.2.76.",
+  "attributes" : [ {
+    "name" : "operationalData1",
+    "comment" : "additional operational characteristics of the IFF emitting system. Each 8-bit field will vary depending on the system type.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "operationalData2",
+    "comment" : "additional operational characteristics of the IFF emitting system. Each 8-bit field will vary depending on the system type.",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "numberOfIFFFundamentalParameterRecords",
+    "comment" : "the number of IFF Fundamental Parameter Data records that follow",
+    "type" : "unsigned short"
+  } ]
+}

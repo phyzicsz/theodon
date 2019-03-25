@@ -1,0 +1,23 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "SystemIdentifier",
+  "parent" : "root",
+  "comment" : "The ID of the IFF emitting system. NOT COMPLETE. Section 6.2.87",
+  "attributes" : [ {
+    "name" : "systemType",
+    "comment" : "general type of emitting system, an enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "systemName",
+    "comment" : "named type of system, an enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "systemMode",
+    "comment" : "mode of operation for the system, an enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "changeOptions",
+    "comment" : "status of this PDU, see section 6.2.15",
+    "type" : "ChangeOptions"
+  } ]
+}

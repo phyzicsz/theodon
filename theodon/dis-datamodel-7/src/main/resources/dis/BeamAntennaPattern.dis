@@ -1,0 +1,47 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "BeamAntennaPattern",
+  "parent" : "root",
+  "comment" : "Used when the antenna pattern type field has a value of 1. Specifies the direction, pattern, and polarization of radiation from an antenna. Section 6.2.9.2",
+  "attributes" : [ {
+    "name" : "beamDirection",
+    "comment" : "The rotation that transforms the reference coordinate sytem into the beam coordinate system. Either world coordinates or entity coordinates may be used as the reference coordinate system, as specified by the reference system field of the antenna pattern record.",
+    "type" : "EulerAngles"
+  }, {
+    "name" : "azimuthBeamwidth",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "elevationBeamwidth",
+    "comment" : "",
+    "type" : "float"
+  }, {
+    "name" : "referenceSystem",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding1",
+    "comment" : "",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding2",
+    "comment" : "",
+    "type" : "unsigned short"
+  }, {
+    "name" : "ez",
+    "comment" : "This field shall specify the magnitude of the Z-component (in beam coordinates) of the Electrical field at some arbitrary single point in the main beam and in the far field of the antenna. ",
+    "type" : "float"
+  }, {
+    "name" : "ex",
+    "comment" : "This field shall specify the magnitude of the X-component (in beam coordinates) of the Electri- cal field at some arbitrary single point in the main beam and in the far field of the antenna.",
+    "type" : "float"
+  }, {
+    "name" : "phase",
+    "comment" : "This field shall specify the phase angle between EZ and EX in radians. If fully omni-direc- tional antenna is modeled using beam pattern type one, the omni-directional antenna shall be repre- sented by beam direction Euler angles psi, theta, and phi of zero, an azimuth beamwidth of 2PI, and an elevation beamwidth of PI",
+    "type" : "float"
+  }, {
+    "name" : "padding3",
+    "comment" : "padding",
+    "type" : "unsigned int"
+  } ]
+}

@@ -1,0 +1,31 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ResupplyOfferPdu",
+  "parent" : "LogisticsFamilyPdu",
+  "comment" : "Information used to communicate the offer of supplies by a supplying entity to a receiving entity. Section 7.4.3 COMPLETE",
+  "attributes" : [ {
+    "name" : "receivingEntityID",
+    "comment" : "Field identifies the Entity and respective Entity Record ID that is receiving service (see 6.2.28), Section 7.4.3",
+    "type" : "EntityID"
+  }, {
+    "name" : "supplyingEntityID",
+    "comment" : "Identifies the Entity and respective Entity ID Record that is supplying  (see 6.2.28), Section 7.4.3",
+    "type" : "EntityID"
+  }, {
+    "name" : "numberOfSupplyTypes",
+    "comment" : "How many supplies types are being offered, Section 7.4.3",
+    "type" : "unsigned byte"
+  }, {
+    "name" : "padding1",
+    "comment" : "padding",
+    "type" : "byte"
+  }, {
+    "name" : "padding2",
+    "comment" : "padding",
+    "type" : "short"
+  }, {
+    "name" : "supplies",
+    "comment" : "A Reord that Specifies the type of supply and the amount of that supply for each of the supply types in numberOfSupplyTypes (see 6.2.85), Section 7.4.3",
+    "type" : "SupplyQuantity"
+  } ]
+}

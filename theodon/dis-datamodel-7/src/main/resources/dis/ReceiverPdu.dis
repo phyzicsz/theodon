@@ -1,0 +1,27 @@
+{
+  "package" : "com.phyzicsz.dis7",
+  "name" : "ReceiverPdu",
+  "parent" : "RadioCommunicationsFamilyPdu",
+  "comment" : " Communication of a receiver state. Section 7.7.4 COMPLETE",
+  "attributes" : [ {
+    "name" : "receiverState",
+    "comment" : "encoding scheme used, and enumeration",
+    "type" : "unsigned short"
+  }, {
+    "name" : "padding1",
+    "comment" : "padding",
+    "type" : "unsigned short"
+  }, {
+    "name" : "receivedPoser",
+    "comment" : "received power",
+    "type" : "float"
+  }, {
+    "name" : "transmitterEntityId",
+    "comment" : "ID of transmitter",
+    "type" : "EntityID"
+  }, {
+    "name" : "transmitterRadioId",
+    "comment" : "ID of transmitting radio",
+    "type" : "unsigned short"
+  } ]
+}
