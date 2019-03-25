@@ -24,4 +24,5 @@
             <version>${jackson.version}</version>
         </dependency>
     </dependencies>
+    <name>Theodon: Tools: DisXml2Json</name>
 </project>

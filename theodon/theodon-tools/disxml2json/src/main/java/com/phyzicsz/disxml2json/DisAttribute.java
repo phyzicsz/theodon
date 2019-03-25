@@ -31,6 +31,9 @@ public class DisAttribute {
     
     @JsonProperty("type")
     private String type;
+    
+    @JsonProperty("initialValue")
+    private String initialValue;
 
     public String getName() {
         return name;
@@ -56,12 +59,21 @@ public class DisAttribute {
         this.type = type;
     }
 
+    public String getInitialValue() {
+        return initialValue;
+    }
+
+    public void setInitialValue(String initialValue) {
+        this.initialValue = initialValue;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + Objects.hashCode(this.comment);
-        hash = 89 * hash + Objects.hashCode(this.type);
+        int hash = 5;
+        hash = 67 * hash + Objects.hashCode(this.name);
+        hash = 67 * hash + Objects.hashCode(this.comment);
+        hash = 67 * hash + Objects.hashCode(this.type);
+        hash = 67 * hash + Objects.hashCode(this.initialValue);
         return hash;
     }
 
@@ -86,8 +98,12 @@ public class DisAttribute {
         if (!Objects.equals(this.type, other.type)) {
             return false;
         }
+        if (!Objects.equals(this.initialValue, other.initialValue)) {
+            return false;
+        }
         return true;
     }
+    
     
     
 }

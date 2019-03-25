@@ -68,6 +68,7 @@ public class XMLConverter {
                         attributeName(disAttr, attr);
                         attributeComment(disAttr, attr);
                         attributeType(disAttr, attr);
+                        attributeInitialValue(disAttr, attr);
                         //System.out.println("\tname: " + attr.getAttribute("name"));
                         //System.out.println("\tcomment: " + attr.getAttribute("comment"));
 
@@ -91,22 +92,32 @@ public class XMLConverter {
 
     private void attributeName(DisAttribute dis, Element element) {
         String className = element.getAttribute("name");
-        System.out.println("name : " + className);
+        System.out.println("\tname : " + className);
         dis.setName(className);
     }
 
     private void attributeComment(DisAttribute dis, Element element) {
         String className = element.getAttribute("comment");
-        System.out.println("comment : " + className);
+        System.out.println("\tcomment : " + className);
         dis.setComment(className);
     }
 
     private void attributeType(DisAttribute dis, Element element) {
         String type = getAttributePrimative(element);
         if (type.isEmpty()) {
+            System.out.println("\ttype : " + type);
             type = getAttributeClassRef(element);
+            dis.setType(type);
         }
-        dis.setType(type);
+        
+    }
+    
+    private void attributeInitialValue(DisAttribute dis, Element element) {
+        String initialValue = getAttributePrimativeInitialValue(element);
+        if (!initialValue.isEmpty()) {
+            System.out.println("\tinitialValue : " + initialValue);
+            dis.setInitialValue(initialValue);
+        }
     }
 
     private void classParent(DisClass dis, Element element) {
@@ -130,6 +141,20 @@ public class XMLConverter {
                 Element prim = (Element) node2;
 //                 System.out.println("\ttype: " +prim.getAttribute("type"));
                 return prim.getAttribute("type");
+            }
+        }
+
+        return "";
+    }
+    
+    private String getAttributePrimativeInitialValue(Element attr) {
+        NodeList prims = attr.getElementsByTagName("primitive");
+        for (int x = 0; x < prims.getLength(); x++) {
+            Node node2 = prims.item(x);
+
+            if (node2.getNodeType() == Node.ELEMENT_NODE) {
+                Element prim = (Element) node2;
+                return prim.getAttribute("defaultValue");
             }
         }
 
