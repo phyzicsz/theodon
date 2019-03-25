@@ -17,7 +17,6 @@ package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.codegen.model.DisAttribute;
 import com.phyzicsz.dis.codegen.model.DisClass;
-import java.util.Objects;
 import java.util.Random;
 
 /**
