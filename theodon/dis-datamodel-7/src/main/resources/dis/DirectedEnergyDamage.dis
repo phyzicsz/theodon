@@ -6,15 +6,18 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "DE Record Type.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "4500l"
   }, {
     "name" : "recordLength",
     "comment" : "DE Record Length (bytes).",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "40"
   }, {
     "name" : "padding",
     "comment" : "padding.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "damageLocation",
     "comment" : "location of damage, relative to center of entity",
@@ -26,7 +29,8 @@
   }, {
     "name" : "temperature",
     "comment" : "average temp of the damaged area, in degrees celsius. If firing entitty does not model this, use a value of -273.15",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "-273.15f"
   }, {
     "name" : "componentIdentification",
     "comment" : "enumeration",
@@ -50,6 +54,7 @@
   }, {
     "name" : "padding2",
     "comment" : "padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   } ]
 }

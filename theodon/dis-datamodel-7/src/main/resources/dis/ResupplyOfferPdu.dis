@@ -18,11 +18,13 @@
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "byte"
+    "type" : "byte",
+    "initialValue" : "0"
   }, {
     "name" : "padding2",
     "comment" : "padding",
-    "type" : "short"
+    "type" : "short",
+    "initialValue" : "0"
   }, {
     "name" : "supplies",
     "comment" : "A Reord that Specifies the type of supply and the amount of that supply for each of the supply types in numberOfSupplyTypes (see 6.2.85), Section 7.4.3",

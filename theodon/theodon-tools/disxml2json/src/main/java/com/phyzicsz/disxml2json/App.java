@@ -6,9 +6,9 @@
 package com.phyzicsz.disxml2json;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 
@@ -18,15 +18,15 @@ import org.xml.sax.SAXException;
  * @author phyzicsz
  */
 public class App {
+    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+    
     public static void main(String[] args){
         try {
-            new XMLConverter().convert();
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SAXException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            new DisXml()
+                    .init()
+                    .convert();
+        } catch (ParserConfigurationException | SAXException | IOException ex) {
+            LOGGER.error("Error converting file", ex);
         }
     }
 }

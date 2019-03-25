@@ -15,6 +15,8 @@
  */
 package com.phyzicsz.disxml2json;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
@@ -32,6 +34,7 @@ public class DisAttribute {
     @JsonProperty("type")
     private String type;
     
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("initialValue")
     private String initialValue;
 

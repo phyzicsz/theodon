@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "pduStatus",
     "comment" : "Bit fields. The semantics of the bit fields depend on the PDU type",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   } ]
 }

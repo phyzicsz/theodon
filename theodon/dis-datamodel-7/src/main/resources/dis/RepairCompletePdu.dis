@@ -18,6 +18,7 @@
   }, {
     "name" : "padding4",
     "comment" : "padding, number prevents conflict with superclass ivar name",
-    "type" : "short"
+    "type" : "short",
+    "initialValue" : "0"
   } ]
 }

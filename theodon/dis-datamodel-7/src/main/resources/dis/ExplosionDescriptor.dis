@@ -14,7 +14,8 @@
   }, {
     "name" : "padding",
     "comment" : "padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "explosiveForce",
     "comment" : "Force of explosion, in equivalent KG of TNT",

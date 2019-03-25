@@ -10,6 +10,7 @@
   }, {
     "name" : "padding",
     "comment" : "Padding",
-    "type" : "long"
+    "type" : "long",
+    "initialValue" : "0l"
   } ]
 }

@@ -74,11 +74,13 @@
   }, {
     "name" : "padding2",
     "comment" : "padding2",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "padding3",
     "comment" : "padding3",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "modulationParametersList",
     "comment" : "variable length list of modulation parameters",

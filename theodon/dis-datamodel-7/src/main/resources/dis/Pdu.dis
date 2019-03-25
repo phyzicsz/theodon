@@ -10,6 +10,7 @@
   }, {
     "name" : "padding",
     "comment" : "zero-filled array of padding",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   } ]
 }

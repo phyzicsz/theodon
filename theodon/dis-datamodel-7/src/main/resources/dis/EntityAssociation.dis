@@ -6,19 +6,23 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "4"
   }, {
     "name" : "changeIndicator",
     "comment" : "Indicates if this VP has changed since last issuance",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "associationStatus",
     "comment" : "Indicates association status between two entities; 8 bit enum",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "associationType",
     "comment" : "Type of association; 8 bit enum",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "entityID",
     "comment" : "Object ID of entity associated with this entity",

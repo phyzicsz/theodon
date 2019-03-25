@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "5500l"
   }, {
     "name" : "recordLength",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "16"
   }, {
     "name" : "ioStatus",
     "comment" : "",
@@ -38,6 +40,7 @@
   }, {
     "name" : "padding",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   } ]
 }

@@ -38,7 +38,8 @@
   }, {
     "name" : "coordinateOffsetXi",
     "comment" : "The constant offset value that shall be applied to the grid locations for the xi axis",
-    "type" : "double"
+    "type" : "double",
+    "initialValue" : "0.0d"
   }, {
     "name" : "xiValues",
     "comment" : "list of coordinates",

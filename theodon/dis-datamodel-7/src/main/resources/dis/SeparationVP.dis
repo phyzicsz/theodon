@@ -6,7 +6,8 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "2"
   }, {
     "name" : "reasonForSeparation",
     "comment" : "Reason for separation. EBV",
@@ -18,7 +19,8 @@
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "parentEntityID",
     "comment" : "ID of parent",
@@ -26,10 +28,12 @@
   }, {
     "name" : "padding2",
     "comment" : "padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "stationLocation",
     "comment" : "Station separated from",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "0l"
   } ]
 }

@@ -6,15 +6,18 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "3502l"
   }, {
     "name" : "recordLength",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "40"
   }, {
     "name" : "padding",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "emitterNumber",
     "comment" : "",
@@ -30,7 +33,8 @@
   }, {
     "name" : "padding2",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "falseTargetCount",
     "comment" : "",

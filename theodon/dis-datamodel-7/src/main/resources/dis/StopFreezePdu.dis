@@ -18,7 +18,8 @@
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "short"
+    "type" : "short",
+    "initialValue" : "0"
   }, {
     "name" : "requestID",
     "comment" : "Request ID that is unique",

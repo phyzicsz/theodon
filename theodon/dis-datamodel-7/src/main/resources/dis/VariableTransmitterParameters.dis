@@ -10,6 +10,7 @@
   }, {
     "name" : "recordLength",
     "comment" : "Length, in bytes",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "4l"
   } ]
 }

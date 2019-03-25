@@ -18,7 +18,8 @@
   }, {
     "name" : "pad",
     "comment" : "some padding",
-    "type" : "short"
+    "type" : "short",
+    "initialValue" : "0"
   }, {
     "name" : "contactVelocity",
     "comment" : "This field shall contain the velocity at the time the collision is detected at the point the collision is detected. The velocity shall be represented in world coordinates. This field shall be represented by the Linear Velocity Vector record [see 6.2.95 item c)]",

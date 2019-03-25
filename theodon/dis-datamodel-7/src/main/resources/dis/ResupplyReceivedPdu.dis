@@ -18,11 +18,13 @@
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "short"
+    "type" : "short",
+    "initialValue" : "0"
   }, {
     "name" : "padding2",
     "comment" : "padding",
-    "type" : "byte"
+    "type" : "byte",
+    "initialValue" : "0"
   }, {
     "name" : "supplies",
     "comment" : "Type and amount of supplies for each specified supply type.  See 6.2.85 for supply quantity record.",

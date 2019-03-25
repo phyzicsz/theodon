@@ -10,7 +10,8 @@
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "0l"
   }, {
     "name" : "numberOfFixedDatumRecords",
     "comment" : "Number of fixed datum records",

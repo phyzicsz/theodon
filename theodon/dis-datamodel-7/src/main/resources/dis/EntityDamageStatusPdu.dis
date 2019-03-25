@@ -10,15 +10,18 @@
   }, {
     "name" : "padding1",
     "comment" : "Padding.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "padding2",
     "comment" : "Padding.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "numberOfDamageDescription",
     "comment" : "field shall specify the number of Damage Description records, Section 7.3.5",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "damageDescriptionRecords",
     "comment" : "Fields shall contain one or more Damage Description records (see 6.2.17) and may contain other Standard Variable records, Section 7.3.5",

@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "x",
     "comment" : "velocity about the x axis",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "y",
     "comment" : "velocity about the y axis",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "z",
     "comment" : "velocity about the zaxis",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   } ]
 }

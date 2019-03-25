@@ -22,7 +22,8 @@
   }, {
     "name" : "serviceRequestPadding",
     "comment" : "padding",
-    "type" : "short"
+    "type" : "short",
+    "initialValue" : "0"
   }, {
     "name" : "supplies",
     "comment" : "Field shall specify the type of supply and the amount of that supply for the number specified in the numberOfSupplyTypes (see 6.2.85), Section 7.4.2",

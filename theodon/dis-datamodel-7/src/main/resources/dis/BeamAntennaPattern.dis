@@ -10,38 +10,47 @@
   }, {
     "name" : "azimuthBeamwidth",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "elevationBeamwidth",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "referenceSystem",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "padding1",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "padding2",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "ez",
     "comment" : "This field shall specify the magnitude of the Z-component (in beam coordinates) of the Electrical field at some arbitrary single point in the main beam and in the far field of the antenna. ",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0.0f"
   }, {
     "name" : "ex",
     "comment" : "This field shall specify the magnitude of the X-component (in beam coordinates) of the Electri- cal field at some arbitrary single point in the main beam and in the far field of the antenna.",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0.0f"
   }, {
     "name" : "phase",
     "comment" : "This field shall specify the phase angle between EZ and EX in radians. If fully omni-direc- tional antenna is modeled using beam pattern type one, the omni-directional antenna shall be repre- sented by beam direction Euler angles psi, theta, and phi of zero, an azimuth beamwidth of 2PI, and an elevation beamwidth of PI",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0.0f"
   }, {
     "name" : "padding3",
     "comment" : "padding",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "0l"
   } ]
 }

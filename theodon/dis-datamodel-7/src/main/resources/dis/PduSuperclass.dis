@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "protocolVersion",
     "comment" : "The version of the protocol. 5=DIS-1995, 6=DIS-1998, 7=DIS-2009.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "7"
   }, {
     "name" : "exerciseID",
     "comment" : "Exercise ID",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "pduType",
     "comment" : "Type of pdu, unique for each PDU class",

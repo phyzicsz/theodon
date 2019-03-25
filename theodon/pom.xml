@@ -50,6 +50,7 @@
         <logback.version>1.2.3</logback.version>
         <roaster.version>2.20.8.Final</roaster.version>
         <slf4j.version>1.7.26</slf4j.version>
+        <typesafe.config.version>1.3.2</typesafe.config.version>
         
         <!-- test dependancies -->
         <junit.version>4.12</junit.version>
@@ -62,6 +63,11 @@
     
     <dependencyManagement>
         <dependencies>
+            <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>${typesafe.config.version}</version>
+        </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>

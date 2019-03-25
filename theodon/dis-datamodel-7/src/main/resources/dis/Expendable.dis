@@ -22,6 +22,7 @@
   }, {
     "name" : "padding",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   } ]
 }

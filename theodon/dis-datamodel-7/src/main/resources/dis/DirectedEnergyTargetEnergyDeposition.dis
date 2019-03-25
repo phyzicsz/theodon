@@ -10,7 +10,8 @@
   }, {
     "name" : "padding",
     "comment" : "padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "peakIrradiance",
     "comment" : "Peak irrandiance",

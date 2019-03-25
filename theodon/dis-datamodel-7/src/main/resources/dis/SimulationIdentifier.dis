@@ -10,6 +10,7 @@
   }, {
     "name" : "referenceNumber",
     "comment" : "This field shall be set to zero as there is no reference number associated with a Simulation Identifier.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   } ]
 }

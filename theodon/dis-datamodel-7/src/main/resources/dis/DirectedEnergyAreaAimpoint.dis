@@ -6,7 +6,8 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "Type of Record enumeration",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "4001l"
   }, {
     "name" : "recordLength",
     "comment" : "Length of Record",
@@ -14,15 +15,18 @@
   }, {
     "name" : "padding",
     "comment" : "Padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "beamAntennaPatternRecordCount",
     "comment" : "Number of beam antenna pattern records",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "directedEnergyTargetEnergyDepositionRecordCount",
     "comment" : "Number of DE target energy depositon records",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "beamAntennaParameterList",
     "comment" : "list of beam antenna records. See 6.2.9.2",

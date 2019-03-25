@@ -6,15 +6,18 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "Type of Record",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "4000l"
   }, {
     "name" : "recordLength",
     "comment" : "Length of Record",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "88"
   }, {
     "name" : "padding",
     "comment" : "Padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "targetSpotLocation",
     "comment" : "Position of Target Spot in World Coordinates.",
@@ -38,30 +41,37 @@
   }, {
     "name" : "targetComponentID",
     "comment" : "Target Component ID ENUM, same as in DamageDescriptionRecord.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "beamSpotType",
     "comment" : "Spot Shape ENUM.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "beamSpotCrossSectionSemiMajorAxis",
     "comment" : "Beam Spot Cross Section Semi-Major Axis.",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "beamSpotCrossSectionSemiMinorAxis",
     "comment" : "Beam Spot Cross Section Semi-Major Axis.",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "beamSpotCrossSectionOrientationAngle",
     "comment" : "Beam Spot Cross Section Orientation Angle.",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "peakIrradiance",
     "comment" : "Peak irradiance",
-    "type" : "float"
+    "type" : "float",
+    "initialValue" : "0f"
   }, {
     "name" : "padding2",
     "comment" : "padding",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "0l"
   } ]
 }

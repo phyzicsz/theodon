@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "3"
   }, {
     "name" : "changeIndicator",
     "comment" : "Indicates if this VP has changed since last issuance",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "initialValue" : "0"
   }, {
     "name" : "entityType",
     "comment" : "",
@@ -18,10 +20,12 @@
   }, {
     "name" : "padding",
     "comment" : "padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "initialValue" : "0"
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "initialValue" : "0l"
   } ]
 }
