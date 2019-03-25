@@ -86,7 +86,6 @@ public class DisRoaster {
         
         HashCodeGenerator hashCode = new HashCodeGenerator();
         String hashCodeBody = hashCode.generate(idl);
-        LOGGER.info(hashCodeBody);
         MethodSource<JavaClassSource> hashCodeSource = javaClass.addMethod()
                 .setConstructor(false)
                 .setPublic()
@@ -94,6 +93,17 @@ public class DisRoaster {
                 .setReturnType("int")
                 .setBody(hashCodeBody);
          hashCodeSource.addAnnotation("Override");
+         
+        EqualsGenerator equals = new EqualsGenerator();
+        String equalsBody = equals.generate(idl);
+        MethodSource<JavaClassSource> equalsSource = javaClass.addMethod()
+                .setConstructor(false)
+                .setPublic()
+                .setName("equals")
+                .setParameters("Object obj")
+                .setReturnType("boolean")
+                .setBody(equalsBody);
+         equalsSource.addAnnotation("Override");
 
         return javaClass.toString();
     }
