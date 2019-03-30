@@ -15,8 +15,9 @@
  */
 package com.phyzicsz.dis.codegen;
 
-import com.phyzicsz.dis.codegen.model.DisAttribute;
-import com.phyzicsz.dis.codegen.model.DisClass;
+import com.phyzicsz.dis.datamodel.api.AbstractDisObject;
+import com.phyzicsz.dis.datamodel.api.DisAttribute;
+import com.phyzicsz.dis.datamodel.api.DisClass;
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -44,6 +45,7 @@ public class DisClassGenerator {
         javaClass.setPackage(idl.getPackageName())
                 .setName(idl.getName())
                 .addInterface(Serializable.class)
+                .addInterface(AbstractDisObject.class)
                 .getJavaDoc().setFullText(idl.getComment());
         javaClass.addImport("java.util.Objects");
 
@@ -74,6 +76,7 @@ public class DisClassGenerator {
                 .setReturnType("void")
                 .setBody(serializerBody);
         serializer.addParameter("java.nio.ByteBuffer", "buffer");
+        serializer.addAnnotation("Override");
 
         String deserializerBody = byteBufferDeserializer(typeMap);
         MethodSource<JavaClassSource> deserializer = javaClass.addMethod()
@@ -83,6 +86,7 @@ public class DisClassGenerator {
                 .setReturnType("void")
                 .setBody(deserializerBody);
         deserializer.addParameter("ByteBuffer", "buffer");
+        deserializer.addAnnotation("Override");
         
         HashCodeGenerator hashCode = new HashCodeGenerator();
         String hashCodeBody = hashCode.generate(idl);

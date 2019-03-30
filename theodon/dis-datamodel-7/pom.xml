@@ -12,6 +12,11 @@
     
     <dependencies>
         <dependency>
+            <groupId>com.phyzicsz</groupId>
+            <artifactId>dis-datamodel-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
@@ -19,12 +24,19 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
+        
 
         
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+         <dependency>
+           <groupId>com.github.open-dis</groupId>
+	    <artifactId>open-dis-java</artifactId>
+	    <version>v4.15</version>
+            <scope>test</scope>
         </dependency>
         
     </dependencies>
@@ -38,6 +50,7 @@
                 <configuration>
                     <sourceDirectory>src/main/resources/dis</sourceDirectory>
                     <outputDirectory>target/generated-sources/java</outputDirectory>
+                    <testOutputDirectory>src/test/java</testOutputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -53,6 +66,18 @@
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>${maven.build.help.plugin.version}</version>
                 <executions>
+                    <execution>
+                        <id>add-test-sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources/src</source>
+                            </sources>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>add-source</id>
                         <phase>generate-sources</phase>
@@ -70,4 +95,11 @@
 
         </plugins>
     </build>
+    
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://www.jitpack.io</url>
+        </repository>
+    </repositories>
 </project>

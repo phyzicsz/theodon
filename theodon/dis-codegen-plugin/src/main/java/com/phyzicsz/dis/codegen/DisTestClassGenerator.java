@@ -15,15 +15,12 @@
  */
 package com.phyzicsz.dis.codegen;
 
-import com.phyzicsz.dis.codegen.model.DisAttribute;
-import com.phyzicsz.dis.codegen.model.DisClass;
-import java.io.Serializable;
+import com.phyzicsz.dis.datamodel.api.DisClass;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.jboss.forge.roaster.Roaster;
 import org.jboss.forge.roaster.model.source.JavaClassSource;
 import org.jboss.forge.roaster.model.source.MethodSource;
-import org.jboss.forge.roaster.model.source.PropertySource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

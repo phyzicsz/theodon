@@ -17,7 +17,7 @@ package com.phyzicsz.dis.codegen;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
-import com.phyzicsz.dis.codegen.model.DisClass;
+import com.phyzicsz.dis.datamodel.api.DisClass;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,7 +30,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -77,7 +76,7 @@ public class CodeGenerator {
                     .generate(disClass);
             classString = insertHeader(classString);
             try {
-                LOGGER.error("Writing file {}: ", disClass.getName());
+                LOGGER.error("Writing file {}", disClass.getName());
                 writeClassFile(outputPath, disClass.getPackageName(), classString, disClass.getName());
             } catch (IOException ex) {
                 LOGGER.error("Error Writing File: ", ex);
@@ -91,14 +90,12 @@ public class CodeGenerator {
             throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
         }
         
-        
-        
         for (DisClass disClass : classes) {
             String classString = new DisTestClassGenerator()
                     .generate(disClass);
             classString = insertHeader(classString);
             try {
-                LOGGER.error("Writing file {}: ", disClass.getName());
+                LOGGER.error("Writing test class {}", disClass.getName());
                 writeClassFile(testOutputPath, disClass.getPackageName(), classString, disClass.getName()+"Test");
             } catch (IOException ex) {
                 LOGGER.error("Error Writing File: ", ex);
@@ -143,6 +140,16 @@ public class CodeGenerator {
     }
     
     private void clearGeneratedSources(File directory) throws IOException{
+        Path path = directory.toPath();
+        Files.walk(path)
+                .sorted(Comparator.reverseOrder())
+                .map(Path::toFile)
+                .forEach(File::delete);
+
+        path.toFile().mkdirs();
+    }
+    
+    private void clearGeneratedSources(String packageName, File directory) throws IOException{
         Path path = directory.toPath();
         Files.walk(path)
                 .sorted(Comparator.reverseOrder())

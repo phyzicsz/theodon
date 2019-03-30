@@ -15,8 +15,8 @@
  */
 package com.phyzicsz.dis.codegen;
 
-import com.phyzicsz.dis.codegen.model.DisAttribute;
-import com.phyzicsz.dis.codegen.model.DisClass;
+import com.phyzicsz.dis.datamodel.api.DisAttribute;
+import com.phyzicsz.dis.datamodel.api.DisClass;
 
 /**
  *
@@ -35,7 +35,7 @@ public class EqualsGenerator {
                 .append("return false;\n")
                 .append("}\n");
         
-        sb.append("if (getClass() == obj.getClass()){")
+        sb.append("if (!(obj instanceof AbstractDisObject)){")
                 .append("return false;\n")
                 .append("}\n");
         

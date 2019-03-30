@@ -124,6 +124,7 @@
         <module>dis-codegen-plugin</module>
         <module>dis-datamodel-7</module>
         <module>theodon-tools</module>
+        <module>dis-datamodel-api</module>
     </modules>
    
 </project>

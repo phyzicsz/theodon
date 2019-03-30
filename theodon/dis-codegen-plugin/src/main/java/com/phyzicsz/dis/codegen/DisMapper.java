@@ -17,7 +17,7 @@ package com.phyzicsz.dis.codegen;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
-import com.phyzicsz.dis.codegen.model.DisClass;
+import com.phyzicsz.dis.datamodel.api.DisClass;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
