@@ -19,6 +19,7 @@
         <maven.plugin.annotation.version>3.3</maven.plugin.annotation.version>
         <maven.plugin.test.harness.version>3.3.0</maven.plugin.test.harness.version>-->
         <opendis.version>v4.15</opendis.version>
+        <javapoet.version>1.11.1</javapoet.version>
         
         <plugin-plugin.version>3.6.0</plugin-plugin.version>
         <maven.version>2.0.11</maven.version>
@@ -40,7 +41,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
-        <dependency>
+         <dependency>
+            <groupId>com.squareup</groupId>
+            <artifactId>javapoet</artifactId>
+            <version>${javapoet.version}</version>
+        </dependency>
+<!--        <dependency>
             <groupId>org.jboss.forge.roaster</groupId>
             <artifactId>roaster-api</artifactId>
             <version>${roaster.version}</version>
@@ -50,7 +56,7 @@
             <artifactId>roaster-jdt</artifactId>
             <version>${roaster.version}</version>
             <scope>runtime</scope>
-        </dependency>
+        </dependency>-->
         
         <!-- test dependencies -->
         <dependency>

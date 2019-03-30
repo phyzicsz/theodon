@@ -16,11 +16,9 @@
 package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.datamodel.api.DisClass;
+import com.squareup.javapoet.JavaFile;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import org.jboss.forge.roaster.Roaster;
-import org.jboss.forge.roaster.model.source.JavaClassSource;
-import org.jboss.forge.roaster.model.source.MethodSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,25 +32,26 @@ public class DisTestClassGenerator {
 
     private final Map<String, String> typeMap = new LinkedHashMap<>();
 
-    public String generate(DisClass idl) {
+    public JavaFile generate(DisClass idl) {
 
         //generate class
-        final JavaClassSource javaClass = Roaster.create(JavaClassSource.class);
-        javaClass.setPackage(idl.getPackageName())
-                .setName(idl.getName() + "Test")
-                .getJavaDoc().setFullText(idl.getComment());
-        javaClass.addImport("org.junit.Test");
-        javaClass.addImport("org.junit.Assert.assertEquals");
-
-        String testBody = testMethodBody(idl);
-        MethodSource<JavaClassSource> methodSource = javaClass.addMethod()
-                .setName("test" + idl.getName())
-                .setReturnType("void")
-                .setPublic()
-                .setBody(testBody);
-        methodSource.addAnnotation("Test");
-
-        return javaClass.toString();
+//        final JavaClassSource javaClass = Roaster.create(JavaClassSource.class);
+//        javaClass.setPackage(idl.getPackageName())
+//                .setName(idl.getName() + "Test")
+//                .getJavaDoc().setFullText(idl.getComment());
+//        javaClass.addImport("org.junit.Test");
+//        javaClass.addImport("org.junit.Assert.assertEquals");
+//
+//        String testBody = testMethodBody(idl);
+//        MethodSource<JavaClassSource> methodSource = javaClass.addMethod()
+//                .setName("test" + idl.getName())
+//                .setReturnType("void")
+//                .setPublic()
+//                .setBody(testBody);
+//        methodSource.addAnnotation("Test");
+//
+//        return javaClass.toString();
+        return null;
     }
 
     private String testMethodBody(DisClass idl) {

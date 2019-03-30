@@ -18,6 +18,8 @@ package com.phyzicsz.dis.codegen;
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -61,17 +63,11 @@ public class DisCodeGenMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        try {
-            new CodeGenerator(
-                    sourceDirectory,
-                    outputDirectory,
-                    testOutputDirectory)
-                    .generate();
-        } catch (CodeGenerationConfigurationException ex) {
-            LOGGER.error("Configuration Error:", ex);
-        } catch (IOException  ex) {
-            LOGGER.error("Runtime Error:", ex);
-        }
+        new CodeGenerator(
+                sourceDirectory,
+                outputDirectory,
+                testOutputDirectory)
+                .generate();
 
     }
 

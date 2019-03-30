@@ -13,16 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.phyzicsz.dis.datamodel.api;
+package com.phyzicsz.dis.codegen;
 
-import java.nio.ByteBuffer;
+import com.phyzicsz.dis.datamodel.api.DisAttribute;
+import com.squareup.javapoet.FieldSpec;
+import com.squareup.javapoet.TypeName;
+import javax.lang.model.element.Modifier;
 
 /**
  *
  * @author phyzicsz
  */
-public interface AbstractDisObject {
-    public void serialize(ByteBuffer buffer);
-    public void deserialize(ByteBuffer buffer);
-    public int wirelineSize();
+public class FieldGenerator {
+    
+    public static FieldSpec field(DisAttribute attr) throws ClassNotFoundException {
+        String name = attr.getName();
+        TypeName type = TypeMapper.typeMapper(attr.getType());
+        FieldSpec field = FieldSpec.builder(type, attr.getName())
+                .addModifiers(Modifier.PRIVATE)
+                .build();
+        return field;
+    }
+
 }

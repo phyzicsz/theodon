@@ -18,18 +18,14 @@ package com.phyzicsz.dis.codegen;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
 import com.phyzicsz.dis.datamodel.api.DisClass;
-import java.io.BufferedWriter;
+import com.squareup.javapoet.JavaFile;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.List;
+import java.util.logging.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,33 +47,37 @@ public class CodeGenerator {
                
     }
     
-    public CodeGenerator generate() throws CodeGenerationConfigurationException, IOException{
+    public CodeGenerator generate(){
         //clear the generated sources
         //clearGeneratedSources(outputPath);
         //clearGeneratedSources(testOutputPath);
         
         //create all of the mappings
         DisMapper mapper = new DisMapper();
-        List<DisClass> classes = mapper.mapper(inputPath);
+        List<DisClass> classes;
+        try {
+            classes = mapper.mapper(inputPath);
+             generateClasses(classes);
+        } catch (CodeGenerationConfigurationException | IOException | ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(CodeGenerator.class.getName()).log(Level.SEVERE, null, ex);
+        }
           
         //generate the Java sources
-        generateClasses(classes);
-        generateTestClasses(classes);
+       
+        //generateTestClasses(classes);
         return this; 
     }
     
-    private void generateClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
+    private void generateClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException, ClassNotFoundException{
         if(null == outputPath){
             throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
         }
         
         for (DisClass disClass : classes) {
-            String classString = new DisClassGenerator()
-                    .generate(disClass);
-            classString = insertHeader(classString);
             try {
-                LOGGER.error("Writing file {}", disClass.getName());
-                writeClassFile(outputPath, disClass.getPackageName(), classString, disClass.getName());
+                JavaFile javaFile = new DisClassGenerator()
+                    .generate(disClass);
+                writeClassFile(outputPath, javaFile);
             } catch (IOException ex) {
                 LOGGER.error("Error Writing File: ", ex);
             }
@@ -85,58 +85,31 @@ public class CodeGenerator {
         
     }
     
-    private void generateTestClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
-        if(null == outputPath){
-            throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
-        }
-        
-        for (DisClass disClass : classes) {
-            String classString = new DisTestClassGenerator()
-                    .generate(disClass);
-            classString = insertHeader(classString);
-            try {
-                LOGGER.error("Writing test class {}", disClass.getName());
-                writeClassFile(testOutputPath, disClass.getPackageName(), classString, disClass.getName()+"Test");
-            } catch (IOException ex) {
-                LOGGER.error("Error Writing File: ", ex);
-            }
-        }
-        
-    }
+//    private void generateTestClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
+//        if(null == outputPath){
+//            throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
+//        }
+//        
+//        for (DisClass disClass : classes) {
+//            String classString = new DisTestClassGenerator()
+//                    .generate(disClass);
+//            classString = insertHeader(classString);
+//            try {
+//                LOGGER.error("Writing test class {}", disClass.getName());
+//                writeClassFile(testOutputPath, disClass.getPackageName(), classString, disClass.getName()+"Test");
+//            } catch (IOException ex) {
+//                LOGGER.error("Error Writing File: ", ex);
+//            }
+//        }
+//        
+//    }
 
     
-    private void writeClassFile(File outputPath, String packageName, String content, String fileName) throws UnsupportedEncodingException, IOException{
+    private void writeClassFile(File outputPath, JavaFile javaFile) throws IOException{
+        LOGGER.error("Writing file {}", javaFile.toJavaFileObject().getName());
         Path file = outputPath.toPath();
-        String[] splits = packageName.split("\\.");
-        for(String split: splits){
-            file = Paths.get(file.toString(), split);
-        }
         file.toFile().mkdirs();
-        file = Paths.get(file.toString(), fileName + ".java");
-        try (Writer writer = new BufferedWriter(
-                new OutputStreamWriter(
-                        new FileOutputStream(file.toString()), "utf-8"))) {
-            writer.write(content);
-        }
-        
-        
-    }
-    
-    private String insertHeader(String content) {
-    
-       StringBuilder sb = new StringBuilder();
-        sb.append("/**")
-                .append("\n")
-                .append("* Autogenerated by dis-codegen")
-                .append("\n")
-                .append("*")
-                .append("\n")
-                .append("DO NOT EDIT DIRECTLY")
-                .append("\n")
-                .append("*/")
-                .append("\n")
-                .append(content);
-        return sb.toString();
+        javaFile.writeTo(file); 
     }
     
     private void clearGeneratedSources(File directory) throws IOException{

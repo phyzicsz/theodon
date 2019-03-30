@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 pborawski.
+ * Copyright 2019 phyzicsz.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,42 +16,43 @@
 package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.datamodel.api.DisAttribute;
-import com.phyzicsz.dis.datamodel.api.DisClass;
+import com.squareup.javapoet.ClassName;
+import com.squareup.javapoet.TypeName;
 
 /**
  *
- * @author pborawski
+ * @author phyzicsz
  */
-public class WirelineSizeGenerator {
+public class TypeMapper {
+    public static TypeName typeMapper(final String type) throws ClassNotFoundException {
 
-    public String generate(DisClass dis) {
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("int wirelineSize = 0")
-                //.append(";\n")
-                //.append("wirelineSize += super.wirelineSize()")
-                .append(";\n");
-        
-        dis.getAttributes().forEach((attr) -> {
-            addAttribute(sb, attr);
-        });
-        
-        sb.append("return wirelineSize;\n");
-
-        return sb.toString();
+        switch (type) {
+            case "unsigned short":
+                return TypeName.INT;
+            case "unsigned byte":
+                return TypeName.SHORT;
+            case "unsigned int":
+                return TypeName.LONG;
+            case "unsigned long":
+                return TypeName.LONG;
+            case "int":
+                return TypeName.INT;
+            case "short":
+                return TypeName.SHORT;
+            case "long":
+                return TypeName.LONG;
+            case "float":
+                return TypeName.FLOAT;
+            case "double":
+                return TypeName.DOUBLE;
+            case "byte":
+                return TypeName.BYTE;
+            default:
+                return ClassName.bestGuess(type);
+        }
     }
     
-    private void addAttribute(StringBuilder sb, DisAttribute attr){
-        String size = getSize(attr);
-        sb.append("wirelineSize += ")
-                .append(size)
-                .append(";")
-                .append(" //")
-                .append(attr.getName())
-                .append(";\n");
-    } 
-    
-    private String getSize(DisAttribute attr){
+    public static String getSize(DisAttribute attr){
         String type = attr.getType();
          if (null == type) {
             return type;
