@@ -6,6 +6,7 @@ DO NOT EDIT DIRECTLY
 package com.phyzicsz.dis;
 
 import org.junit.Test;
+import org.junit.Assert.assertEquals;
 
 /**
  * The unique designation of each aggregate in an exercise is specified by an
@@ -16,5 +17,10 @@ public class AggregateIdentifierTest {
 
 	@Test
 	public void testAggregateIdentifier() {
+		edu.nps.moves.dis7.AggregateIdentifier openDis = new edu.nps.moves.dis7.AggregateIdentifier();
+		com.phyzicsz.dis.AggregateIdentifier local = new com.phyzicsz.dis.AggregateIdentifier();
+		int openDisSize = openDis.getMarshalledSize();
+		int localSize = local.wirelineSize();
+		assertEquals(openDisSize, localSize);
 	}
 }

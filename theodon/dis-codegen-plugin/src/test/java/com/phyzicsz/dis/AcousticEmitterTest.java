@@ -6,6 +6,7 @@ DO NOT EDIT DIRECTLY
 package com.phyzicsz.dis;
 
 import org.junit.Test;
+import org.junit.Assert.assertEquals;
 
 /**
  * information about a specific UA emmtter. Section 6.2.2.
@@ -14,5 +15,10 @@ public class AcousticEmitterTest {
 
 	@Test
 	public void testAcousticEmitter() {
+		edu.nps.moves.dis7.AcousticEmitter openDis = new edu.nps.moves.dis7.AcousticEmitter();
+		com.phyzicsz.dis.AcousticEmitter local = new com.phyzicsz.dis.AcousticEmitter();
+		int openDisSize = openDis.getMarshalledSize();
+		int localSize = local.wirelineSize();
+		assertEquals(openDisSize, localSize);
 	}
 }

@@ -24,4 +24,5 @@ import java.nio.ByteBuffer;
 public interface AbstractDisObject {
     public void serialize(ByteBuffer buffer);
     public void deserialize(ByteBuffer buffer);
+    public int wirelineSize();
 }

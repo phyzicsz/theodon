@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
 public class DisClassGenerator {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DisClassGenerator.class);
-    
+
     private final Map<String, String> typeMap = new LinkedHashMap<>();
 
     public String generate(DisClass idl) {
@@ -54,11 +54,11 @@ public class DisClassGenerator {
 
             //add the field
             String type = typeMapper(attr.getType());
-            
+
             PropertySource<JavaClassSource> propertySource = javaClass
                     .addProperty(type, attr.getName())
                     .setMutable(true);
-            if(!attr.getComment().isEmpty()){
+            if (!attr.getComment().isEmpty()) {
                 propertySource.getField()
                         .getJavaDoc()
                         .setFullText(attr.getComment());
@@ -67,6 +67,16 @@ public class DisClassGenerator {
             //save the raw type later for the serializers
             typeMap.put(attr.getName(), attr.getType());
         }
+
+        WirelineSizeGenerator wirelineCode = new WirelineSizeGenerator();
+        String wirelineCodeBody = wirelineCode.generate(idl);
+        MethodSource<JavaClassSource> wirelineCodeSource = javaClass.addMethod()
+                .setConstructor(false)
+                .setPublic()
+                .setName("wirelineSize")
+                .setReturnType("int")
+                .setBody(wirelineCodeBody);
+        //wirelineCodeSource.addAnnotation("Override");
 
         String serializerBody = byteBufferSerializer(typeMap);
         MethodSource<JavaClassSource> serializer = javaClass.addMethod()
@@ -87,7 +97,7 @@ public class DisClassGenerator {
                 .setBody(deserializerBody);
         deserializer.addParameter("ByteBuffer", "buffer");
         deserializer.addAnnotation("Override");
-        
+
         HashCodeGenerator hashCode = new HashCodeGenerator();
         String hashCodeBody = hashCode.generate(idl);
         MethodSource<JavaClassSource> hashCodeSource = javaClass.addMethod()
@@ -96,8 +106,8 @@ public class DisClassGenerator {
                 .setName("hashCode")
                 .setReturnType("int")
                 .setBody(hashCodeBody);
-         hashCodeSource.addAnnotation("Override");
-         
+        hashCodeSource.addAnnotation("Override");
+
         EqualsGenerator equals = new EqualsGenerator();
         String equalsBody = equals.generate(idl);
         MethodSource<JavaClassSource> equalsSource = javaClass.addMethod()
@@ -107,7 +117,7 @@ public class DisClassGenerator {
                 .setParameters("Object obj")
                 .setReturnType("boolean")
                 .setBody(equalsBody);
-         equalsSource.addAnnotation("Override");
+        equalsSource.addAnnotation("Override");
 
         return javaClass.toString();
     }

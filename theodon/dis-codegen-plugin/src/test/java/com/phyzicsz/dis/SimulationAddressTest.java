@@ -6,6 +6,7 @@ DO NOT EDIT DIRECTLY
 package com.phyzicsz.dis;
 
 import org.junit.Test;
+import org.junit.Assert.assertEquals;
 
 /**
  * A Simulation Address record shall consist of the Site Identification number
@@ -15,5 +16,10 @@ public class SimulationAddressTest {
 
 	@Test
 	public void testSimulationAddress() {
+		edu.nps.moves.dis7.SimulationAddress openDis = new edu.nps.moves.dis7.SimulationAddress();
+		com.phyzicsz.dis.SimulationAddress local = new com.phyzicsz.dis.SimulationAddress();
+		int openDisSize = openDis.getMarshalledSize();
+		int localSize = local.wirelineSize();
+		assertEquals(openDisSize, localSize);
 	}
 }

@@ -31,23 +31,22 @@ import org.slf4j.LoggerFactory;
 public class DisTestClassGenerator {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DisTestClassGenerator.class);
-    
+
     private final Map<String, String> typeMap = new LinkedHashMap<>();
 
     public String generate(DisClass idl) {
-        
-        
 
         //generate class
         final JavaClassSource javaClass = Roaster.create(JavaClassSource.class);
         javaClass.setPackage(idl.getPackageName())
-                .setName(idl.getName()+"Test")
+                .setName(idl.getName() + "Test")
                 .getJavaDoc().setFullText(idl.getComment());
         javaClass.addImport("org.junit.Test");
+        javaClass.addImport("org.junit.Assert.assertEquals");
 
-        String testBody = testMethodBody();
+        String testBody = testMethodBody(idl);
         MethodSource<JavaClassSource> methodSource = javaClass.addMethod()
-                .setName("test"+idl.getName())
+                .setName("test" + idl.getName())
                 .setReturnType("void")
                 .setPublic()
                 .setBody(testBody);
@@ -56,12 +55,39 @@ public class DisTestClassGenerator {
         return javaClass.toString();
     }
 
-    private String testMethodBody(){
-        return "";
+    private String testMethodBody(DisClass idl) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("edu.nps.moves.dis7.")
+                .append(idl.getName())
+                .append(" ")
+                .append("openDis")
+                .append(" = ")
+                .append("new edu.nps.moves.dis7.")
+                .append(idl.getName())
+                .append("();");
+
+        sb.append(idl.getPackageName())
+                .append(".")
+                .append(idl.getName())
+                .append(" ")
+                .append("local")
+                .append(" = ")
+                .append(" new ")
+                .append(idl.getPackageName())
+                .append(".")
+                .append(idl.getName())
+                .append("();");
+
+        sb.append("\n\n")
+                .append("int openDisSize = openDis.getMarshalledSize();");
+
+        sb.append("\n\n")
+                .append("int localSize = local.wirelineSize();");
+
+        sb.append("\n\n")
+                .append("assertEquals(openDisSize,localSize);");
+
+        return sb.toString();
     }
-
-    
-
-
 
 }
