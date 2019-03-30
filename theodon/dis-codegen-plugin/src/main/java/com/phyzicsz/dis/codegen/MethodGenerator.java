@@ -15,7 +15,6 @@
  */
 package com.phyzicsz.dis.codegen;
 
-import com.phyzicsz.dis.datamodel.api.DisAttribute;
 import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.MethodSpec;
@@ -178,5 +177,44 @@ public class MethodGenerator {
         }
 
         return builder.build();
+    }
+    
+     public static MethodSpec equalsMethod(DisClass dis) {
+
+        MethodSpec.Builder method = MethodSpec
+                .methodBuilder("equals")
+                .returns(TypeName.BOOLEAN)
+                .addModifiers(Modifier.PUBLIC)
+                .addParameter(Object.class, "obj")
+                .addAnnotation(Override.class);
+        
+        method.beginControlFlow("if (this == obj)")
+                .addStatement("return true")
+                .endControlFlow();
+        
+        method.beginControlFlow("if (null == obj)")
+                .addStatement("return false")
+                .endControlFlow();
+        
+        method.beginControlFlow("if (!(obj instanceof AbstractDisObject))")
+                .addStatement("return false")
+                .endControlFlow();
+        
+        method.addStatement("final $L other = ($L)obj", dis.getName(), dis.getName());
+
+
+        dis.getAttributes().forEach((attr) -> {
+             method.beginControlFlow("if (!java.util.Objects.equals(this.$L,other.$L))",attr.getName(), attr.getName())
+                .addStatement("return false")
+                .endControlFlow();
+//             sb.append("if (!Objects.equals(this.")
+//                    .append(attr.getName())
+//                    .append(",other.")
+//                    .append(attr.getName())
+//                    .append(")){")
+//                .append("return false;\n")
+//                .append("}\n");
+        });
+        return method.addStatement("return true").build();
     }
 }

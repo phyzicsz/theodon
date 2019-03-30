@@ -56,10 +56,12 @@ public class DisClassGenerator {
         MethodSpec wireline = MethodGenerator.wirelineSize(idl);
         MethodSpec serializer = MethodGenerator.serializer(typeMap);
         MethodSpec deserializer = MethodGenerator.deserializer(typeMap);
+        MethodSpec equals = MethodGenerator.equalsMethod(idl);
         
         mainBuilder.addMethod(wireline)
                 .addMethod(serializer)
-                .addMethod(deserializer);
+                .addMethod(deserializer)
+                .addMethod(equals);
        
         return JavaFile.builder(idl.getPackageName(), mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
