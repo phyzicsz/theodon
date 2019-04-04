@@ -6,6 +6,8 @@
 package com.phyzicsz.disxml2json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.phyzicsz.dis.datamodel.api.DisAttribute;
+import com.phyzicsz.dis.datamodel.api.DisClass;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -99,6 +101,7 @@ public class XMLConverter {
                         attributeName(disAttr, attr);
                         attributeComment(disAttr, attr);
                         attributeType(disAttr, attr);
+                        atributeFixedLength(disAttr, attr);
                         attributeInitialValue(disAttr, attr, disAttr.getType());
 
                         dis.setAttribute(disAttr);
@@ -139,6 +142,15 @@ public class XMLConverter {
         dis.setType(type);
     }
 
+    private void atributeFixedLength(DisAttribute dis, Element element) {
+        String length = getAttributeFixedList(element);
+        if (!length.isEmpty()) {
+            LOGGER.info("\tfixedList : " + length);
+            dis.setFixedList(Integer.parseInt(length));
+        }
+        
+    }
+    
     private void attributeInitialValue(DisAttribute dis, Element element, String type) {
         String initialValue = getAttributePrimativeInitialValue(element);
         if (!initialValue.isEmpty()) {
@@ -183,6 +195,20 @@ public class XMLConverter {
             if (node2.getNodeType() == Node.ELEMENT_NODE) {
                 Element prim = (Element) node2;
                 return prim.getAttribute("type");
+            }
+        }
+
+        return "";
+    }
+    
+    private String getAttributeFixedList(Element attr) {
+        NodeList prims = attr.getElementsByTagName("fixedlist");
+        for (int x = 0; x < prims.getLength(); x++) {
+            Node node2 = prims.item(x);
+
+            if (node2.getNodeType() == Node.ELEMENT_NODE) {
+                Element length = (Element) node2;
+                return length.getAttribute("length");
             }
         }
 

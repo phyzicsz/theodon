@@ -27,10 +27,12 @@ import javax.lang.model.element.Modifier;
 public class FieldGenerator {
     
     public static FieldSpec field(DisAttribute attr) throws ClassNotFoundException {
+        
         String name = attr.getName();
         TypeName type = TypeMapper.typeMapper(attr.getType());
         FieldSpec field = FieldSpec.builder(type, attr.getName())
                 .addModifiers(Modifier.PRIVATE)
+                
                 .build();
         return field;
     }

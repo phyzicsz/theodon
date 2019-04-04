@@ -1,5 +1,5 @@
 {
-    "package":"com.phyzicsz.dis",
+    "package":"com.phyzicsz.dis7",
     "name":"AggregateIdentifier",
     "parent":"root",
     "comment":"The unique designation of each aggregate in an exercise is specified by an aggregate identifier record. The aggregate ID is not an entity and shall not be treated as such. Section 6.2.3.",

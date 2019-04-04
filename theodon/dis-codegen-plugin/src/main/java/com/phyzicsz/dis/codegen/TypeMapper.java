@@ -73,7 +73,7 @@ public class TypeMapper {
                 case "long":
                     return "8";
                 case "float":
-                    return "8";
+                    return "4";
                 case "double":
                     return "8";
                 case "byte":

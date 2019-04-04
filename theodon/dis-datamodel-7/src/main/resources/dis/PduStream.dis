@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "description",
     "comment" : "Longish description of this PDU stream",
-    "type" : "byte"
+    "type" : "byte",
+    "fixedList" : 512
   }, {
     "name" : "name",
     "comment" : "short description of this PDU stream",
-    "type" : "byte"
+    "type" : "byte",
+    "fixedList" : 256
   }, {
     "name" : "startTime",
     "comment" : "Start time of recording, in Unix time (seconds since epoch)",

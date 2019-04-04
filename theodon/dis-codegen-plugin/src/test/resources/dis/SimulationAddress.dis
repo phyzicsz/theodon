@@ -1,5 +1,5 @@
 {
-    "package":"com.phyzicsz.dis",
+    "package":"com.phyzicsz.dis7",
     "name":"SimulationAddress",
     "parent":"root",
     "comment":"A Simulation Address record shall consist of the Site Identification number and the Application Identification number. Section 6.2.79 ",

@@ -10,7 +10,8 @@
   }, {
     "name" : "parameters",
     "comment" : "Dead reckoning parameters. Contents depends on algorithm.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "fixedList" : 15
   }, {
     "name" : "entityLinearAcceleration",
     "comment" : "Linear acceleration of the entity",

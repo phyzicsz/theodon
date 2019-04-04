@@ -30,6 +30,7 @@
   }, {
     "name" : "systemSpecificData",
     "comment" : "System-specific data",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "fixedList" : 3
   } ]
 }

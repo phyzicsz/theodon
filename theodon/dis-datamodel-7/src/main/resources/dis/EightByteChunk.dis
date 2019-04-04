@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "otherParameters",
     "comment" : "Eight bytes of arbitrary data",
-    "type" : "byte"
+    "type" : "byte",
+    "fixedList" : 8
   } ]
 }

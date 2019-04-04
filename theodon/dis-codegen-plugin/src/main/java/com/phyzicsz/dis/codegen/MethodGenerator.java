@@ -15,12 +15,15 @@
  */
 package com.phyzicsz.dis.codegen;
 
+import com.phyzicsz.dis.datamodel.api.AbstractDisObject;
 import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeName;
 import java.nio.ByteBuffer;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.lang.model.element.Modifier;
 
 /**
@@ -29,6 +32,26 @@ import javax.lang.model.element.Modifier;
  */
 public class MethodGenerator {
 
+     public static MethodSpec constructor(DisClass dis) {
+
+        MethodSpec.Builder method = MethodSpec.constructorBuilder()
+                .addModifiers(Modifier.PUBLIC);
+
+        dis.getAttributes().forEach((attr) -> {
+            try {
+                TypeName type = TypeMapper.typeMapper(attr.getType());
+                if(!type.isPrimitive()){
+                    method.addStatement("$L = new $L()", attr.getName(), type);
+                }
+            } catch (ClassNotFoundException ex) {
+               
+            }
+            
+        });
+        
+        return method.build();
+    }
+     
     public static MethodSpec getter(FieldSpec spec) {
         String fieldName = spec.name;
         fieldName = fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
@@ -147,7 +170,7 @@ public class MethodGenerator {
                     builder.addStatement("$L = (short)(buffer.get() & 0xFF)", name);
                     break;
                 case "unsigned int":
-                    builder.addStatement("$L = (long)(buffer.getInt()", name);
+                    builder.addStatement("$L = (long)buffer.getInt()", name);
                     break;
                 case "unsigned long":
                     builder.addStatement("$L = buffer.getLong()", name);

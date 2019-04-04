@@ -126,7 +126,8 @@
   }, {
     "name" : "otherParameters",
     "comment" : "other parameters to use in the dead reckoning algorithm",
-    "type" : "byte"
+    "type" : "byte",
+    "fixedList" : 15
   }, {
     "name" : "xAcceleration",
     "comment" : "X value",
@@ -154,7 +155,8 @@
   }, {
     "name" : "marking",
     "comment" : "characters that can be used for debugging, or to draw unique strings on the side of entities in the world",
-    "type" : "byte"
+    "type" : "byte",
+    "fixedList" : 12
   }, {
     "name" : "capabilities",
     "comment" : "a series of bit flags",

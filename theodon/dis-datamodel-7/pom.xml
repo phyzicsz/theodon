@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.phyzicsz</groupId>
-            <artifactId>dis-datamodel-api</artifactId>
+            <artifactId>dis-generation-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -31,6 +31,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>provided</scope>
         </dependency>
          <dependency>
            <groupId>com.github.open-dis</groupId>

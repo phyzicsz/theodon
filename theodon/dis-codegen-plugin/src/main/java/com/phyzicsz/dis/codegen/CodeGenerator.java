@@ -48,9 +48,13 @@ public class CodeGenerator {
     }
     
     public CodeGenerator generate(){
-        //clear the generated sources
-        //clearGeneratedSources(outputPath);
-        //clearGeneratedSources(testOutputPath);
+//        try {
+//            //clear the generated sources
+//            //clearGeneratedSources(outputPath);
+//            //clearGeneratedSources(testOutputPath);
+//        } catch (IOException ex) {
+//            LOGGER.error("Error cleaning up previous classes",ex);
+//        }
         
         //create all of the mappings
         DisMapper mapper = new DisMapper();
@@ -58,13 +62,11 @@ public class CodeGenerator {
         try {
             classes = mapper.mapper(inputPath);
              generateClasses(classes);
+             generateTestClasses(classes);
         } catch (CodeGenerationConfigurationException | IOException | ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CodeGenerator.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("Error generating classes",ex);
         }
           
-        //generate the Java sources
-       
-        //generateTestClasses(classes);
         return this; 
     }
     
@@ -85,28 +87,27 @@ public class CodeGenerator {
         
     }
     
-//    private void generateTestClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
-//        if(null == outputPath){
-//            throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
-//        }
-//        
-//        for (DisClass disClass : classes) {
-//            String classString = new DisTestClassGenerator()
-//                    .generate(disClass);
-//            classString = insertHeader(classString);
-//            try {
-//                LOGGER.error("Writing test class {}", disClass.getName());
-//                writeClassFile(testOutputPath, disClass.getPackageName(), classString, disClass.getName()+"Test");
-//            } catch (IOException ex) {
-//                LOGGER.error("Error Writing File: ", ex);
-//            }
-//        }
-//        
-//    }
+    private void generateTestClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
+        if(null == outputPath){
+            throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
+        }
+        
+        for (DisClass disClass : classes) {
+            try {
+                
+                JavaFile javaFile = new DisTestClassGenerator()
+                    .generate(disClass);
+                writeClassFile(testOutputPath, javaFile);
+            } catch (IOException ex) {
+                LOGGER.error("Error Writing File: ", ex);
+            }
+        }
+        
+    }
 
     
     private void writeClassFile(File outputPath, JavaFile javaFile) throws IOException{
-        LOGGER.error("Writing file {}", javaFile.toJavaFileObject().getName());
+        LOGGER.info("Writing file {}", javaFile.toJavaFileObject().getName());
         Path file = outputPath.toPath();
         file.toFile().mkdirs();
         javaFile.writeTo(file); 

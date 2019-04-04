@@ -25,6 +25,7 @@ import com.squareup.javapoet.TypeSpec;
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import javax.lang.model.element.Modifier;
 
 /**
  *
@@ -39,6 +40,7 @@ public class DisClassGenerator {
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName())
                 .addSuperinterface(Serializable.class)
                 .addSuperinterface(AbstractDisObject.class)
+                .addModifiers(Modifier.PUBLIC)
                 .addJavadoc(idl.getComment());
 
         for (DisAttribute attr : idl.getAttributes()) {
@@ -53,18 +55,21 @@ public class DisClassGenerator {
 
         }
         
+        MethodSpec constructor = MethodGenerator.constructor(idl);
         MethodSpec wireline = MethodGenerator.wirelineSize(idl);
         MethodSpec serializer = MethodGenerator.serializer(typeMap);
         MethodSpec deserializer = MethodGenerator.deserializer(typeMap);
         MethodSpec equals = MethodGenerator.equalsMethod(idl);
         
-        mainBuilder.addMethod(wireline)
+        mainBuilder.addMethod(constructor)
+                .addMethod(wireline)
                 .addMethod(serializer)
                 .addMethod(deserializer)
                 .addMethod(equals);
        
         return JavaFile.builder(idl.getPackageName(), mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
+                
                 .build();
 
     }

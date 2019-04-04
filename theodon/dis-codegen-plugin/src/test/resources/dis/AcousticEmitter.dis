@@ -1,5 +1,5 @@
 {
-    "package":"com.phyzicsz.dis",
+    "package":"com.phyzicsz.dis7",
     "name":"AcousticEmitter",
     "parent":"root",
     "comment":"information about a specific UA emmtter. Section 6.2.2.",

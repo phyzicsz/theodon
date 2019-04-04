@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.phyzicsz.disxml2json;
+package com.phyzicsz.dis.datamodel.api;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -37,6 +37,10 @@ public class DisAttribute {
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("initialValue")
     private String initialValue;
+    
+    @JsonInclude(Include.NON_NULL)
+    @JsonProperty("fixedList")
+    private Integer fixedList;
 
     public String getName() {
         return name;
@@ -70,13 +74,24 @@ public class DisAttribute {
         this.initialValue = initialValue;
     }
 
+    public Integer getFixedList() {
+        return fixedList;
+    }
+
+    public void setFixedList(Integer fixedList) {
+        this.fixedList = fixedList;
+    }
+
+    
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + Objects.hashCode(this.comment);
-        hash = 67 * hash + Objects.hashCode(this.type);
-        hash = 67 * hash + Objects.hashCode(this.initialValue);
+        hash = 23 * hash + Objects.hashCode(this.name);
+        hash = 23 * hash + Objects.hashCode(this.comment);
+        hash = 23 * hash + Objects.hashCode(this.type);
+        hash = 23 * hash + Objects.hashCode(this.initialValue);
+        hash = 23 * hash + Objects.hashCode(this.fixedList);
         return hash;
     }
 
@@ -104,9 +119,11 @@ public class DisAttribute {
         if (!Objects.equals(this.initialValue, other.initialValue)) {
             return false;
         }
+        if (!Objects.equals(this.fixedList, other.fixedList)) {
+            return false;
+        }
         return true;
     }
-    
-    
-    
+
+   
 }
