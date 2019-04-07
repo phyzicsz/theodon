@@ -7,40 +7,49 @@
     "name" : "recordType",
     "comment" : "",
     "type" : "unsigned int",
-    "initialValue" : "5500l"
+    "initialValue" : "5500l",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "16"
+    "initialValue" : "16",
+    "isCollection" : false
   }, {
     "name" : "ioStatus",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "ioLinkType",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "ioEffect",
     "comment" : "",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "ioEffectDutyCycle",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "ioEffectDuration",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "ioProcess",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

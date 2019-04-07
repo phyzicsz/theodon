@@ -6,38 +6,47 @@
   "attributes" : [ {
     "name" : "originatingSimulationAddress",
     "comment" : "This field shall identify the simulation issuing the Attribute PDU. It shall be represented by a Simulation Address record (see 6.2.79).",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "padding1",
     "comment" : "Padding",
-    "type" : "int"
+    "type" : "int",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "Padding",
-    "type" : "short"
+    "type" : "short",
+    "isCollection" : false
   }, {
     "name" : "attributeRecordPduType",
     "comment" : "This field shall represent the type of the PDU that is being extended or updated, if applicable. It shall be represented by an 8-bit enumeration.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "attributeRecordProtocolVersion",
     "comment" : "This field shall indicate the Protocol Version associated with the Attribute Record PDU Type. It shall be represented by an 8-bit enumeration.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "masterAttributeRecordType",
     "comment" : "This field shall contain the Attribute record type of the Attribute records in the PDU if they all have the same Attribute record type. It shall be represented by a 32-bit enumeration.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "actionCode",
     "comment" : "This field shall identify the action code applicable to this Attribute PDU. The Action Code shall apply to all Attribute records contained in the PDU. It shall be represented by an 8-bit enumeration.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding3",
     "comment" : "Padding",
-    "type" : "byte"
+    "type" : "byte",
+    "isCollection" : false
   }, {
     "name" : "numberAttributeRecordSet",
     "comment" : "This field shall specify the number of Attribute Record Sets that make up the remainder of the PDU. It shall be represented by a 16-bit unsigned integer.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

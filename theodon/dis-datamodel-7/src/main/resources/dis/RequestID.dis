@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "requestID",
     "comment" : "monotonically increasing number",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

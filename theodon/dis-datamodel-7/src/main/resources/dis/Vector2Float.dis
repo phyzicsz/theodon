@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "x",
     "comment" : "X value",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "y",
     "comment" : "y Value",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

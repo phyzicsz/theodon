@@ -6,51 +6,61 @@
   "attributes" : [ {
     "name" : "beamDirection",
     "comment" : "The rotation that transforms the reference coordinate sytem into the beam coordinate system. Either world coordinates or entity coordinates may be used as the reference coordinate system, as specified by the reference system field of the antenna pattern record.",
-    "type" : "EulerAngles"
+    "type" : "EulerAngles",
+    "isCollection" : false
   }, {
     "name" : "azimuthBeamwidth",
     "comment" : "",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "elevationBeamwidth",
     "comment" : "",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "referenceSystem",
     "comment" : "",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "padding1",
     "comment" : "",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "ez",
     "comment" : "This field shall specify the magnitude of the Z-component (in beam coordinates) of the Electrical field at some arbitrary single point in the main beam and in the far field of the antenna. ",
     "type" : "float",
-    "initialValue" : "0.0f"
+    "initialValue" : "0.0f",
+    "isCollection" : false
   }, {
     "name" : "ex",
     "comment" : "This field shall specify the magnitude of the X-component (in beam coordinates) of the Electri- cal field at some arbitrary single point in the main beam and in the far field of the antenna.",
     "type" : "float",
-    "initialValue" : "0.0f"
+    "initialValue" : "0.0f",
+    "isCollection" : false
   }, {
     "name" : "phase",
     "comment" : "This field shall specify the phase angle between EZ and EX in radians. If fully omni-direc- tional antenna is modeled using beam pattern type one, the omni-directional antenna shall be repre- sented by beam direction Euler angles psi, theta, and phi of zero, an azimuth beamwidth of 2PI, and an elevation beamwidth of PI",
     "type" : "float",
-    "initialValue" : "0.0f"
+    "initialValue" : "0.0f",
+    "isCollection" : false
   }, {
     "name" : "padding3",
     "comment" : "padding",
     "type" : "unsigned int",
-    "initialValue" : "0l"
+    "initialValue" : "0l",
+    "isCollection" : false
   } ]
 }

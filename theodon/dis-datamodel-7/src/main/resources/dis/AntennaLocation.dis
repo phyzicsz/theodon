@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "antennaLocation",
     "comment" : "Location of the radiating portion of the antenna in world    coordinates",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : false
   }, {
     "name" : "relativeAntennaLocation",
     "comment" : "Location of the radiating portion of the antenna     in entity coordinates",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   } ]
 }

@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "protocolMode",
     "comment" : "Bitfields, 14-15 contain an enum",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

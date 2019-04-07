@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "entityID",
     "comment" : "the entity tracked or illumated, or an emitter beam targeted with jamming",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "emitterNumber",
     "comment" : "Emitter system associated with the entity",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "beamNumber",
     "comment" : "Beam associated with the entity",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

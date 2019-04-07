@@ -6,34 +6,42 @@
   "attributes" : [ {
     "name" : "entityID",
     "comment" : "entity ID",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "communicationsDeviceID",
     "comment" : "ID of communications device",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "encodingScheme",
     "comment" : "encoding scheme",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "tdlType",
     "comment" : "tactical data link type",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "sampleRate",
     "comment" : "sample rate",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "dataLength",
     "comment" : "data length",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "samples",
     "comment" : "samples",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "data",
     "comment" : "data bytes",
-    "type" : "OneByteChunk"
+    "type" : "OneByteChunk",
+    "isCollection" : true
   } ]
 }

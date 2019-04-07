@@ -6,15 +6,18 @@
   "attributes" : [ {
     "name" : "targetEntityID",
     "comment" : "Unique ID of the target entity.",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "padding",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "peakIrradiance",
     "comment" : "Peak irrandiance",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

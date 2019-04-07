@@ -6,42 +6,52 @@
   "attributes" : [ {
     "name" : "systemStatus",
     "comment" : "system status",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "dataField1",
     "comment" : "data field 1",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "informationLayers",
     "comment" : "eight boolean fields",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "dataField2",
     "comment" : "enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "parameter1",
     "comment" : "parameter, enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "parameter2",
     "comment" : "parameter, enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "parameter3",
     "comment" : "parameter, enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "parameter4",
     "comment" : "parameter, enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "parameter5",
     "comment" : "parameter, enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "parameter6",
     "comment" : "parameter, enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

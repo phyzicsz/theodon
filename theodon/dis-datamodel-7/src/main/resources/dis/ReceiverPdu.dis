@@ -6,22 +6,27 @@
   "attributes" : [ {
     "name" : "receiverState",
     "comment" : "encoding scheme used, and enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "receivedPoser",
     "comment" : "received power",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "transmitterEntityId",
     "comment" : "ID of transmitter",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "transmitterRadioId",
     "comment" : "ID of transmitting radio",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

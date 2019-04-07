@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "powerSetting",
     "comment" : "powerSetting",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "engineRpm",
     "comment" : "engine RPMs",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

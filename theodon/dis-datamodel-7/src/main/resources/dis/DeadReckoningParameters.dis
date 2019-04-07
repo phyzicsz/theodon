@@ -6,19 +6,23 @@
   "attributes" : [ {
     "name" : "deadReckoningAlgorithm",
     "comment" : "Algorithm to use in computing dead reckoning. See EBV doc.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "parameters",
     "comment" : "Dead reckoning parameters. Contents depends on algorithm.",
     "type" : "unsigned byte",
-    "fixedList" : 15
+    "fixedList" : 15,
+    "isCollection" : false
   }, {
     "name" : "entityLinearAcceleration",
     "comment" : "Linear acceleration of the entity",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "entityAngularVelocity",
     "comment" : "Angular velocity of the entity",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   } ]
 }

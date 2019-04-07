@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "acknowledgeFlag",
     "comment" : "type of message being acknowledged",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "responseFlag",
     "comment" : "Whether or not the receiving entity was able to comply with the request",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "requestID",
     "comment" : "Request ID that is unique",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

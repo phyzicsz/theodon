@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "originatingEntityID",
     "comment" : "Object originatig the request",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "receivingEntityID",
     "comment" : "Object with which this point object is associated",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   } ]
 }

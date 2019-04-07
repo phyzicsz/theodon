@@ -6,88 +6,109 @@
   "attributes" : [ {
     "name" : "radioReferenceID",
     "comment" : "ID of the entitythat is the source of the communication",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "radioNumber",
     "comment" : "particular radio within an entity",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "radioEntityType",
     "comment" : "Type of radio",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "transmitState",
     "comment" : "transmit state",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "inputSource",
     "comment" : "input source",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "variableTransmitterParameterCount",
     "comment" : "count field",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "antennaLocation",
     "comment" : "Location of antenna",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : false
   }, {
     "name" : "relativeAntennaLocation",
     "comment" : "relative location of antenna",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "antennaPatternType",
     "comment" : "antenna pattern type",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "antennaPatternCount",
     "comment" : "atenna pattern length",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "frequency",
     "comment" : "frequency",
-    "type" : "unsigned long"
+    "type" : "unsigned long",
+    "isCollection" : false
   }, {
     "name" : "transmitFrequencyBandwidth",
     "comment" : "transmit frequency Bandwidth",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "power",
     "comment" : "transmission power",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "modulationType",
     "comment" : "modulation",
-    "type" : "ModulationType"
+    "type" : "ModulationType",
+    "isCollection" : false
   }, {
     "name" : "cryptoSystem",
     "comment" : "crypto system enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "cryptoKeyId",
     "comment" : "crypto system key identifer",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "modulationParameterCount",
     "comment" : "how many modulation parameters we have",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "padding2",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "padding3",
     "comment" : "padding3",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "modulationParametersList",
     "comment" : "variable length list of modulation parameters",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : true
   }, {
     "name" : "antennaPatternList",
     "comment" : "variable length list of antenna pattern records",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : true
   } ]
 }

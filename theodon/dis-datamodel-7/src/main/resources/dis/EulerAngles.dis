@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "psi",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "theta",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "phi",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

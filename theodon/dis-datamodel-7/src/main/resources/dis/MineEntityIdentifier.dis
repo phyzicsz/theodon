@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "simulationAddress",
     "comment" : "",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "mineEntityNumber",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

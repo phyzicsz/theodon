@@ -6,34 +6,42 @@
   "attributes" : [ {
     "name" : "requestID",
     "comment" : "request ID",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "requiredReliabilityService",
     "comment" : "level of reliability service used for this transaction",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "pad1",
     "comment" : "padding. The spec is unclear and contradictory here.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "pad2",
     "comment" : "padding",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "eventType",
     "comment" : "event type",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "time",
     "comment" : "time",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfRecords",
     "comment" : "numberOfRecords",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "recordIDs",
     "comment" : "record IDs",
-    "type" : "FourByteChunk"
+    "type" : "FourByteChunk",
+    "isCollection" : true
   } ]
 }

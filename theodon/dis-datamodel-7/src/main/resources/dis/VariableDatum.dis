@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "variableDatumID",
     "comment" : "ID of variable datum to be transmitted. 32 bit enumeration defined in EBV",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "variableDatumLength",
     "comment" : "Length, IN BITS, of the variable datum.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "variableDatumData",
     "comment" : "Variable length data class",
-    "type" : "OneByteChunk"
+    "type" : "OneByteChunk",
+    "isCollection" : true
   } ]
 }

@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "simulationAddress",
     "comment" : "See 6.2.79",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "referenceNumber",
     "comment" : "Reference number",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

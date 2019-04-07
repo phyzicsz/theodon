@@ -6,28 +6,34 @@
   "attributes" : [ {
     "name" : "receivingEntityID",
     "comment" : "Entity that is receiving service.  Shall be represented by Entity Identifier record (see 6.2.28)",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "supplyingEntityID",
     "comment" : "Entity that is supplying.  Shall be represented by Entity Identifier record (see 6.2.28)",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "numberOfSupplyTypes",
     "comment" : "How many supplies are taken by receiving entity",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding1",
     "comment" : "padding",
     "type" : "short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "padding",
     "type" : "byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "supplies",
     "comment" : "Type and amount of supplies for each specified supply type.  See 6.2.85 for supply quantity record.",
-    "type" : "SupplyQuantity"
+    "type" : "SupplyQuantity",
+    "isCollection" : true
   } ]
 }

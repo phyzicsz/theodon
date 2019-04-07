@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "requestID",
     "comment" : "This field shall identify the specific and unique start/resume request being made by the SM",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

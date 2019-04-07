@@ -6,35 +6,43 @@
   "attributes" : [ {
     "name" : "standardQuantity",
     "comment" : " the standard quantity of this fuel type normally loaded at this station/launcher if a station/launcher is specified. If the Station/Launcher field is set to zero, then this is the total quantity of this fuel type that would be present in a standard reload of all appli- cable stations/launchers associated with this entity.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "maximumQuantity",
     "comment" : "the maximum quantity of this fuel type that this sta- tion/launcher is capable of holding when a station/launcher is specified. This would be the value used when a maximum reload was desired to be set for this station/launcher. If the Station/launcher field is set to zero, then this is the maximum quantity of this fuel type that would be present on this entity at all stations/launchers that can accept this fuel type.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "standardQuantityReloadTime",
     "comment" : "the seconds normally required to reload the standard quantity of this fuel type at this specific station/launcher. When the Station/Launcher field is set to zero, this shall be the time it takes to perform a standard quantity reload of this fuel type at all applicable stations/launchers for this entity.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "maximumQuantityReloadTime",
     "comment" : "the seconds normally required to reload the maximum possible quantity of this fuel type at this station/launcher. When the Station/Launcher field is set to zero, this shall be the time it takes to perform a maximum quantity load/reload of this fuel type at all applicable stations/launchers for this entity.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "fuelMeasurementUnits",
     "comment" : "the fuel measurement units. Enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "fuelType",
     "comment" : "Fuel type. Enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "fuelLocation",
     "comment" : "Location of fuel as related to entity. See section 14 of EBV document",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "padding",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

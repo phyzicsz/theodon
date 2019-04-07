@@ -6,18 +6,22 @@
   "attributes" : [ {
     "name" : "siteNumber",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "applicationNumber",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "referenceNumber",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "intercomNumber",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

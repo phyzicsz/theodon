@@ -7,54 +7,66 @@
     "name" : "recordType",
     "comment" : "DE Record Type.",
     "type" : "unsigned int",
-    "initialValue" : "4500l"
+    "initialValue" : "4500l",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "DE Record Length (bytes).",
     "type" : "unsigned short",
-    "initialValue" : "40"
+    "initialValue" : "40",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "padding.",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "damageLocation",
     "comment" : "location of damage, relative to center of entity",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "damageDiameter",
     "comment" : "Size of damaged area, in meters.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "temperature",
     "comment" : "average temp of the damaged area, in degrees celsius. If firing entitty does not model this, use a value of -273.15",
     "type" : "float",
-    "initialValue" : "-273.15f"
+    "initialValue" : "-273.15f",
+    "isCollection" : false
   }, {
     "name" : "componentIdentification",
     "comment" : "enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "componentDamageStatus",
     "comment" : "enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "componentVisualDamageStatus",
     "comment" : "enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "componentVisualSmokeColor",
     "comment" : "enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "fireEventID",
     "comment" : "For any component damage resulting this field shall be set to the fire event ID from that PDU.",
-    "type" : "EventIdentifier"
+    "type" : "EventIdentifier",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "padding",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

@@ -6,22 +6,27 @@
   "attributes" : [ {
     "name" : "minefieldID",
     "comment" : "Minefield ID",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "requestingEntityID",
     "comment" : "entity ID making the request",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "requestID",
     "comment" : "request ID",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfMissingPdus",
     "comment" : "how many pdus were missing",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "missingPduSequenceNumbers",
     "comment" : "PDU sequence numbers that were missing",
-    "type" : "EightByteChunk"
+    "type" : "EightByteChunk",
+    "isCollection" : true
   } ]
 }

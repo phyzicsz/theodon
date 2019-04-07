@@ -6,31 +6,38 @@
   "attributes" : [ {
     "name" : "erp",
     "comment" : "ERP",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "frequency",
     "comment" : "frequency",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "pgrf",
     "comment" : "pgrf",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "pulseWidth",
     "comment" : "Pulse width",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "burstLength",
     "comment" : "Burst length",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "applicableModes",
     "comment" : "Applicable modes enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "systemSpecificData",
     "comment" : "System-specific data",
     "type" : "unsigned byte",
-    "fixedList" : 3
+    "fixedList" : 3,
+    "isCollection" : false
   } ]
 }

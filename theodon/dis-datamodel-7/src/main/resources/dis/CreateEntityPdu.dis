@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "requestID",
     "comment" : "Identifier for the request.  See 6.2.75",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

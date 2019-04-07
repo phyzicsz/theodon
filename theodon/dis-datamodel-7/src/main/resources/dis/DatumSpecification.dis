@@ -6,18 +6,22 @@
   "attributes" : [ {
     "name" : "numberOfFixedDatums",
     "comment" : "Number of fixed datums",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfVariableDatums",
     "comment" : "Number of variable datums",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "fixedDatumList",
     "comment" : "variable length list fixed datums",
-    "type" : "FixedDatum"
+    "type" : "FixedDatum",
+    "isCollection" : false
   }, {
     "name" : "variableDatumList",
     "comment" : "variable length list variable datums. See 6.2.93",
-    "type" : "VariableDatum"
+    "type" : "VariableDatum",
+    "isCollection" : false
   } ]
 }

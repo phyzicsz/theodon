@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "val",
     "comment" : "unsigned integer",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

@@ -6,50 +6,62 @@
   "attributes" : [ {
     "name" : "emittingEntityID",
     "comment" : "ID of the entity that is the source of the emission",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "eventID",
     "comment" : "ID of event",
-    "type" : "EventIdentifier"
+    "type" : "EventIdentifier",
+    "isCollection" : false
   }, {
     "name" : "stateChangeIndicator",
     "comment" : "This field shall be used to indicate whether the data in the UA PDU represent a state update or data that have changed since issuance of the last UA PDU",
-    "type" : "byte"
+    "type" : "byte",
+    "isCollection" : false
   }, {
     "name" : "pad",
     "comment" : "padding",
-    "type" : "byte"
+    "type" : "byte",
+    "isCollection" : false
   }, {
     "name" : "passiveParameterIndex",
     "comment" : "This field indicates which database record (or file) shall be used in the definition of passive signature (unintentional) emissions of the entity. The indicated database record (or  file) shall define all noise generated as a function of propulsion plant configurations and associated  auxiliaries.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "propulsionPlantConfiguration",
     "comment" : "This field shall specify the entity propulsion plant configuration. This field is used to determine the passive signature characteristics of an entity.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfShafts",
     "comment" : " This field shall represent the number of shafts on a platform",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfAPAs",
     "comment" : "This field shall indicate the number of APAs described in the current UA PDU",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfUAEmitterSystems",
     "comment" : "This field shall specify the number of UA emitter systems being described in the current UA PDU",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "shaftRPMs",
     "comment" : "shaft RPM values. THIS IS WRONG. It has the wrong class in the list.",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : true
   }, {
     "name" : "apaData",
     "comment" : "apaData. THIS IS WRONG. It has the worng class in the list.",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : true
   }, {
     "name" : "emitterSystems",
     "comment" : "THIS IS WRONG. It has the wrong class in the list.",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : true
   } ]
 }

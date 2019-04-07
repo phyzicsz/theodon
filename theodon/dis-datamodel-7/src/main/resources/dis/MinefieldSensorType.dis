@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "sensorType",
     "comment" : "sensor type. bit fields 0-3 are the type category, 4-15 are teh subcategory",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

@@ -6,34 +6,42 @@
   "attributes" : [ {
     "name" : "orginatingEntityID",
     "comment" : "Originating entity ID",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "infraredSignatureRepresentationIndex",
     "comment" : "IR Signature representation index",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "acousticSignatureRepresentationIndex",
     "comment" : "acoustic Signature representation index",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "radarCrossSectionSignatureRepresentationIndex",
     "comment" : "radar cross section representation index",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "numberOfPropulsionSystems",
     "comment" : "how many propulsion systems",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "numberOfVectoringNozzleSystems",
     "comment" : "how many vectoring nozzle systems",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "propulsionSystemData",
     "comment" : "variable length list of propulsion system data",
-    "type" : "PropulsionSystemData"
+    "type" : "PropulsionSystemData",
+    "isCollection" : true
   }, {
     "name" : "vectoringSystemData",
     "comment" : "variable length list of vectoring system data",
-    "type" : "VectoringNozzleSystem"
+    "type" : "VectoringNozzleSystem",
+    "isCollection" : true
   } ]
 }

@@ -6,46 +6,57 @@
   "attributes" : [ {
     "name" : "segmentNumber",
     "comment" : "the individual segment of the linear segment ",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "segmentModification",
     "comment" : " whether a modification has been made to the point object’s location or orientation",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "generalSegmentAppearance",
     "comment" : "general dynamic appearance attributes of the segment. This record shall be defined as a 16-bit record of enumerations. The values defined for this record are included in Section 12 of SISO-REF-010.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "specificSegmentAppearance",
     "comment" : "This field shall specify specific dynamic appearance attributes of the segment. This record shall be defined as a 32-bit record of enumerations.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "segmentLocation",
     "comment" : "This field shall specify the location of the linear segment in the simulated world and shall be represented by a World Coordinates record ",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : false
   }, {
     "name" : "segmentOrientation",
     "comment" : "orientation of the linear segment about the segment location and shall be represented by a Euler Angles record ",
-    "type" : "EulerAngles"
+    "type" : "EulerAngles",
+    "isCollection" : false
   }, {
     "name" : "segmentLength",
     "comment" : "length of the linear segment, in meters, extending in the positive X direction",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "segmentWidth",
     "comment" : "The total width of the linear segment, in meters, shall be specified by a 16-bit unsigned integer. One-half of the width shall extend in the positive Y direction, and one-half of the width shall extend in the negative Y direction.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "segmentHeight",
     "comment" : "The height of the linear segment, in meters, above ground shall be specified by a 16-bit unsigned integer.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "segmentDepth",
     "comment" : "The depth of the linear segment, in meters, below ground level ",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "padding",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

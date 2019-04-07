@@ -7,27 +7,33 @@
     "name" : "protocolVersion",
     "comment" : "The version of the protocol. 5=DIS-1995, 6=DIS-1998, 7=DIS-2009.",
     "type" : "unsigned byte",
-    "initialValue" : "7"
+    "initialValue" : "7",
+    "isCollection" : false
   }, {
     "name" : "exerciseID",
     "comment" : "Exercise ID",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "pduType",
     "comment" : "Type of pdu, unique for each PDU class",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "protocolFamily",
     "comment" : "value that refers to the protocol family, eg SimulationManagement, et",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "timestamp",
     "comment" : "Timestamp value",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "length",
     "comment" : "Length, in bytes, of the PDU",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

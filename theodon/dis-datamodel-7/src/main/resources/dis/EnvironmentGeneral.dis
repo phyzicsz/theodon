@@ -6,26 +6,32 @@
   "attributes" : [ {
     "name" : "environmentType",
     "comment" : "Record type",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "length",
     "comment" : "length, in bits",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "index",
     "comment" : "Identify the sequentially numbered record index",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding1",
     "comment" : "padding",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "geometry",
     "comment" : "Geometry or state record",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "padding to bring the total size up to a 64 bit boundry",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

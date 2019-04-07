@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "numberOfIffDataRecords",
     "comment" : "Number of iff records",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "iffDataRecords",
     "comment" : "IFF data records",
-    "type" : "IFFData"
+    "type" : "IFFData",
+    "isCollection" : true
   } ]
 }

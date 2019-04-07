@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "totalRecordSets",
     "comment" : "Total number of record sets",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "padding",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

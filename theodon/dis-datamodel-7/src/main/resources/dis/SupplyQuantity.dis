@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "supplyType",
     "comment" : "Type of supply",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "quantity",
     "comment" : "the number of units of a supply type. ",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

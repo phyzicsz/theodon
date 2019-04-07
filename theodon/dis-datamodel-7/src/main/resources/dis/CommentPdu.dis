@@ -6,18 +6,22 @@
   "attributes" : [ {
     "name" : "numberOfFixedDatumRecords",
     "comment" : "Number of fixed datum records",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfVariableDatumRecords",
     "comment" : "Number of variable datum records",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "fixedDatums",
     "comment" : "variable length list of fixed datums",
-    "type" : "FixedDatum"
+    "type" : "FixedDatum",
+    "isCollection" : true
   }, {
     "name" : "variableDatums",
     "comment" : "variable length list of variable length datums",
-    "type" : "VariableDatum"
+    "type" : "VariableDatum",
+    "isCollection" : true
   } ]
 }

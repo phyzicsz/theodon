@@ -7,33 +7,40 @@
     "name" : "recordType",
     "comment" : "Type of Record enumeration",
     "type" : "unsigned int",
-    "initialValue" : "4001l"
+    "initialValue" : "4001l",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "Length of Record",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "Padding",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "beamAntennaPatternRecordCount",
     "comment" : "Number of beam antenna pattern records",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "directedEnergyTargetEnergyDepositionRecordCount",
     "comment" : "Number of DE target energy depositon records",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "beamAntennaParameterList",
     "comment" : "list of beam antenna records. See 6.2.9.2",
-    "type" : "BeamAntennaPattern"
+    "type" : "BeamAntennaPattern",
+    "isCollection" : false
   }, {
     "name" : "directedEnergyTargetEnergyDepositionRecordList",
     "comment" : "list of DE target deposition records. See 6.2.21.4",
-    "type" : "DirectedEnergyTargetEnergyDeposition"
+    "type" : "DirectedEnergyTargetEnergyDeposition",
+    "isCollection" : false
   } ]
 }

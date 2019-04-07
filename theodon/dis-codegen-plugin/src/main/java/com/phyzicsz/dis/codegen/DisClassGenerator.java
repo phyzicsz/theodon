@@ -18,13 +18,12 @@ package com.phyzicsz.dis.codegen;
 import com.phyzicsz.dis.datamodel.api.AbstractDisObject;
 import com.phyzicsz.dis.datamodel.api.DisAttribute;
 import com.phyzicsz.dis.datamodel.api.DisClass;
+import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
 import java.io.Serializable;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import javax.lang.model.element.Modifier;
 
 /**
@@ -33,15 +32,18 @@ import javax.lang.model.element.Modifier;
  */
 public class DisClassGenerator {
 
-    private final Map<String, String> typeMap = new LinkedHashMap<>();
-
     public JavaFile generate(DisClass idl) throws ClassNotFoundException {
 
+        
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName())
                 .addSuperinterface(Serializable.class)
                 .addSuperinterface(AbstractDisObject.class)
                 .addModifiers(Modifier.PUBLIC)
                 .addJavadoc(idl.getComment());
+        
+        if(!idl.getParent().equals("root") && !idl.getParent().isEmpty()){
+            mainBuilder.superclass(ClassName.get(idl.getPackageName(),idl.getParent()));
+        }
 
         for (DisAttribute attr : idl.getAttributes()) {
             FieldSpec field = FieldGenerator.field(attr);
@@ -50,15 +52,12 @@ public class DisClassGenerator {
             mainBuilder.addField(field)
                     .addMethod(getter)
                     .addMethod(setter);
-            
-            typeMap.put(attr.getName(), attr.getType());
-
         }
         
         MethodSpec constructor = MethodGenerator.constructor(idl);
         MethodSpec wireline = MethodGenerator.wirelineSize(idl);
-        MethodSpec serializer = MethodGenerator.serializer(typeMap);
-        MethodSpec deserializer = MethodGenerator.deserializer(typeMap);
+        MethodSpec serializer = MethodGenerator.serializer(idl);
+        MethodSpec deserializer = MethodGenerator.deserializer(idl);
         MethodSpec equals = MethodGenerator.equalsMethod(idl);
         
         mainBuilder.addMethod(constructor)

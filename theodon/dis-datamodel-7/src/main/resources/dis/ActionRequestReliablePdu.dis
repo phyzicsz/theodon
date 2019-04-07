@@ -6,38 +6,47 @@
   "attributes" : [ {
     "name" : "requiredReliabilityService",
     "comment" : "level of reliability service used for this transaction",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "pad1",
     "comment" : "padding",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "pad2",
     "comment" : "padding",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "requestID",
     "comment" : "request ID",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "actionID",
     "comment" : "request ID",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfFixedDatumRecords",
     "comment" : "Fixed datum record count",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfVariableDatumRecords",
     "comment" : "variable datum record count",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "fixedDatumRecords",
     "comment" : "Fixed datum records",
-    "type" : "FixedDatum"
+    "type" : "FixedDatum",
+    "isCollection" : true
   }, {
     "name" : "variableDatumRecords",
     "comment" : "Variable datum records",
-    "type" : "VariableDatum"
+    "type" : "VariableDatum",
+    "isCollection" : true
   } ]
 }

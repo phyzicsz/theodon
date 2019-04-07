@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "simulationAddress",
     "comment" : "Simulation address ",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "referenceNumber",
     "comment" : "This field shall be set to zero as there is no reference number associated with a Simulation Identifier.",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

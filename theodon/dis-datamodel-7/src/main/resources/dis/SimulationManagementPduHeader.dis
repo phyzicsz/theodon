@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "pduHeader",
     "comment" : "Conventional PDU header",
-    "type" : "PduHeader"
+    "type" : "PduHeader",
+    "isCollection" : false
   }, {
     "name" : "originatingID",
     "comment" : "IDs the simulation or entity, etiehr a simulation or an entity. Either 6.2.80 or 6.2.28",
-    "type" : "SimulationIdentifier"
+    "type" : "SimulationIdentifier",
+    "isCollection" : false
   }, {
     "name" : "receivingID",
     "comment" : "simulation, all simulations, a special ID, or an entity. See 5.6.5 and 5.12.4",
-    "type" : "SimulationIdentifier"
+    "type" : "SimulationIdentifier",
+    "isCollection" : false
   } ]
 }

@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "numberOfStandardVariableRecords",
     "comment" : "Number of static variable records",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "standardVariables",
     "comment" : "variable length list of standard variables, The class type and length here are WRONG and will cause the incorrect serialization of any class in whihc it is embedded.",
-    "type" : "SimulationManagementPduHeader"
+    "type" : "SimulationManagementPduHeader",
+    "isCollection" : true
   } ]
 }

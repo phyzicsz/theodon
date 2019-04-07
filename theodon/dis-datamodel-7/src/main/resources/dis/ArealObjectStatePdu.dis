@@ -6,50 +6,62 @@
   "attributes" : [ {
     "name" : "objectID",
     "comment" : "Object in synthetic environment",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "referencedObjectID",
     "comment" : "Object with which this point object is associated",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "updateNumber",
     "comment" : "unique update number of each state transition of an object",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "forceID",
     "comment" : "force ID",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "modifications",
     "comment" : "modifications enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "objectType",
     "comment" : "Object type",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "specificObjectAppearance",
     "comment" : "Object appearance",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "generalObjectAppearance",
     "comment" : "Object appearance",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "numberOfPoints",
     "comment" : "Number of points",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "requesterID",
     "comment" : "requesterID",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "receivingID",
     "comment" : "receiver ID",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "objectLocation",
     "comment" : "location of object",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : true
   } ]
 }

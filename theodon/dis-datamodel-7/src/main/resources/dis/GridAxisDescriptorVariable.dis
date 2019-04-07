@@ -6,43 +6,53 @@
   "attributes" : [ {
     "name" : "domainInitialXi",
     "comment" : "coordinate of the grid origin or initial value",
-    "type" : "double"
+    "type" : "double",
+    "isCollection" : false
   }, {
     "name" : "domainFinalXi",
     "comment" : "coordinate of the endpoint or final value",
-    "type" : "double"
+    "type" : "double",
+    "isCollection" : false
   }, {
     "name" : "domainPointsXi",
     "comment" : "The number of grid points along the Xi domain axis for the enviornmental state data",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "interleafFactor",
     "comment" : "interleaf factor along the domain axis.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "axisType",
     "comment" : "type of grid axis",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfPointsOnXiAxis",
     "comment" : "Number of grid locations along Xi axis",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "initialIndex",
     "comment" : "initial grid point for the current pdu",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "coordinateScaleXi",
     "comment" : "value that linearly scales the coordinates of the grid locations for the xi axis",
-    "type" : "double"
+    "type" : "double",
+    "isCollection" : false
   }, {
     "name" : "coordinateOffsetXi",
     "comment" : "The constant offset value that shall be applied to the grid locations for the xi axis",
     "type" : "double",
-    "initialValue" : "0.0d"
+    "initialValue" : "0.0d",
+    "isCollection" : false
   }, {
     "name" : "xiValues",
     "comment" : "list of coordinates",
-    "type" : "TwoByteChunk"
+    "type" : "TwoByteChunk",
+    "isCollection" : true
   } ]
 }

@@ -6,18 +6,22 @@
   "attributes" : [ {
     "name" : "spreadSpectrum",
     "comment" : "This field shall indicate the spread spectrum technique or combination of spread spectrum techniques in use. Bit field. 0=freq hopping, 1=psuedo noise, time hopping=2, reamining bits unused",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "majorModulation",
     "comment" : "the major classification of the modulation type. ",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "detail",
     "comment" : "provide certain detailed information depending upon the major modulation type",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "radioSystem",
     "comment" : "the radio system associated with this Transmitter PDU and shall be used as the basis to interpret other fields whose values depend on a specific radio system.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "originatingEntityID",
     "comment" : "Entity that is sending message",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "receivingEntityID",
     "comment" : "Entity that is intended to receive message",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   } ]
 }

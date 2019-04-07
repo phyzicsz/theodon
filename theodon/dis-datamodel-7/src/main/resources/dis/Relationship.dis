@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "nature",
     "comment" : "the nature or purpose for joining of the part entity to the host entity and shall be represented by a 16-bit enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "position",
     "comment" : "the position of the part entity with respect to the host entity and shall be represented by a 16-bit enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

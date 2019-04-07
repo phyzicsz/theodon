@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "fixedDatumID",
     "comment" : "ID of the fixed datum, an enumeration",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "fixedDatumValue",
     "comment" : "Value for the fixed datum",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

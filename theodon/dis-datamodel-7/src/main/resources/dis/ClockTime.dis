@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "hour",
     "comment" : "Hours since midnight, 1970, UTC",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "timePastHour",
     "comment" : "Time past the hour, in timestamp form",
-    "type" : "Timestamp"
+    "type" : "Timestamp",
+    "isCollection" : false
   } ]
 }

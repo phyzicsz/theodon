@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "acousticSystemName",
     "comment" : "the system for a particular UA emitter, and an enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "acousticFunction",
     "comment" : "The function of the acoustic system",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "acousticIDNumber",
     "comment" : "The UA emitter identification number relative to a specific system",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "siteNumber",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "applicationNumber",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "eventNumber",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

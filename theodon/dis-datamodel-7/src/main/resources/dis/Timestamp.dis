@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "timestamp",
     "comment" : "timestamp",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

@@ -6,18 +6,22 @@
   "attributes" : [ {
     "name" : "systemType",
     "comment" : "general type of emitting system, an enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "systemName",
     "comment" : "named type of system, an enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "systemMode",
     "comment" : "mode of operation for the system, an enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "changeOptions",
     "comment" : "status of this PDU, see section 6.2.15",
-    "type" : "ChangeOptions"
+    "type" : "ChangeOptions",
+    "isCollection" : false
   } ]
 }

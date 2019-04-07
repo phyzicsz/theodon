@@ -6,26 +6,32 @@
   "attributes" : [ {
     "name" : "encodingScheme",
     "comment" : "encoding scheme used, and enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "tdlType",
     "comment" : "tdl type",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "sampleRate",
     "comment" : "sample rate",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "dataLength",
     "comment" : "length od data",
-    "type" : "short"
+    "type" : "short",
+    "isCollection" : false
   }, {
     "name" : "samples",
     "comment" : "number of samples",
-    "type" : "short"
+    "type" : "short",
+    "isCollection" : false
   }, {
     "name" : "data",
     "comment" : "list of eight bit values",
-    "type" : "OneByteChunk"
+    "type" : "OneByteChunk",
+    "isCollection" : true
   } ]
 }

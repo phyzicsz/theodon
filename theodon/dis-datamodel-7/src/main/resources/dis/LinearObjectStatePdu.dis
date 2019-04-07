@@ -6,38 +6,47 @@
   "attributes" : [ {
     "name" : "objectID",
     "comment" : "Object in synthetic environment",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "referencedObjectID",
     "comment" : "Object with which this point object is associated",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "updateNumber",
     "comment" : "unique update number of each state transition of an object",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "forceID",
     "comment" : "force ID",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfSegments",
     "comment" : "number of linear segment parameters",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "requesterID",
     "comment" : "requesterID",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "receivingID",
     "comment" : "receiver ID",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "objectType",
     "comment" : "Object type",
-    "type" : "ObjectType"
+    "type" : "ObjectType",
+    "isCollection" : false
   }, {
     "name" : "linearSegmentParameters",
     "comment" : "Linear segment parameters",
-    "type" : "LinearSegmentParameter"
+    "type" : "LinearSegmentParameter",
+    "isCollection" : true
   } ]
 }

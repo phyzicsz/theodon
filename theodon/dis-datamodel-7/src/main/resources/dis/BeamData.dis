@@ -6,22 +6,27 @@
   "attributes" : [ {
     "name" : "beamAzimuthCenter",
     "comment" : "Specifies the beam azimuth an elevation centers and corresponding half-angles to describe the scan volume",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "beamAzimuthSweep",
     "comment" : "Specifies the beam azimuth sweep to determine scan volume",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "beamElevationCenter",
     "comment" : "Specifies the beam elevation center to determine scan volume",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "beamElevationSweep",
     "comment" : "Specifies the beam elevation sweep to determine scan volume",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "beamSweepSync",
     "comment" : "allows receiver to synchronize its regenerated scan pattern to that of the emmitter. Specifies the percentage of time a scan is through its pattern from its origion.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

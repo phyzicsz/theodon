@@ -6,26 +6,32 @@
   "attributes" : [ {
     "name" : "expendable",
     "comment" : "Type of expendable",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "station",
     "comment" : "",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "standardQuantity",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "maximumQuantity",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "standardQuantityReloadTime",
     "comment" : "",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "maximumQuantityReloadTime",
     "comment" : "",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

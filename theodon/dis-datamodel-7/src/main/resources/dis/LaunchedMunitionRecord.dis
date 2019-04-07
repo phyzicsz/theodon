@@ -6,30 +6,37 @@
   "attributes" : [ {
     "name" : "fireEventID",
     "comment" : "",
-    "type" : "EventIdentifier"
+    "type" : "EventIdentifier",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "firingEntityID",
     "comment" : "",
-    "type" : "EventIdentifier"
+    "type" : "EventIdentifier",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "targetEntityID",
     "comment" : "",
-    "type" : "EventIdentifier"
+    "type" : "EventIdentifier",
+    "isCollection" : false
   }, {
     "name" : "padding3",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "targetLocation",
     "comment" : "",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : false
   } ]
 }

@@ -7,23 +7,28 @@
     "name" : "recordType",
     "comment" : "",
     "type" : "unsigned int",
-    "initialValue" : "5501l"
+    "initialValue" : "5501l",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "16"
+    "initialValue" : "16",
+    "isCollection" : false
   }, {
     "name" : "communcationsNodeType",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "communicationsNodeID",
     "comment" : "",
-    "type" : "CommunicationsNodeID"
+    "type" : "CommunicationsNodeID",
+    "isCollection" : false
   } ]
 }

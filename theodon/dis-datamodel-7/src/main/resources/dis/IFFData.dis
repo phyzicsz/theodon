@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "enumeration for type of record",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "length of record. Should be padded to 32 bit boundary.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "iffData",
     "comment" : "IFF data.",
-    "type" : "OneByteChunk"
+    "type" : "OneByteChunk",
+    "isCollection" : true
   } ]
 }

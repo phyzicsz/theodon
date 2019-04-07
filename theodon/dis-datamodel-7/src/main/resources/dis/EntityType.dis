@@ -6,30 +6,37 @@
   "attributes" : [ {
     "name" : "entityKind",
     "comment" : "Kind of entity",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "domain",
     "comment" : "Domain of entity (air, surface, subsurface, space, etc)",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "country",
     "comment" : "country to which the design of the entity is attributed",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "category",
     "comment" : "category of entity",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "subcategory",
     "comment" : "subcategory of entity",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "specific",
     "comment" : "specific info based on subcategory field. Renamed from specific because that is a reserved word in SQL.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "extra",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

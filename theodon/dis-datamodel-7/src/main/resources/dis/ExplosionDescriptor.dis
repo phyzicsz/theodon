@@ -6,19 +6,23 @@
   "attributes" : [ {
     "name" : "explodingObject",
     "comment" : "Type of the object that exploded. See 6.2.30",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "explosiveMaterial",
     "comment" : "Material that exploded. Can be grain dust, tnt, gasoline, etc. Enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "padding",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "explosiveForce",
     "comment" : "Force of explosion, in equivalent KG of TNT",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

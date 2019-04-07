@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "characterSet",
     "comment" : "The character set",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "characters",
     "comment" : "The characters",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

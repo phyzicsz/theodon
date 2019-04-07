@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "numberOfRecordSets",
     "comment" : "The number of record sets",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "recordSets",
     "comment" : "variable length list record specifications.",
-    "type" : "RecordSpecificationElement"
+    "type" : "RecordSpecificationElement",
+    "isCollection" : true
   } ]
 }

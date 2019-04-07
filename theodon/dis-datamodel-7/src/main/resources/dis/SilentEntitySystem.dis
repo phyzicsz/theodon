@@ -6,18 +6,22 @@
   "attributes" : [ {
     "name" : "numberOfEntities",
     "comment" : "number of the type specified by the entity type field",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "numberOfAppearanceRecords",
     "comment" : "number of entity appearance records that follow",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "entityType",
     "comment" : "Entity type",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "appearanceRecordList",
     "comment" : "Variable length list of appearance records",
-    "type" : "FourByteChunk"
+    "type" : "FourByteChunk",
+    "isCollection" : true
   } ]
 }

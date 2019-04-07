@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "stationName",
     "comment" : "the station name within the host at which the part entity is located. If the part entity is On Station, this field shall specify the representation of the part’s location data fields. This field shall be specified by a 16-bit enumeration ",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "stationNumber",
     "comment" : "the number of the particular wing station, cargo hold etc., at which the part is attached. ",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "emitterName",
     "comment" : "Name of the emitter, 16 bit enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "emitterFunction",
     "comment" : "function of the emitter, 8 bit enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "emitterIDNumber",
     "comment" : "emitter ID, 8 bit enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

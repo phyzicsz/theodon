@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "pduStatus",
     "comment" : "PDU Status Record. Described in 6.2.67. This field is not present in earlier DIS versions ",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "zero-filled array of padding",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

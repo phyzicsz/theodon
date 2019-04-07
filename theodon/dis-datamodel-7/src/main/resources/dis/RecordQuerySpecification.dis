@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "numberOfRecords",
     "comment" : "",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "records",
     "comment" : "variable length list of 32 bit records",
-    "type" : "FourByteChunk"
+    "type" : "FourByteChunk",
+    "isCollection" : true
   } ]
 }

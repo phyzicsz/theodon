@@ -6,26 +6,32 @@
   "attributes" : [ {
     "name" : "orginatingEntityID",
     "comment" : "ID of entity originating PDU",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "receivingEntityID",
     "comment" : "ID of entity receiving PDU",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "relationship",
     "comment" : "relationship of joined parts",
-    "type" : "Relationship"
+    "type" : "Relationship",
+    "isCollection" : false
   }, {
     "name" : "partLocation",
     "comment" : "location of part; centroid of part in host's coordinate system. x=range, y=bearing, z=0",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "namedLocationID",
     "comment" : "named location",
-    "type" : "NamedLocationIdentification"
+    "type" : "NamedLocationIdentification",
+    "isCollection" : false
   }, {
     "name" : "partEntityType",
     "comment" : "entity type",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   } ]
 }

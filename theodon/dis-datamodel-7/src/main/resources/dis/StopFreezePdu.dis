@@ -6,23 +6,28 @@
   "attributes" : [ {
     "name" : "realWorldTime",
     "comment" : "real-world(UTC) time at which the entity shall stop or freeze in the exercise",
-    "type" : "ClockTime"
+    "type" : "ClockTime",
+    "isCollection" : false
   }, {
     "name" : "reason",
     "comment" : "Reason the simulation was stopped or frozen (see section 7 of SISO-REF-010) represented by an 8-bit enumeration",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "frozenBehavior",
     "comment" : "Internal behavior of the entity(or simulation) and its appearance while frozen to the other participants",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding1",
     "comment" : "padding",
     "type" : "short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "requestID",
     "comment" : "Request ID that is unique",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

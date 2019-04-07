@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "realWorldTime",
     "comment" : "This field shall specify the real-world time (UTC) at which the entity is to start/resume in the exercise. This information shall be used by the participating simulation applications to start/resume an exercise synchronously. This field shall be represented by a Clock Time record (see 6.2.16).",
-    "type" : "ClockTime"
+    "type" : "ClockTime",
+    "isCollection" : false
   }, {
     "name" : "simulationTime",
     "comment" : "The reference time within a simulation exercise. This time is established ahead of time by simulation management and is common to all participants in a particular exercise. Simulation time may be either Absolute Time or Relative Time. This field shall be represented by a Clock Time record (see 6.2.16)",
-    "type" : "ClockTime"
+    "type" : "ClockTime",
+    "isCollection" : false
   }, {
     "name" : "requestID",
     "comment" : "Identifier for the specific and unique start/resume request",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

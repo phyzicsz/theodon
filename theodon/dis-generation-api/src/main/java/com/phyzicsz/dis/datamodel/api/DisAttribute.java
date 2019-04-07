@@ -41,6 +41,10 @@ public class DisAttribute {
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("fixedList")
     private Integer fixedList;
+    
+    @JsonInclude(Include.NON_NULL)
+    @JsonProperty("isCollection")
+    private Boolean isCollection = false;
 
     public String getName() {
         return name;
@@ -82,16 +86,23 @@ public class DisAttribute {
         this.fixedList = fixedList;
     }
 
-    
+    public Boolean getIsCollection() {
+        return isCollection;
+    }
+
+    public void setIsCollection(Boolean isCollection) {
+        this.isCollection = isCollection;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 23 * hash + Objects.hashCode(this.name);
-        hash = 23 * hash + Objects.hashCode(this.comment);
-        hash = 23 * hash + Objects.hashCode(this.type);
-        hash = 23 * hash + Objects.hashCode(this.initialValue);
-        hash = 23 * hash + Objects.hashCode(this.fixedList);
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.name);
+        hash = 79 * hash + Objects.hashCode(this.comment);
+        hash = 79 * hash + Objects.hashCode(this.type);
+        hash = 79 * hash + Objects.hashCode(this.initialValue);
+        hash = 79 * hash + Objects.hashCode(this.fixedList);
+        hash = 79 * hash + Objects.hashCode(this.isCollection);
         return hash;
     }
 
@@ -122,8 +133,12 @@ public class DisAttribute {
         if (!Objects.equals(this.fixedList, other.fixedList)) {
             return false;
         }
+        if (!Objects.equals(this.isCollection, other.isCollection)) {
+            return false;
+        }
         return true;
     }
-
+    
+    
    
 }

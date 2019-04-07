@@ -6,26 +6,32 @@
   "attributes" : [ {
     "name" : "requestID",
     "comment" : "ID of request",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "timeInterval",
     "comment" : "time issues between issues of Data PDUs. Zero means send once only.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfFixedDatumRecords",
     "comment" : "Number of fixed datum records",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfVariableDatumRecords",
     "comment" : "Number of variable datum records",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "fixedDatums",
     "comment" : "variable length list of fixed datums",
-    "type" : "FixedDatum"
+    "type" : "FixedDatum",
+    "isCollection" : true
   }, {
     "name" : "variableDatums",
     "comment" : "variable length list of variable length datums",
-    "type" : "VariableDatum"
+    "type" : "VariableDatum",
+    "isCollection" : true
   } ]
 }

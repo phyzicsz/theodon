@@ -7,6 +7,7 @@
     "name" : "otherParameters",
     "comment" : "four bytes of arbitrary data",
     "type" : "byte",
-    "fixedList" : 4
+    "fixedList" : 4,
+    "isCollection" : false
   } ]
 }

@@ -6,22 +6,27 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "the identification of the Variable Parameter record. Enumeration from EBV",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "variableParameterFields1",
     "comment" : "Variable parameter data fields. Two doubles minus one byte",
-    "type" : "double"
+    "type" : "double",
+    "isCollection" : false
   }, {
     "name" : "variableParameterFields2",
     "comment" : "Variable parameter data fields. ",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "variableParameterFields3",
     "comment" : "Variable parameter data fields. ",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "variableParameterFields4",
     "comment" : "Variable parameter data fields. ",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

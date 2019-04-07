@@ -102,6 +102,7 @@ public class XMLConverter {
                         attributeComment(disAttr, attr);
                         attributeType(disAttr, attr);
                         atributeFixedLength(disAttr, attr);
+                        atributeVariableLength(disAttr,attr);
                         attributeInitialValue(disAttr, attr, disAttr.getType());
 
                         dis.setAttribute(disAttr);
@@ -147,6 +148,15 @@ public class XMLConverter {
         if (!length.isEmpty()) {
             LOGGER.info("\tfixedList : " + length);
             dis.setFixedList(Integer.parseInt(length));
+        }
+        
+    }
+    
+     private void atributeVariableLength(DisAttribute dis, Element element) {
+        Boolean isColleciton = getAttributeVariableList(element);
+        if (isColleciton) {
+            LOGGER.info("\tisCollection : {}",true);
+            dis.setIsCollection(true);
         }
         
     }
@@ -213,6 +223,11 @@ public class XMLConverter {
         }
 
         return "";
+    }
+    
+    private boolean getAttributeVariableList(Element attr) {
+        NodeList prims = attr.getElementsByTagName("variablelist");
+        return prims.getLength() > 0;
     }
 
     private String getAttributePrimativeInitialValue(Element attr) {

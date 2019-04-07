@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "siteID",
     "comment" : "Site ID",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "applicationID",
     "comment" : "application number ID",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "entityID",
     "comment" : "Entity number ID",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

@@ -6,6 +6,7 @@
   "attributes" : [ {
     "name" : "beamState",
     "comment" : "First bit zero means beam is active, first bit = 1 means deactivated. The rest is padding.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   } ]
 }

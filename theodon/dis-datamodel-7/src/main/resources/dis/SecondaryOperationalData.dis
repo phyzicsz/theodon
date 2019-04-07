@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "operationalData1",
     "comment" : "additional operational characteristics of the IFF emitting system. Each 8-bit field will vary depending on the system type.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "operationalData2",
     "comment" : "additional operational characteristics of the IFF emitting system. Each 8-bit field will vary depending on the system type.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfIFFFundamentalParameterRecords",
     "comment" : "the number of IFF Fundamental Parameter Data records that follow",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "firingEntityID",
     "comment" : "ID of the entity that shot",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "targetEntityID",
     "comment" : "ID of the entity that is being shot at",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   } ]
 }

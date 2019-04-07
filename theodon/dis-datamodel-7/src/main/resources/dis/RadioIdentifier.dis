@@ -6,18 +6,22 @@
   "attributes" : [ {
     "name" : "siteNumber",
     "comment" : " site",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "applicationNumber",
     "comment" : "application number",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "referenceNumber",
     "comment" : " reference number",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "radioNumber",
     "comment" : " Radio number",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

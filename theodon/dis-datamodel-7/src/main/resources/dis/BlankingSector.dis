@@ -7,63 +7,77 @@
     "name" : "recordType",
     "comment" : "",
     "type" : "int",
-    "initialValue" : "3500"
+    "initialValue" : "3500",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "40"
+    "initialValue" : "40",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "emitterNumber",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "beamNumber",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "stateIndicator",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "leftAzimuth",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "rightAzimuth",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "lowerElevation",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "upperElevation",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "residualPower",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "padding3",
     "comment" : "",
     "type" : "int",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "padding4",
     "comment" : "",
     "type" : "int",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

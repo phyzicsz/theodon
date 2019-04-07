@@ -16,7 +16,10 @@
 package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.datamodel.api.DisAttribute;
+import com.squareup.javapoet.ArrayTypeName;
+import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.FieldSpec;
+import com.squareup.javapoet.ParameterizedTypeName;
 import com.squareup.javapoet.TypeName;
 import javax.lang.model.element.Modifier;
 
@@ -25,16 +28,41 @@ import javax.lang.model.element.Modifier;
  * @author phyzicsz
  */
 public class FieldGenerator {
-    
+
     public static FieldSpec field(DisAttribute attr) throws ClassNotFoundException {
-        
         String name = attr.getName();
         TypeName type = TypeMapper.typeMapper(attr.getType());
-        FieldSpec field = FieldSpec.builder(type, attr.getName())
-                .addModifiers(Modifier.PRIVATE)
-                
-                .build();
-        return field;
-    }
 
+        //check if fixed list
+        if ((null != attr.getFixedList()) && (attr.getFixedList() > 0)) {
+
+            TypeName typeName = ArrayTypeName.of(type);
+            FieldSpec.Builder field = FieldSpec.builder(typeName, attr.getName())
+                    .addModifiers(Modifier.PROTECTED);
+            field.initializer("new $T[$L]", type, attr.getFixedList());
+            if (!type.isPrimitive()) {
+                field.initializer("new $T()", type);
+            }
+            return field.build();
+
+        } else if (null != attr.getIsCollection() && attr.getIsCollection()) {
+            ClassName list = ClassName.get("java.util", "List");
+            ClassName arrayList = ClassName.get("java.util", "ArrayList");
+            TypeName listOfTypes = ParameterizedTypeName.get(list, type);
+
+            FieldSpec field = FieldSpec.builder(listOfTypes, attr.getName())
+                    .addModifiers(Modifier.PROTECTED)
+                    .initializer("new $T<>()", arrayList)
+                    .build();
+
+            return field;
+        } else {
+            FieldSpec.Builder field = FieldSpec.builder(type, attr.getName())
+                    .addModifiers(Modifier.PROTECTED);
+            if (!type.isPrimitive()) {
+                field.initializer("new $T()", type);
+            }
+            return field.build();
+        }
+    }
 }

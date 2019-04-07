@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "liveSimulationAddress",
     "comment" : "Live Simulation Address record (see 6.2.54) ",
-    "type" : "LiveSimulationAddress"
+    "type" : "LiveSimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "entityNumber",
     "comment" : "Live entity number ",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "simulationAddress",
     "comment" : "Simulation address (site and application number)",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "groupNumber",
     "comment" : "group number",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

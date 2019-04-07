@@ -6,50 +6,62 @@
   "attributes" : [ {
     "name" : "minefieldID",
     "comment" : "Minefield ID",
-    "type" : "MinefieldIdentifier"
+    "type" : "MinefieldIdentifier",
+    "isCollection" : false
   }, {
     "name" : "minefieldSequence",
     "comment" : "Minefield sequence",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "forceID",
     "comment" : "force ID",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfPerimeterPoints",
     "comment" : "Number of permieter points",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "minefieldType",
     "comment" : "type of minefield",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "numberOfMineTypes",
     "comment" : "how many mine types",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "minefieldLocation",
     "comment" : "location of center of minefield in world coords",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : false
   }, {
     "name" : "minefieldOrientation",
     "comment" : "orientation of minefield",
-    "type" : "EulerAngles"
+    "type" : "EulerAngles",
+    "isCollection" : false
   }, {
     "name" : "appearance",
     "comment" : "appearance bitflags",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "protocolMode",
     "comment" : "protocolMode. First two bits are the protocol mode, 14 bits reserved.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "perimeterPoints",
     "comment" : "perimeter points for the minefield",
-    "type" : "Vector2Float"
+    "type" : "Vector2Float",
+    "isCollection" : true
   }, {
     "name" : "mineType",
     "comment" : "Type of mines",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : true
   } ]
 }

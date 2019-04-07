@@ -6,54 +6,67 @@
   "attributes" : [ {
     "name" : "entityID",
     "comment" : "Unique ID for an entity that is tied to this state information",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "forceId",
     "comment" : "What force this entity is affiliated with, eg red, blue, neutral, etc",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "numberOfVariableParameters",
     "comment" : "How many variable parameters are in the variable length list. In earlier versions of DIS these were known as articulation parameters",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "entityType",
     "comment" : "Describes the type of entity in the world",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "alternativeEntityType",
     "comment" : "",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "entityLinearVelocity",
     "comment" : "Describes the speed of the entity in the world",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "entityLocation",
     "comment" : "describes the location of the entity in the world",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : false
   }, {
     "name" : "entityOrientation",
     "comment" : "describes the orientation of the entity, in euler angles",
-    "type" : "EulerAngles"
+    "type" : "EulerAngles",
+    "isCollection" : false
   }, {
     "name" : "entityAppearance",
     "comment" : "a series of bit flags that are used to help draw the entity, such as smoking, on fire, etc.",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "deadReckoningParameters",
     "comment" : "parameters used for dead reckoning",
-    "type" : "DeadReckoningParameters"
+    "type" : "DeadReckoningParameters",
+    "isCollection" : false
   }, {
     "name" : "marking",
     "comment" : "characters that can be used for debugging, or to draw unique strings on the side of entities in the world",
-    "type" : "EntityMarking"
+    "type" : "EntityMarking",
+    "isCollection" : false
   }, {
     "name" : "capabilities",
     "comment" : "a series of bit flags",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "variableParameters",
     "comment" : "variable length list of variable parameters. In earlier DIS versions this was articulation parameters.",
-    "type" : "VariableParameter"
+    "type" : "VariableParameter",
+    "isCollection" : true
   } ]
 }

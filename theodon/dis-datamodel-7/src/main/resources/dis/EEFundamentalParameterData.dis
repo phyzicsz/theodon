@@ -6,22 +6,27 @@
   "attributes" : [ {
     "name" : "frequency",
     "comment" : "center frequency of the emission in hertz.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "frequencyRange",
     "comment" : "Bandwidth of the frequencies corresponding to the fequency field.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "effectiveRadiatedPower",
     "comment" : "Effective radiated power for the emission in DdBm. For a radar noise jammer, indicates the peak of the transmitted power.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "pulseRepetitionFrequency",
     "comment" : "Average repetition frequency of the emission in hertz.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "pulseWidth",
     "comment" : "Average pulse width  of the emission in microseconds.",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

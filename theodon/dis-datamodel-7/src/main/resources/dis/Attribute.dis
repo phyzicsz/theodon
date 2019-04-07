@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "recordSpecificFields",
     "comment" : "",
-    "type" : "unsigned long"
+    "type" : "unsigned long",
+    "isCollection" : false
   } ]
 }

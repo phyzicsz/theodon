@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "subprotocolNumber",
     "comment" : "Subprotocol used to decode the PDU. Section 13 of EBV.",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "zero-filled array of padding",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

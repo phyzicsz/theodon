@@ -6,26 +6,32 @@
   "attributes" : [ {
     "name" : "requestID",
     "comment" : "request ID",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "responseStatus",
     "comment" : "status of response",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfFixedDatumRecords",
     "comment" : "Fixed datum record count",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "numberOfVariableDatumRecords",
     "comment" : "variable datum record count",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "fixedDatumRecords",
     "comment" : "Fixed datum records",
-    "type" : "FixedDatum"
+    "type" : "FixedDatum",
+    "isCollection" : true
   }, {
     "name" : "variableDatumRecords",
     "comment" : "Variable datum records",
-    "type" : "VariableDatum"
+    "type" : "VariableDatum",
+    "isCollection" : true
   } ]
 }

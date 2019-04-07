@@ -6,50 +6,62 @@
   "attributes" : [ {
     "name" : "controlType",
     "comment" : "control type",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "communicationsChannelType",
     "comment" : "control type",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "sourceEntityID",
     "comment" : "Source entity ID",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "sourceCommunicationsDeviceID",
     "comment" : "The specific intercom device being simulated within an entity.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "sourceLineID",
     "comment" : "Line number to which the intercom control refers",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "transmitPriority",
     "comment" : "priority of this message relative to transmissons from other intercom devices",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "transmitLineState",
     "comment" : "current transmit state of the line",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "command",
     "comment" : "detailed type requested.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "masterEntityID",
     "comment" : "eid of the entity that has created this intercom channel.",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "masterCommunicationsDeviceID",
     "comment" : "specific intercom device that has created this intercom channel",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "intercomParametersLength",
     "comment" : "number of intercom parameters",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "intercomParameters",
     "comment" : "^^^This is wrong the length of the data field is variable. Using a long for now.",
-    "type" : "IntercomCommunicationsParameters"
+    "type" : "IntercomCommunicationsParameters",
+    "isCollection" : true
   } ]
 }

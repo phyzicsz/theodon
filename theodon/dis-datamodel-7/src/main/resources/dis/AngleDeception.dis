@@ -7,70 +7,86 @@
     "name" : "recordType",
     "comment" : "",
     "type" : "unsigned int",
-    "initialValue" : "3501l"
+    "initialValue" : "3501l",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "48"
+    "initialValue" : "48",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "emitterNumber",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "beamNumber",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "stateIndicator",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "azimuthOffset",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "azimuthWidth",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "azimuthPullRate",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "azimuthPullAcceleration",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "elevationOffset",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "elevationWidth",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "elevationPullRate",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "elevationPullAcceleration",
     "comment" : "",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "padding3",
     "comment" : "",
     "type" : "unsigned int",
-    "initialValue" : "0l"
+    "initialValue" : "0l",
+    "isCollection" : false
   } ]
 }

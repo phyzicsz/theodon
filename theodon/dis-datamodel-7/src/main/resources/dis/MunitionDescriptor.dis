@@ -6,22 +6,27 @@
   "attributes" : [ {
     "name" : "munitionType",
     "comment" : "What munition was used in the burst",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "warhead",
     "comment" : "type of warhead enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "fuse",
     "comment" : "type of fuse used enumeration",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "quantity",
     "comment" : "how many of the munition were fired",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "rate",
     "comment" : "rate at which the munition was fired",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

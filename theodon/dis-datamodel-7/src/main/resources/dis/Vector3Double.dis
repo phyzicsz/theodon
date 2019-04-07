@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "x",
     "comment" : "X value",
-    "type" : "double"
+    "type" : "double",
+    "isCollection" : false
   }, {
     "name" : "y",
     "comment" : "y Value",
-    "type" : "double"
+    "type" : "double",
+    "isCollection" : false
   }, {
     "name" : "z",
     "comment" : "Z value",
-    "type" : "double"
+    "type" : "double",
+    "isCollection" : false
   } ]
 }

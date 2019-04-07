@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "horizontalDeflectionAngle",
     "comment" : "In degrees",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   }, {
     "name" : "verticalDeflectionAngle",
     "comment" : "In degrees",
-    "type" : "float"
+    "type" : "float",
+    "isCollection" : false
   } ]
 }

@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "acknowledgeFlag",
     "comment" : "ack flags",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "responseFlag",
     "comment" : "response flags",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   }, {
     "name" : "requestID",
     "comment" : "Request ID",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

@@ -6,14 +6,17 @@
   "attributes" : [ {
     "name" : "layerNumber",
     "comment" : "",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "layerSpecificInformation",
     "comment" : "field shall specify layer-specific information that varies by System Type (see 6.2.86) and Layer Number.",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "length",
     "comment" : "This field shall specify the length in octets of the layer, including the Layer Header record",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "simulationAddress",
     "comment" : "Simulation address, ie site and application, the first two fields of the entity ID",
-    "type" : "SimulationAddress"
+    "type" : "SimulationAddress",
+    "isCollection" : false
   }, {
     "name" : "aggregateID",
     "comment" : "the aggregate ID, an object identifier",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

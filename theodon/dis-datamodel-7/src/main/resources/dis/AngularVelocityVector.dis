@@ -7,16 +7,19 @@
     "name" : "x",
     "comment" : "velocity about the x axis",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "y",
     "comment" : "velocity about the y axis",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "z",
     "comment" : "velocity about the zaxis",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   } ]
 }

@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "entityID",
     "comment" : "",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "elementID",
     "comment" : "",
-    "type" : "unsigned short"
+    "type" : "unsigned short",
+    "isCollection" : false
   } ]
 }

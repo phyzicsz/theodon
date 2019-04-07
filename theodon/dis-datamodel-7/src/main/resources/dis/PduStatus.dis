@@ -7,6 +7,7 @@
     "name" : "pduStatus",
     "comment" : "Bit fields. The semantics of the bit fields depend on the PDU type",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

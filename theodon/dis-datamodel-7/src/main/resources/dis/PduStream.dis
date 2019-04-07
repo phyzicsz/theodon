@@ -7,19 +7,23 @@
     "name" : "description",
     "comment" : "Longish description of this PDU stream",
     "type" : "byte",
-    "fixedList" : 512
+    "fixedList" : 512,
+    "isCollection" : false
   }, {
     "name" : "name",
     "comment" : "short description of this PDU stream",
     "type" : "byte",
-    "fixedList" : 256
+    "fixedList" : 256,
+    "isCollection" : false
   }, {
     "name" : "startTime",
     "comment" : "Start time of recording, in Unix time (seconds since epoch)",
-    "type" : "long"
+    "type" : "long",
+    "isCollection" : false
   }, {
     "name" : "stopTime",
     "comment" : "stop time of recording, in Unix time (seconds since epoch)",
-    "type" : "long"
+    "type" : "long",
+    "isCollection" : false
   } ]
 }

@@ -6,26 +6,32 @@
   "attributes" : [ {
     "name" : "realWorldTime",
     "comment" : "time in real world for this operation to happen",
-    "type" : "ClockTime"
+    "type" : "ClockTime",
+    "isCollection" : false
   }, {
     "name" : "reason",
     "comment" : "Reason for stopping/freezing simulation",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "frozenBehavior",
     "comment" : "internal behvior of the simulation while frozen",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "requiredReliablityService",
     "comment" : "reliablity level",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "pad1",
     "comment" : "padding",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "requestID",
     "comment" : "Request ID",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   } ]
 }

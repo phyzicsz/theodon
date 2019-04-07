@@ -6,10 +6,12 @@
   "attributes" : [ {
     "name" : "numberOfPdus",
     "comment" : "Number of PDUs in the container list",
-    "type" : "int"
+    "type" : "int",
+    "isCollection" : false
   }, {
     "name" : "pdus",
     "comment" : "List of PDUs",
-    "type" : "Pdu"
+    "type" : "Pdu",
+    "isCollection" : true
   } ]
 }

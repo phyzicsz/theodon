@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "expendableType",
     "comment" : "Type of the object that exploded",
-    "type" : "EntityType"
+    "type" : "EntityType",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "Padding",
     "type" : "long",
-    "initialValue" : "0l"
+    "initialValue" : "0l",
+    "isCollection" : false
   } ]
 }

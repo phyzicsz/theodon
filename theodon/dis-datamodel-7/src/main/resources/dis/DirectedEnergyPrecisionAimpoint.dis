@@ -7,71 +7,86 @@
     "name" : "recordType",
     "comment" : "Type of Record",
     "type" : "unsigned int",
-    "initialValue" : "4000l"
+    "initialValue" : "4000l",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "Length of Record",
     "type" : "unsigned short",
-    "initialValue" : "88"
+    "initialValue" : "88",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "Padding",
     "type" : "unsigned short",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "targetSpotLocation",
     "comment" : "Position of Target Spot in World Coordinates.",
-    "type" : "Vector3Double"
+    "type" : "Vector3Double",
+    "isCollection" : false
   }, {
     "name" : "targetSpotEntityLocation",
     "comment" : "Position (meters) of Target Spot relative to Entity Position.",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "targetSpotVelocity",
     "comment" : "Velocity (meters/sec) of Target Spot.",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "targetSpotAcceleration",
     "comment" : "Acceleration (meters/sec/sec) of Target Spot.",
-    "type" : "Vector3Float"
+    "type" : "Vector3Float",
+    "isCollection" : false
   }, {
     "name" : "targetEntityID",
     "comment" : "Unique ID of the target entity.",
-    "type" : "EntityID"
+    "type" : "EntityID",
+    "isCollection" : false
   }, {
     "name" : "targetComponentID",
     "comment" : "Target Component ID ENUM, same as in DamageDescriptionRecord.",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "beamSpotType",
     "comment" : "Spot Shape ENUM.",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   }, {
     "name" : "beamSpotCrossSectionSemiMajorAxis",
     "comment" : "Beam Spot Cross Section Semi-Major Axis.",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "beamSpotCrossSectionSemiMinorAxis",
     "comment" : "Beam Spot Cross Section Semi-Major Axis.",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "beamSpotCrossSectionOrientationAngle",
     "comment" : "Beam Spot Cross Section Orientation Angle.",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "peakIrradiance",
     "comment" : "Peak irradiance",
     "type" : "float",
-    "initialValue" : "0f"
+    "initialValue" : "0f",
+    "isCollection" : false
   }, {
     "name" : "padding2",
     "comment" : "padding",
     "type" : "unsigned int",
-    "initialValue" : "0l"
+    "initialValue" : "0l",
+    "isCollection" : false
   } ]
 }

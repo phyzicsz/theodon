@@ -6,31 +6,38 @@
   "attributes" : [ {
     "name" : "standardQuantity",
     "comment" : "standard quantity of fuel loaded",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "maximumQuantity",
     "comment" : "maximum quantity of fuel loaded",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "standardQuantityReloadTime",
     "comment" : "seconds normally required to to reload standard qty",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "maximumQuantityReloadTime",
     "comment" : "seconds normally required to to reload maximum qty",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "fuelMeasurmentUnits",
     "comment" : "Units of measure",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "fuelLocation",
     "comment" : "fuel  location as related to the entity",
-    "type" : "unsigned byte"
+    "type" : "unsigned byte",
+    "isCollection" : false
   }, {
     "name" : "padding",
     "comment" : "padding",
     "type" : "unsigned byte",
-    "initialValue" : "0"
+    "initialValue" : "0",
+    "isCollection" : false
   } ]
 }

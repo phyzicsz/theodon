@@ -6,11 +6,13 @@
   "attributes" : [ {
     "name" : "recordType",
     "comment" : "Type of VTP. Enumeration from EBV",
-    "type" : "unsigned int"
+    "type" : "unsigned int",
+    "isCollection" : false
   }, {
     "name" : "recordLength",
     "comment" : "Length, in bytes",
     "type" : "unsigned int",
-    "initialValue" : "4l"
+    "initialValue" : "4l",
+    "isCollection" : false
   } ]
 }
