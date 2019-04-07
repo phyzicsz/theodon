@@ -67,7 +67,7 @@ public class MethodGenerator {
         String fieldName = spec.name;
         fieldName = fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
         MethodSpec method = MethodSpec
-                .methodBuilder("get" + fieldName)
+                .methodBuilder("set" + fieldName)
                 .returns(TypeName.VOID)
                 .addParameter(spec.type, spec.name)
                 .addStatement("this.$L  = $L", spec.name, spec.name)

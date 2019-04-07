@@ -4,6 +4,16 @@
   "parent" : "SimulationManagementFamilyPdu",
   "comment" : "Section 7.5.5. Stop or freeze an enity (or exercise). COMPLETE",
   "attributes" : [ {
+    "name" : "originatingID",
+    "comment" : "Identifier for originating entity(or simulation)",
+    "type" : "EntityID",
+    "isCollection" : false
+  }, {
+    "name" : "receivingID",
+    "comment" : "Identifier for receiving entity(or simulation)",
+    "type" : "EntityID",
+    "isCollection" : false
+  }, {
     "name" : "realWorldTime",
     "comment" : "real-world(UTC) time at which the entity shall stop or freeze in the exercise",
     "type" : "ClockTime",

@@ -4,6 +4,16 @@
   "parent" : "SimulationManagementFamilyPdu",
   "comment" : "Section 7.5.6. Acknowledge the receipt of a start/resume, stop/freeze, or RemoveEntityPDU. COMPLETE",
   "attributes" : [ {
+    "name" : "originatingID",
+    "comment" : "Identifier for originating entity(or simulation)",
+    "type" : "EntityID",
+    "isCollection" : false
+  }, {
+    "name" : "receivingID",
+    "comment" : "Identifier for receiving entity(or simulation)",
+    "type" : "EntityID",
+    "isCollection" : false
+  }, {
     "name" : "acknowledgeFlag",
     "comment" : "type of message being acknowledged",
     "type" : "unsigned short",
