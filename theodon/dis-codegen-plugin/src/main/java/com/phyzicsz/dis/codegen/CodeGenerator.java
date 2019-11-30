@@ -21,9 +21,7 @@ import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.squareup.javapoet.JavaFile;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Comparator;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,8 +35,7 @@ public class CodeGenerator {
     final File inputPath;
     final File outputPath;
     final File testOutputPath;
-    private final ObjectMapper mapper = new ObjectMapper();
-    
+   
     public CodeGenerator(final File inputPath, final File outputPath,final File testOutputPath){
         this.inputPath = inputPath;
         this.outputPath = outputPath;
@@ -112,23 +109,23 @@ public class CodeGenerator {
         javaFile.writeTo(file); 
     }
     
-    private void clearGeneratedSources(File directory) throws IOException{
-        Path path = directory.toPath();
-        Files.walk(path)
-                .sorted(Comparator.reverseOrder())
-                .map(Path::toFile)
-                .forEach(File::delete);
-
-        path.toFile().mkdirs();
-    }
+//    private void clearGeneratedSources(File directory) throws IOException{
+//        Path path = directory.toPath();
+//        Files.walk(path)
+//                .sorted(Comparator.reverseOrder())
+//                .map(Path::toFile)
+//                .forEach(File::delete);
+//
+//        path.toFile().mkdirs();
+//    }
     
-    private void clearGeneratedSources(String packageName, File directory) throws IOException{
-        Path path = directory.toPath();
-        Files.walk(path)
-                .sorted(Comparator.reverseOrder())
-                .map(Path::toFile)
-                .forEach(File::delete);
-
-        path.toFile().mkdirs();
-    }
+//    private void clearGeneratedSources(String packageName, File directory) throws IOException{
+//        Path path = directory.toPath();
+//        Files.walk(path)
+//                .sorted(Comparator.reverseOrder())
+//                .map(Path::toFile)
+//                .forEach(File::delete);
+//
+//        path.toFile().mkdirs();
+//    }
 }

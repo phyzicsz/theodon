@@ -114,9 +114,13 @@ public class DisAttribute {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+        if (!(obj instanceof DisAttribute)) {
             return false;
-        }
+        } 
+        
         final DisAttribute other = (DisAttribute) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;

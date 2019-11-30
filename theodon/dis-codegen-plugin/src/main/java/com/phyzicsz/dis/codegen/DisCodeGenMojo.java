@@ -19,7 +19,6 @@ import java.io.File;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -32,8 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class DisCodeGenMojo extends AbstractMojo {
 
-    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(CodeGenerator.class);
-
+    
     /**
      * The source directory of DIS IDL files. This directory is added to the
      * classpath at schema compiling time. All files can therefore be referenced

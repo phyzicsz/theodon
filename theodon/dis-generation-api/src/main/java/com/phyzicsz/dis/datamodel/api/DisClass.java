@@ -25,19 +25,19 @@ import java.util.Objects;
  * @author phyzicsz
  */
 public class DisClass {
-    
+
     @JsonProperty("package")
     private String packageName;
-     
+
     @JsonProperty("name")
     private String name;
-    
+
     @JsonProperty("parent")
     private String parent;
-    
+
     @JsonProperty("comment")
     private String comment;
-    
+
     @JsonProperty("attributes")
     private List<DisAttribute> attributes = new ArrayList<>();
 
@@ -49,7 +49,6 @@ public class DisClass {
         this.packageName = packageName;
     }
 
-    
     public String getName() {
         return name;
     }
@@ -85,8 +84,6 @@ public class DisClass {
     public void setAttributes(List<DisAttribute> attributes) {
         this.attributes = attributes;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -106,9 +103,13 @@ public class DisClass {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+        if (!(obj instanceof DisClass)) {
             return false;
-        }
+        } 
+        
         final DisClass other = (DisClass) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
@@ -124,7 +125,5 @@ public class DisClass {
         }
         return true;
     }
-    
-    
-    
+
 }

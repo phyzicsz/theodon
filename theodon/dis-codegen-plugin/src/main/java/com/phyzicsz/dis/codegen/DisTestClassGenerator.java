@@ -15,28 +15,18 @@
  */
 package com.phyzicsz.dis.codegen;
 
-import com.phyzicsz.dis.datamodel.api.AbstractDisObject;
 import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
-import java.io.Serializable;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import javax.lang.model.element.Modifier;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author phyzicsz
  */
 public class DisTestClassGenerator {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(DisTestClassGenerator.class);
-
-    private final Map<String, String> typeMap = new LinkedHashMap<>();
 
     public JavaFile generate(DisClass idl) {
 
@@ -55,41 +45,6 @@ public class DisTestClassGenerator {
                 .addFileComment(insertHeader(idl.getComment()))
                 .addStaticImport(assertEquals, "assertEquals")
                 .build();
-    }
-
-    private String testMethodBody(DisClass idl) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("edu.nps.moves.dis7.")
-                .append(idl.getName())
-                .append(" ")
-                .append("openDis")
-                .append(" = ")
-                .append("new edu.nps.moves.dis7.")
-                .append(idl.getName())
-                .append("();");
-
-        sb.append(idl.getPackageName())
-                .append(".")
-                .append(idl.getName())
-                .append(" ")
-                .append("local")
-                .append(" = ")
-                .append(" new ")
-                .append(idl.getPackageName())
-                .append(".")
-                .append(idl.getName())
-                .append("();");
-
-        sb.append("\n\n")
-                .append("int openDisSize = openDis.getMarshalledSize();");
-
-        sb.append("\n\n")
-                .append("int localSize = local.wirelineSize();");
-
-        sb.append("\n\n")
-                .append("assertEquals(openDisSize,localSize);");
-
-        return sb.toString();
     }
 
     private String insertHeader(String content) {
