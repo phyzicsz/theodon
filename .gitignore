@@ -11,3 +11,6 @@ buildNumber.properties
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 /theodon/dis-codegen-plugin/nbproject/
+
+#ignore error_prone javac args file
+javac*.args
