@@ -40,6 +40,7 @@
    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.compiler.showWarnings>true</java.compiler.showWarnings>
         <java.source.version>11</java.source.version>
         <java.target.version>11</java.target.version>
