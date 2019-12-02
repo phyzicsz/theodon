@@ -15,7 +15,6 @@
  */
 package com.phyzicsz.dis.codegen;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
 import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.squareup.javapoet.JavaFile;

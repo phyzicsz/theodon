@@ -35,7 +35,9 @@ public class EqualsGenerator {
                 .append("return false;\n")
                 .append("}\n");
         
-        sb.append("if (!(obj instanceof AbstractDisObject)){")
+        sb.append("if (!(obj instanceof ")
+                .append(dis.getName())
+                .append(")) {")
                 .append("return false;\n")
                 .append("}\n");
         
