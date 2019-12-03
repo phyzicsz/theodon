@@ -1,7 +1,0 @@
-{
-  "package" : "com.phyzicsz.dis7",
-  "name" : "DistributedEmissionsFamilyPdu",
-  "parent" : "Pdu",
-  "comment" : "Section 5.3.7. Electronic Emissions. Abstract superclass for distirubted emissions PDU",
-  "attributes" : [ ]
-}

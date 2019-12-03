@@ -1,7 +1,0 @@
-{
-  "package" : "com.phyzicsz.dis7",
-  "name" : "EntityManagementFamilyPdu",
-  "parent" : "Pdu",
-  "comment" : " Managment of grouping of PDUs, and more. Section 7.8",
-  "attributes" : [ ]
-}

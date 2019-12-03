@@ -1,7 +1,0 @@
-{
-  "package" : "com.phyzicsz.dis7",
-  "name" : "SyntheticEnvironmentFamilyPdu",
-  "parent" : "Pdu",
-  "comment" : "Section 5.3.11: Abstract superclass for synthetic environment PDUs",
-  "attributes" : [ ]
-}

@@ -1,7 +1,0 @@
-{
-  "package" : "com.phyzicsz.dis7",
-  "name" : "ModulationParameters",
-  "parent" : "root",
-  "comment" : "Modulation parameters associated with a specific radio system. INCOMPLETE. 6.2.58 ",
-  "attributes" : [ ]
-}
