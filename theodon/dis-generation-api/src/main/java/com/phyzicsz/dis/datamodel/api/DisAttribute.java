@@ -15,35 +15,40 @@
  */
 package com.phyzicsz.dis.datamodel.api;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Objects;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 /**
  *
  * @author phyzicsz
  */
+@XStreamAlias("attribute")
 public class DisAttribute {
-    @JsonProperty("name")
+
+    @XStreamAsAttribute
     private String name;
-    
-    @JsonProperty("comment")
+
+    @XStreamAsAttribute
     private String comment;
+
+    private DisPrimitive primitive;
     
-    @JsonProperty("type")
-    private String type;
+    private DisList list;
     
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("initialValue")
+    @XStreamAlias("variablelist")
+    private DisVariableList variableList;
+    
+    @XStreamAlias("fixedlist")
+    private DisFixedList fixedList;
+    
+    private DisClassRef classRef;
+    
+    private DisFlags flags;
+
+    @XStreamAsAttribute
     private String initialValue;
-    
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("fixedList")
-    private Integer fixedList;
-    
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("isCollection")
+
+
     private Boolean isCollection = false;
 
     public String getName() {
@@ -62,28 +67,12 @@ public class DisAttribute {
         this.comment = comment;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public String getInitialValue() {
         return initialValue;
     }
 
     public void setInitialValue(String initialValue) {
         this.initialValue = initialValue;
-    }
-
-    public Integer getFixedList() {
-        return fixedList;
-    }
-
-    public void setFixedList(Integer fixedList) {
-        this.fixedList = fixedList;
     }
 
     public Boolean getIsCollection() {
@@ -94,55 +83,55 @@ public class DisAttribute {
         this.isCollection = isCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.name);
-        hash = 79 * hash + Objects.hashCode(this.comment);
-        hash = 79 * hash + Objects.hashCode(this.type);
-        hash = 79 * hash + Objects.hashCode(this.initialValue);
-        hash = 79 * hash + Objects.hashCode(this.fixedList);
-        hash = 79 * hash + Objects.hashCode(this.isCollection);
-        return hash;
+    public DisPrimitive getPrimitive() {
+        return primitive;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-//        if (getClass() != obj.getClass()) {
-//            return false;
-//        }
-        if (!(obj instanceof DisAttribute)) {
-            return false;
-        } 
-        
-        final DisAttribute other = (DisAttribute) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.comment, other.comment)) {
-            return false;
-        }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        if (!Objects.equals(this.initialValue, other.initialValue)) {
-            return false;
-        }
-        if (!Objects.equals(this.fixedList, other.fixedList)) {
-            return false;
-        }
-        if (!Objects.equals(this.isCollection, other.isCollection)) {
-            return false;
-        }
-        return true;
+    public void setPrimitive(DisPrimitive primitive) {
+        this.primitive = primitive;
+    }
+
+    public DisClassRef getClassRef() {
+        return classRef;
+    }
+
+    public void setClassRef(DisClassRef classRef) {
+        this.classRef = classRef;
+    }    
+
+    public DisList getList() {
+        return list;
+    }
+
+    public void setList(DisList list) {
+        this.list = list;
+    }
+
+    public DisVariableList getVariableList() {
+        return variableList;
+    }
+
+    public void setVariableList(DisVariableList variableList) {
+        this.variableList = variableList;
+    }
+
+    public DisFixedList getFixedList() {
+        return fixedList;
+    }
+
+    public void setFixedList(DisFixedList fixedList) {
+        this.fixedList = fixedList;
+    }
+
+    public DisFlags getFlags() {
+        return flags;
+    }
+
+    public void setFlags(DisFlags flags) {
+        this.flags = flags;
     }
     
     
-   
+    
+
 }

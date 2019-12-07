@@ -17,6 +17,7 @@ package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
 import com.phyzicsz.dis.datamodel.api.DisClass;
+import com.phyzicsz.dis.datamodel.api.DisClasses;
 import com.squareup.javapoet.JavaFile;
 import java.io.File;
 import java.io.IOException;
@@ -31,12 +32,12 @@ import org.slf4j.LoggerFactory;
  */
 public class CodeGenerator {
     private static final Logger LOGGER = LoggerFactory.getLogger(CodeGenerator.class);
-    final File inputPath;
+    final DisClasses disClasses;
     final File outputPath;
     final File testOutputPath;
    
-    public CodeGenerator(final File inputPath, final File outputPath,final File testOutputPath){
-        this.inputPath = inputPath;
+    public CodeGenerator(final DisClasses disClasses, final File outputPath,final File testOutputPath){
+        this.disClasses = disClasses;
         this.outputPath = outputPath;
         this.testOutputPath = testOutputPath;
                
@@ -55,9 +56,9 @@ public class CodeGenerator {
         DisMapper mapper = new DisMapper();
         List<DisClass> classes;
         try {
-            classes = mapper.mapper(inputPath);
-             generateClasses(classes);
-             generateTestClasses(classes);
+            //classes = mapper.mapper(inputPath);
+             generateClasses(disClasses);
+             generateTestClasses(disClasses);
         } catch (CodeGenerationConfigurationException | IOException | ClassNotFoundException ex) {
             LOGGER.error("Error generating classes",ex);
         }
@@ -65,12 +66,12 @@ public class CodeGenerator {
         return this; 
     }
     
-    private void generateClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException, ClassNotFoundException{
+    private void generateClasses(DisClasses classes) throws CodeGenerationConfigurationException, IOException, ClassNotFoundException{
         if(null == outputPath){
             throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
         }
         
-        for (DisClass disClass : classes) {
+        for (DisClass disClass : classes.getClasses()) {
             try {
                 JavaFile javaFile = new DisClassGenerator()
                     .generate(disClass);
@@ -82,12 +83,12 @@ public class CodeGenerator {
         
     }
     
-    private void generateTestClasses(List<DisClass> classes) throws CodeGenerationConfigurationException, IOException{
+    private void generateTestClasses(DisClasses classes) throws CodeGenerationConfigurationException, IOException{
         if(null == outputPath){
             throw new CodeGenerationConfigurationException("Output Directory cannot be undefined");
         }
         
-        for (DisClass disClass : classes) {
+        for (DisClass disClass : classes.getClasses()) {
             try {
                 
                 JavaFile javaFile = new DisTestClassGenerator()

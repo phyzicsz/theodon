@@ -42,60 +42,7 @@
         
     </dependencies>
     
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>com.phyzicsz</groupId>
-                <artifactId>dis-codegen-plugin</artifactId>
-                <version>${project.version}</version>
-                <configuration>
-                    <sourceDirectory>src/main/resources/dis</sourceDirectory>
-                    <outputDirectory>target/generated-sources/java</outputDirectory>
-                    <testOutputDirectory>src/test/java</testOutputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>idl</id>
-                        <goals>
-                            <goal>idl-protocol</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>${maven.build.help.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>add-test-sources</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>add-test-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.build.directory}/generated-sources/src</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>add-source</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.build.directory}/generated-sources/java</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
-    </build>
+    
     
     <repositories>
         <repository>

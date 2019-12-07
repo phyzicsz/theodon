@@ -15,7 +15,9 @@
  */
 package com.phyzicsz.dis.datamodel.api;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -26,28 +28,22 @@ import java.util.Objects;
  */
 public class DisClass {
 
-    @JsonProperty("package")
-    private String packageName;
-
-    @JsonProperty("name")
+    @XStreamAsAttribute
     private String name;
 
-    @JsonProperty("parent")
+    @XStreamAsAttribute
+    @XStreamAlias("inheritsFrom")
     private String parent;
 
-    @JsonProperty("comment")
+    @XStreamAsAttribute
     private String comment;
 
-    @JsonProperty("attributes")
+    @XStreamImplicit(itemFieldName="attribute")
     private List<DisAttribute> attributes = new ArrayList<>();
-
-    public String getPackageName() {
-        return packageName;
-    }
-
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
+    
+    @XStreamImplicit(itemFieldName="initialValue")
+    private List<DisInitialValue> initialValue;
+   
 
     public String getName() {
         return name;
@@ -85,45 +81,11 @@ public class DisClass {
         this.attributes = attributes;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + Objects.hashCode(this.parent);
-        hash = 53 * hash + Objects.hashCode(this.comment);
-        hash = 53 * hash + Objects.hashCode(this.attributes);
-        return hash;
+    public List<DisInitialValue> getInitialValue() {
+        return initialValue;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-//        if (getClass() != obj.getClass()) {
-//            return false;
-//        }
-        if (!(obj instanceof DisClass)) {
-            return false;
-        } 
-        
-        final DisClass other = (DisClass) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.parent, other.parent)) {
-            return false;
-        }
-        if (!Objects.equals(this.comment, other.comment)) {
-            return false;
-        }
-        if (!Objects.equals(this.attributes, other.attributes)) {
-            return false;
-        }
-        return true;
-    }
-
+    public void setInitialValue(List<DisInitialValue> initialValue) {
+        this.initialValue = initialValue;
+    } 
 }

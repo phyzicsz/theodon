@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 phyzicsz.
+ * Copyright 2019 pborawski.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,28 @@
  */
 package com.phyzicsz.dis.datamodel.api;
 
-import java.nio.ByteBuffer;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author phyzicsz
+ * @author pborawski
  */
-public interface AbstractDisObject {
-    public void serialize(ByteBuffer buffer);
-    public void deserialize(ByteBuffer buffer);
-    public int wirelineSize();
+@XStreamAlias("classes")
+public class DisClasses {
+ 
+    @XStreamImplicit(itemFieldName="class")
+    private List<DisClass> classes = new ArrayList<>();
+
+    public List<DisClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(List<DisClass> classes) {
+        this.classes = classes;
+    }
+    
+    
 }

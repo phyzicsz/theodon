@@ -15,38 +15,52 @@
  */
 package com.phyzicsz.disclassgen7;
 
+import com.phyzicsz.dis.datamodel.api.DisClasses;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
 /**
  *
  * @author phyzicsz
  */
 public class DisGenerator {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DisGenerator.class);
-    private XMLGenerator generator = new XMLGenerator(); 
-    
-    public DisGenerator init(){
-        Config conf = ConfigFactory.load();
-        
-        String disFile = conf.getString("disxml.disFile");
-        String outputDir = conf.getString("disxml.outputDir");
-        String packageName = conf.getString("disxml.package");
-        
-        generator.disFile(disFile)
-                .outputDir(outputDir)
-                .packageName(packageName);
 
-                return this;
+    private static final Logger LOGGER = LoggerFactory.getLogger(DisGenerator.class);
+
+    private String disFile;
+    private String outputDir;
+    private String packageName;
+
+    public DisGenerator init() {
+        Config conf = ConfigFactory.load();
+
+        disFile = conf.getString("disxml.disFile");
+        outputDir = conf.getString("disxml.outputDir");
+        packageName = conf.getString("disxml.package");
+
+        Class<?>[] allowedClasses = new Class[] { DisClasses.class};
+        XStream xstream = new XStream(new StaxDriver());
+        xstream.processAnnotations(DisClasses.class);
+        XStream.setupDefaultSecurity(xstream);
+        xstream.allowTypes(allowedClasses);
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        File xmlfile = new File(classLoader.getResource(disFile).getFile());
+        
+        LOGGER.info("parsing DIS XML File: {}", disFile);
+        DisClasses classes = (DisClasses)xstream.fromXML(xmlfile);
+        LOGGER.info("parsed {} classes: ", classes.getClasses().size());
+
+        return this;
     }
-    
-    public DisGenerator convert() throws ParserConfigurationException, SAXException, IOException{
-        generator.convert();
+
+    public DisGenerator convert() {
+
         return this;
     }
 }
