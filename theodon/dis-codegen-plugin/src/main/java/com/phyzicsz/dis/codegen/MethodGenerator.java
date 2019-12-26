@@ -15,6 +15,7 @@
  */
 package com.phyzicsz.dis.codegen;
 
+import com.phyzicsz.dis.datamodel.api.DisAttribute;
 import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.MethodSpec;
@@ -33,10 +34,11 @@ public class MethodGenerator {
         MethodSpec.Builder method = MethodSpec.constructorBuilder()
                 .addModifiers(Modifier.PUBLIC);
 
-        dis.getAttributes().forEach((attr) -> {
+        //dis.getAttributes().forEach((attr) -> {
+        for(DisAttribute attr: dis.getAttributes())
             try {
-                TypeName type = TypeMapper.typeMapper(attr.getType());
-                if (null == attr.getIsCollection() && !attr.getIsCollection()) {
+                TypeName type = TypeMapper.typeMapper(attr.getPrimitive().getType());
+                if (null == attr.getFixedList()&& (null == attr.getVariableList())) {
                     if (!type.isPrimitive()) {
                         method.addStatement("$L = new $L()", attr.getName(), type);
                     }
@@ -45,7 +47,7 @@ public class MethodGenerator {
 
             }
 
-        });
+        //});
 
         return method.build();
     }
@@ -92,24 +94,24 @@ public class MethodGenerator {
         //loop once to write the base size
         dis.getAttributes().forEach((attr) -> {
             String size = TypeMapper.getSize(attr);
-            if (!attr.getIsCollection()) {
-                if ((null != attr.getFixedList()) && (attr.getFixedList() > 0)) {
-                    method.addStatement("wirelineSize += $L * $L; //$L", size, attr.getFixedList(),attr.getName());
-                } else {
+            //if (!attr.getIsCollection()) {
+//                if (null != attr.getFixedList()){ 
+//                    method.addStatement("wirelineSize += $L * $L; //$L", size, attr.getFixedList(),attr.getName());
+//                } else {
                     method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
-                }
-            }
+//                }
+            //}
         });
 
         //loop again to get the collections...
-        dis.getAttributes().forEach((attr) -> {
-            if (attr.getIsCollection()) {
-                method.beginControlFlow("for (int i = 0; i < $L.size(); i++)", attr.getName())
-                        .addStatement("$L listElement = $L.get(i)", attr.getType(), attr.getName())
-                        .addStatement("wirelineSize += listElement.wirelineSize()")
-                        .endControlFlow();
-            }
-        });
+//        dis.getAttributes().forEach((attr) -> {
+//            //if (attr.getIsCollection()) {
+//                method.beginControlFlow("for (int i = 0; i < $L.size(); i++)", attr.getName())
+//                        .addStatement("$L listElement = $L.get(i)", attr.getPrimitive().getType(), attr.getName())
+//                        .addStatement("wirelineSize += listElement.wirelineSize()")
+//                        .endControlFlow();
+//            //}
+//        });
 
         return method.addStatement("return wirelineSize")
                 .build();
@@ -129,20 +131,20 @@ public class MethodGenerator {
         }
 
         dis.getAttributes().forEach((attr) -> {
-            if (!attr.getIsCollection()) {
-                if ((null != attr.getFixedList()) && (attr.getFixedList() > 0)) {
-                    SerializerBuilder.fixedLengthBuilder(attr, builder);
-                } else {
+            //if (!attr.getIsCollection()) {
+//                if ((null != attr.getFixedList()) && (attr.getFixedList().getSize() > 0)) {
+//                    SerializerBuilder.fixedLengthBuilder(attr, builder);
+//                } else {
                     SerializerBuilder.singleTypeBuilder(attr, builder);
-                }
-            }
+//                }
+            //}
         });
 
-        dis.getAttributes().forEach((attr) -> {
-            if (attr.getIsCollection()) {
-                SerializerBuilder.listBuilder(attr, builder);
-            }
-        });
+//        dis.getAttributes().forEach((attr) -> {
+//            //if (attr.getIsCollection()) {
+//                SerializerBuilder.listBuilder(attr, builder);
+//            //}
+//        });
 
         return builder.build();
     }
@@ -161,20 +163,20 @@ public class MethodGenerator {
         }
 
         dis.getAttributes().forEach((attr) -> {
-            if (!attr.getIsCollection()) {
-                if ((null != attr.getFixedList()) && (attr.getFixedList() > 0)) {
-                    DeserializerBuilder.fixedLengthBuilder(attr, builder);
-                } else {
+           // if (!attr.getIsCollection()) {
+//                if ((null != attr.getFixedList()) && (attr.getFixedList().getSize() > 0)) {
+//                    DeserializerBuilder.fixedLengthBuilder(attr, builder);
+//                } else {
                     DeserializerBuilder.singleTypeBuilder(attr, builder);
-                }
-            }
+//                }
+            //}
         });
 
-        dis.getAttributes().forEach((attr) -> {
-            if (attr.getIsCollection()) {
-                DeserializerBuilder.listBuilder(attr, builder);
-            }
-        });
+//        dis.getAttributes().forEach((attr) -> {
+//           // if (attr.getIsCollection()) {
+//                DeserializerBuilder.listBuilder(attr, builder);
+//           // }
+//        });
 
         return builder.build();
     }

@@ -26,7 +26,7 @@ public class DeserializerBuilder {
 
     public static MethodSpec.Builder singleTypeBuilder(DisAttribute attr, MethodSpec.Builder builder) {
         String name = attr.getName();
-        String type = attr.getType();
+        String type = attr.getPrimitive().getType();
        
         switch (type) {
             case "unsigned short":
@@ -68,7 +68,7 @@ public class DeserializerBuilder {
     
     public static MethodSpec.Builder fixedLengthBuilder(DisAttribute attr, MethodSpec.Builder builder) {
         String name = attr.getName();
-        String type = attr.getType();
+        String type = attr.getPrimitive().getType();
 
         switch (type) {
             case "unsigned short":
@@ -131,7 +131,7 @@ public class DeserializerBuilder {
 
     public static MethodSpec.Builder listBuilder(DisAttribute attr, MethodSpec.Builder builder) {
         builder.beginControlFlow("for (int i = 0; i < $L.size(); i++)", attr.getName())
-                .addStatement("$L listElement = $L.get(i)", attr.getType(), attr.getName())
+                .addStatement("$L listElement = $L.get(i)", attr.getPrimitive().getType(), attr.getName())
                 .addStatement("listElement.deserialize(buffer)")
                 .endControlFlow();
         return builder;

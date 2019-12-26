@@ -23,8 +23,13 @@ import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.file.Path;
 import javax.lang.model.element.Modifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -32,7 +37,9 @@ import javax.lang.model.element.Modifier;
  */
 public class DisClassGenerator {
 
-    public JavaFile generate(DisClass idl) throws ClassNotFoundException {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DisClassGenerator.class);
+    
+    public JavaFile generate(String javaPackage, DisClass idl) throws ClassNotFoundException {
 
         
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName())
@@ -42,7 +49,7 @@ public class DisClassGenerator {
                 .addJavadoc(idl.getComment());
         
         if(!idl.getParent().equals("root") && !idl.getParent().isEmpty()){
-            mainBuilder.superclass(ClassName.get(idl.getPackageName(),idl.getParent()));
+            mainBuilder.superclass(ClassName.get(javaPackage,idl.getParent()));
         }
 
         for (DisAttribute attr : idl.getAttributes()) {
@@ -66,7 +73,7 @@ public class DisClassGenerator {
                 .addMethod(deserializer)
                 .addMethod(equals);
        
-        return JavaFile.builder(idl.getPackageName(), mainBuilder.build())
+        return JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
                 
                 .build();
@@ -88,5 +95,12 @@ public class DisClassGenerator {
                 .append("\n")
                 .append(content);
         return sb.toString();
+    }
+    
+     public void writeClassFile(File outputPath, JavaFile javaFile) throws IOException{
+        LOGGER.info("Writing file {}", javaFile.toJavaFileObject().getName());
+        Path file = outputPath.toPath();
+        file.toFile().mkdirs();
+        javaFile.writeTo(file); 
     }
 }

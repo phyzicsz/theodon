@@ -46,7 +46,7 @@ public class DisCodeGenMojoTest extends AbstractMojoTestCase {
         DisCodeGenMojo mojo = (DisCodeGenMojo) lookupMojo("idl-protocol", pom);
         
         assertNotNull(mojo);
-        //mojo.execute();
+        mojo.execute();
     }
 
 }

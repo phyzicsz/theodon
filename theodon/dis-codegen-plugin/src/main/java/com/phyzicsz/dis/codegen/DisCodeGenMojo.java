@@ -15,10 +15,15 @@
  */
 package com.phyzicsz.dis.codegen;
 
+import com.phyzicsz.dis.codegen.exceptions.CodeGenerationConfigurationException;
 import java.io.File;
+import java.io.IOException;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  *
@@ -30,19 +35,7 @@ import org.apache.maven.plugin.MojoFailureException;
  * @threadSafe
  */
 public class DisCodeGenMojo extends AbstractMojo {
-
-    
-    /**
-     * The source directory of DIS IDL files. This directory is added to the
-     * classpath at schema compiling time. All files can therefore be referenced
-     * as classpath resources following the directory structure under the source
-     * directory.
-     *
-     * @parameter property="sourceDirectory"
-     * default-value="${basedir}/src/main/dis"
-     */
-    private File sourceDirectory;
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(DisCodeGenMojo.class);
     /**
      * @parameter property="outputDirectory"
      * default-value="${project.build.directory}/generated-sources/dis"
@@ -54,14 +47,24 @@ public class DisCodeGenMojo extends AbstractMojo {
      * default-value="${project.directory}/src/test/java"
      */
     private File testOutputDirectory;
+    
+     /**
+     * @parameter property="javaPackage"
+     * default-value="com.phyzics.dis7"
+     */
+    private String javaPackage;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        new CodeGenerator(
-                sourceDirectory,
-                outputDirectory,
-                testOutputDirectory)
-                .generate();
+        try {
+            new CodeGenerator(
+                    javaPackage,
+                    outputDirectory,
+                    testOutputDirectory)
+                    .generate();
+        } catch (CodeGenerationConfigurationException | IOException | ClassNotFoundException ex) {
+            LOGGER.error("Error generating code",ex);
+        }
 
     }
 

@@ -17,6 +17,7 @@
     <properties>
         <opendis.version>v4.15</opendis.version>
         <javapoet.version>1.11.1</javapoet.version>
+        <xstream.version>1.4.11.1</xstream.version>
         
         
         <!--maven plugins-->
@@ -31,9 +32,9 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.phyzicsz</groupId>
-            <artifactId>dis-generation-api</artifactId>
-            <version>${project.version}</version>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>${xstream.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

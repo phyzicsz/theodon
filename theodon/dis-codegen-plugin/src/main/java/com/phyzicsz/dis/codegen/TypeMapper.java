@@ -53,7 +53,7 @@ public class TypeMapper {
     }
     
     public static String getSize(DisAttribute attr){
-        String type = attr.getType();
+        String type = attr.getPrimitive().getType();
          if (null == type) {
             return type;
         } else {

@@ -28,7 +28,7 @@ import javax.lang.model.element.Modifier;
  */
 public class DisTestClassGenerator {
 
-    public JavaFile generate(DisClass idl) {
+    public JavaFile generate(String javaPackage, DisClass idl) {
 
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName() + "Test")
                 .addModifiers(Modifier.PUBLIC)
@@ -41,7 +41,7 @@ public class DisTestClassGenerator {
                 .addMethod(wireline);
 
         ClassName assertEquals = ClassName.get("org.junit", "Assert");
-        return JavaFile.builder(idl.getPackageName(), mainBuilder.build())
+        return JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
                 .addStaticImport(assertEquals, "assertEquals")
                 .build();

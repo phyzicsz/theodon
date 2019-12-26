@@ -49,8 +49,6 @@ public class DisAttribute {
     private String initialValue;
 
 
-    private Boolean isCollection = false;
-
     public String getName() {
         return name;
     }
@@ -73,14 +71,6 @@ public class DisAttribute {
 
     public void setInitialValue(String initialValue) {
         this.initialValue = initialValue;
-    }
-
-    public Boolean getIsCollection() {
-        return isCollection;
-    }
-
-    public void setIsCollection(Boolean isCollection) {
-        this.isCollection = isCollection;
     }
 
     public DisPrimitive getPrimitive() {
