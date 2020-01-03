@@ -77,9 +77,9 @@
         </attribute>
 
         <attribute name="characters" comment="The characters">
-            <list type="fixed" length="31" couldBeString="true">
+            <fixedlist type="fixed" length="31" couldBeString="true">
                 <primitive type="unsigned byte"/>
-            </list>
+            </fixedlist>
         </attribute>
 
     </class>
@@ -397,15 +397,15 @@
         </attribute>
 
         <attribute name="fixedDatumIDList" comment="variable length list fixed datum IDs">
-            <list type="variable" countFieldName="numberOfFixedDatums">
+            <variablelist type="variable" countFieldName="numberOfFixedDatums">
                 <classRef name="UnsignedDISInteger"/>
-            </list> 
+            </variablelist> 
         </attribute>
   
         <attribute name="variableDatumIDList" comment="variable length list variable datum IDs">
-            <list type="variable" countFieldName="numberOfVariableDatums">
+            <variablelist type="variable" countFieldName="numberOfVariableDatums">
                 <classRef name="UnsignedDISInteger"/>
-            </list> 
+            </variablelist> 
         </attribute>
 
     </class>
@@ -423,15 +423,15 @@
         </attribute>
 
         <attribute name="fixedDatumList" comment="variable length list fixed datums">
-            <list type="variable" countFieldName="numberOfFixedDatums">
+            <variablelist type="variable" countFieldName="numberOfFixedDatums">
                 <classRef name="FixedDatum"/>
-            </list> 
+            </variablelist> 
         </attribute>
   
         <attribute name="variableDatumList" comment="variable length list variable datums. See 6.2.93">
-            <list type="variable" countFieldName="numberOfVariableDatums">
+            <variablelist type="variable" countFieldName="numberOfVariableDatums">
                 <classRef name="VariableDatum"/>
-            </list> 
+            </variablelist> 
         </attribute>
 
     </class>
@@ -525,15 +525,15 @@
         </attribute>
    
         <attribute name="beamAntennaParameterList" comment="list of beam antenna records. See 6.2.9.2">
-            <list type="variable" countFieldName="beamAntennaPatternRecordCount">
+            <variablelist type="variable" countFieldName="beamAntennaPatternRecordCount">
                 <classRef name="BeamAntennaPattern"/>
-            </list> 
+            </variablelist> 
         </attribute>
    
         <attribute name="directedEnergyTargetEnergyDepositionRecordList" comment="list of DE target deposition records. See 6.2.21.4">
-            <list type="variable" countFieldName="directedEnergyTargetEnergyDepositionRecordCount">
+            <variablelist type="variable" countFieldName="directedEnergyTargetEnergyDepositionRecordCount">
                 <classRef name="DirectedEnergyTargetEnergyDeposition"/>
-            </list> 
+            </variablelist> 
         </attribute>
    
     
@@ -955,9 +955,9 @@
         </attribute>
  
         <attribute name="characters" comment="The characters">
-            <list type="fixed" length="11" couldBeString="true">
+            <fixedlist type="fixed" length="11" couldBeString="true">
                 <primitive type="byte"/>
-            </list>
+            </fixedlist>
         </attribute>
             
     </class>

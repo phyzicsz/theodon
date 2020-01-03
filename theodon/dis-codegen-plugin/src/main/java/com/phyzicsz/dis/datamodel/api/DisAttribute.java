@@ -33,13 +33,10 @@ public class DisAttribute {
 
     private DisPrimitive primitive;
     
-    private DisList list;
+    private DisFixedList fixedlist;
     
     @XStreamAlias("variablelist")
     private DisVariableList variableList;
-    
-    @XStreamAlias("fixedlist")
-    private DisFixedList fixedList;
     
     private DisClassRef classRef;
     
@@ -89,12 +86,12 @@ public class DisAttribute {
         this.classRef = classRef;
     }    
 
-    public DisList getList() {
-        return list;
+    public DisFixedList getFixedList() {
+        return fixedlist;
     }
 
-    public void setList(DisList list) {
-        this.list = list;
+    public void setFixedList(DisFixedList list) {
+        this.fixedlist = list;
     }
 
     public DisVariableList getVariableList() {
@@ -105,14 +102,6 @@ public class DisAttribute {
         this.variableList = variableList;
     }
 
-    public DisFixedList getFixedList() {
-        return fixedList;
-    }
-
-    public void setFixedList(DisFixedList fixedList) {
-        this.fixedList = fixedList;
-    }
-
     public DisFlags getFlags() {
         return flags;
     }
@@ -120,8 +109,4 @@ public class DisAttribute {
     public void setFlags(DisFlags flags) {
         this.flags = flags;
     }
-    
-    
-    
-
 }

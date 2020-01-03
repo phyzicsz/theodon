@@ -62,6 +62,7 @@ public class CodeGenerator {
         
         for (DisClass disClass : classes.getClasses()) {
             try {
+                LOGGER.info("generating class {}: ", disClass.getName());
                 DisClassGenerator generator = new DisClassGenerator();
                 JavaFile javaFile = generator.generate(javaPackage,disClass);
                 

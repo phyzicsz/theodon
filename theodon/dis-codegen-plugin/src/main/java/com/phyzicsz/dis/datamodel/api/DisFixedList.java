@@ -15,27 +15,26 @@
  */
 package com.phyzicsz.dis.datamodel.api;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 /**
  *
  * @author pborawski
  */
 public class DisFixedList {
-
-    private Integer size;
     
+    @XStreamAsAttribute
     private String type;
     
-    private DisPrimitive primitive;
+    @XStreamAsAttribute
+    private Integer length;
+    
+    @XStreamAsAttribute
+    private Boolean couldBeString;
+    
+    private DisPrimitive primitive;    
 
-    public Integer getSize() {
-        return size;
-    }
-
-    public void setSize(Integer size) {
-        this.size = size;
-    }
+    private DisClassRef classRef;
 
     public String getType() {
         return type;
@@ -45,12 +44,39 @@ public class DisFixedList {
         this.type = type;
     }
 
-    public DisPrimitive getPrimative() {
+    public Integer getLength() {
+        return length;
+    }
+
+    public void setLength(Integer length) {
+        this.length = length;
+    }
+
+    public Boolean getCouldBeString() {
+        return couldBeString;
+    }
+
+    public void setCouldBeString(Boolean couldBeString) {
+        this.couldBeString = couldBeString;
+    }
+
+    public DisPrimitive getPrimitive() {
         return primitive;
     }
 
-    public void setPrimative(DisPrimitive primitive) {
+    public void setPrimitive(DisPrimitive primitive) {
         this.primitive = primitive;
-    } 
+    }
 
+    public DisClassRef getClassRef() {
+        return classRef;
+    }
+
+    public void setClassRef(DisClassRef classRef) {
+        this.classRef = classRef;
+    }
+    
+    
+    
+    
 }

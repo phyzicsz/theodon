@@ -31,10 +31,12 @@ public class FieldGenerator {
 
     public static FieldSpec field(DisAttribute attr) throws ClassNotFoundException {
         
-        TypeName type = TypeMapper.typeMapper(attr.getPrimitive().getType());
+        //check to see if type is a classref
+        TypeName type = TypeMapper.typeMapper(attr);
+        
 
         //check if fixed list
-        if ((null != attr.getFixedList()) && (attr.getFixedList().getSize() > 0)) {
+        if ((null != attr.getFixedList())) {
 
             TypeName typeName = ArrayTypeName.of(type);
             FieldSpec.Builder field = FieldSpec.builder(typeName, attr.getName())

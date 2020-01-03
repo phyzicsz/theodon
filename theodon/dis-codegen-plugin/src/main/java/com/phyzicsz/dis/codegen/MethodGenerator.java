@@ -22,6 +22,8 @@ import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeName;
 import java.nio.ByteBuffer;
 import javax.lang.model.element.Modifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -29,26 +31,27 @@ import javax.lang.model.element.Modifier;
  */
 public class MethodGenerator {
 
-    public static MethodSpec constructor(DisClass dis) {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MethodGenerator.class);
 
+    public static MethodSpec constructor(DisClass dis) {
+        LOGGER.info("construcor method spec");
         MethodSpec.Builder method = MethodSpec.constructorBuilder()
                 .addModifiers(Modifier.PUBLIC);
 
         //dis.getAttributes().forEach((attr) -> {
-        for(DisAttribute attr: dis.getAttributes())
+        for (DisAttribute attr : dis.getAttributes())
             try {
-                TypeName type = TypeMapper.typeMapper(attr.getPrimitive().getType());
-                if (null == attr.getFixedList()&& (null == attr.getVariableList())) {
-                    if (!type.isPrimitive()) {
-                        method.addStatement("$L = new $L()", attr.getName(), type);
-                    }
+            TypeName type = TypeMapper.typeMapper(attr);
+            if (null == attr.getFixedList() && (null == attr.getVariableList())) {
+                if (!type.isPrimitive()) {
+                    method.addStatement("$L = new $L()", attr.getName(), type);
                 }
-            } catch (ClassNotFoundException ex) {
-
             }
+        } catch (ClassNotFoundException ex) {
+
+        }
 
         //});
-
         return method.build();
     }
 
@@ -80,7 +83,8 @@ public class MethodGenerator {
     }
 
     public static MethodSpec wirelineSize(DisClass dis) {
-
+        LOGGER.info("wirelineSize method spec");
+        
         MethodSpec.Builder method = MethodSpec
                 .methodBuilder("wirelineSize")
                 .returns(TypeName.INT)
@@ -98,7 +102,7 @@ public class MethodGenerator {
 //                if (null != attr.getFixedList()){ 
 //                    method.addStatement("wirelineSize += $L * $L; //$L", size, attr.getFixedList(),attr.getName());
 //                } else {
-                    method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
+            method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
 //                }
             //}
         });
@@ -112,13 +116,13 @@ public class MethodGenerator {
 //                        .endControlFlow();
 //            //}
 //        });
-
         return method.addStatement("return wirelineSize")
                 .build();
     }
 
     public static MethodSpec serializer(DisClass dis) {
-
+        LOGGER.info("serializer method spec");
+        
         MethodSpec.Builder builder = MethodSpec
                 .methodBuilder("serialize")
                 .returns(TypeName.VOID)
@@ -130,27 +134,26 @@ public class MethodGenerator {
             builder.addStatement("super.serialize(buffer)");
         }
 
-        dis.getAttributes().forEach((attr) -> {
-            //if (!attr.getIsCollection()) {
+//        dis.getAttributes().forEach((attr) -> {
+        //if (!attr.getIsCollection()) {
 //                if ((null != attr.getFixedList()) && (attr.getFixedList().getSize() > 0)) {
 //                    SerializerBuilder.fixedLengthBuilder(attr, builder);
 //                } else {
-                    SerializerBuilder.singleTypeBuilder(attr, builder);
+//                    SerializerBuilder.singleTypeBuilder(attr, builder);
 //                }
-            //}
-        });
-
+        //}
+//        });
 //        dis.getAttributes().forEach((attr) -> {
 //            //if (attr.getIsCollection()) {
 //                SerializerBuilder.listBuilder(attr, builder);
 //            //}
 //        });
-
         return builder.build();
     }
 
     public static MethodSpec deserializer(DisClass dis) {
-
+        LOGGER.info("deserializer method spec");
+        
         MethodSpec.Builder builder = MethodSpec
                 .methodBuilder("deserialize")
                 .returns(TypeName.VOID)
@@ -162,27 +165,26 @@ public class MethodGenerator {
             builder.addStatement("super.deserialize(buffer)");
         }
 
-        dis.getAttributes().forEach((attr) -> {
-           // if (!attr.getIsCollection()) {
+//        dis.getAttributes().forEach((attr) -> {
+        // if (!attr.getIsCollection()) {
 //                if ((null != attr.getFixedList()) && (attr.getFixedList().getSize() > 0)) {
 //                    DeserializerBuilder.fixedLengthBuilder(attr, builder);
 //                } else {
-                    DeserializerBuilder.singleTypeBuilder(attr, builder);
+//                    DeserializerBuilder.singleTypeBuilder(attr, builder);
 //                }
-            //}
-        });
-
+        //}
+//        });
 //        dis.getAttributes().forEach((attr) -> {
 //           // if (attr.getIsCollection()) {
 //                DeserializerBuilder.listBuilder(attr, builder);
 //           // }
 //        });
-
         return builder.build();
     }
 
     public static MethodSpec equalsMethod(DisClass dis) {
-
+        LOGGER.info("equals method spec");
+        
         MethodSpec.Builder method = MethodSpec
                 .methodBuilder("equals")
                 .returns(TypeName.BOOLEAN)
@@ -204,11 +206,11 @@ public class MethodGenerator {
 
         method.addStatement("final $L other = ($L)obj", dis.getName(), dis.getName());
 
-        dis.getAttributes().forEach((attr) -> {
-            method.beginControlFlow("if (!java.util.Objects.equals(this.$L,other.$L))", attr.getName(), attr.getName())
-                    .addStatement("return false")
-                    .endControlFlow();
-        });
+//        dis.getAttributes().forEach((attr) -> {
+//            method.beginControlFlow("if (!java.util.Objects.equals(this.$L,other.$L))", attr.getName(), attr.getName())
+//                    .addStatement("return false")
+//                    .endControlFlow();
+//        });
         return method.addStatement("return true").build();
     }
 }

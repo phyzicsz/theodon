@@ -24,8 +24,13 @@ import com.squareup.javapoet.TypeName;
  * @author phyzicsz
  */
 public class TypeMapper {
-    public static TypeName typeMapper(final String type) throws ClassNotFoundException {
 
+    public static TypeName typeMapper(final DisAttribute attr) throws ClassNotFoundException {
+
+        if (null != attr.getClassRef()) {
+            return TypeName.OBJECT;
+        }
+        String type = attr.getPrimitive().getType();
         switch (type) {
             case "unsigned short":
                 return TypeName.INT;
@@ -51,36 +56,36 @@ public class TypeMapper {
                 return ClassName.bestGuess(type);
         }
     }
-    
-    public static String getSize(DisAttribute attr){
+
+    public static String getSize(final DisAttribute attr) {
+        if (null != attr.getClassRef()) {
+            return (attr.getName() + ".wirelineSize()");
+        }
+        
         String type = attr.getPrimitive().getType();
-         if (null == type) {
-            return type;
-        } else {
-            switch (type) {
-                case "unsigned short":
-                    return "2";
-                case "unsigned byte":
-                    return "1";
-                case "unsigned int":
-                    return "4";
-                case "unsigned long":
-                    return "8";
-                case "int":
-                    return "4";
-                case "short":
-                    return "2";
-                case "long":
-                    return "8";
-                case "float":
-                    return "4";
-                case "double":
-                    return "8";
-                case "byte":
-                    return "1";
-                default:
-                    return (attr.getName() + ".wirelineSize()");
-            }
+        switch (type) {
+            case "unsigned short":
+                return "2";
+            case "unsigned byte":
+                return "1";
+            case "unsigned int":
+                return "4";
+            case "unsigned long":
+                return "8";
+            case "int":
+                return "4";
+            case "short":
+                return "2";
+            case "long":
+                return "8";
+            case "float":
+                return "4";
+            case "double":
+                return "8";
+            case "byte":
+                return "1";
+            default:
+                return (attr.getName() + ".wirelineSize()");
         }
     }
 
