@@ -15,6 +15,9 @@
  */
 package com.phyzicsz.dis.datamodel.api;
 
+import com.phyzicsz.dis.codegen.TypeMapper;
+import com.squareup.javapoet.ClassName;
+import com.squareup.javapoet.TypeName;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
@@ -31,9 +34,10 @@ public class DisAttribute {
     @XStreamAsAttribute
     private String comment;
 
-    private DisPrimitive primitive;
+    protected DisPrimitive primitive;
     
-    private DisFixedList fixedlist;
+    @XStreamAlias("fixedlist")
+    private DisFixedList fixedList;
     
     @XStreamAlias("variablelist")
     private DisVariableList variableList;
@@ -87,11 +91,11 @@ public class DisAttribute {
     }    
 
     public DisFixedList getFixedList() {
-        return fixedlist;
+        return fixedList;
     }
 
     public void setFixedList(DisFixedList list) {
-        this.fixedlist = list;
+        this.fixedList = list;
     }
 
     public DisVariableList getVariableList() {
@@ -108,5 +112,39 @@ public class DisAttribute {
 
     public void setFlags(DisFlags flags) {
         this.flags = flags;
+    }
+    
+    public TypeName getType(){
+        TypeName type = null;
+        if (null != classRef) {
+            type =  ClassName.bestGuess(classRef.getName());
+        }
+        else if (null != variableList){
+            type =  ClassName.bestGuess(variableList.getClassRef().getName());
+        }
+        else if(null != primitive){
+            type =  TypeMapper.typeMapper(primitive);
+        }else if(null != fixedList){
+            type =  TypeMapper.typeMapper(fixedList.getPrimitive());
+        }
+        
+       return type;
+    }
+    
+    public String getTypeSize(){
+        String size = "";
+        if (null != classRef) {
+            size = classRef.getName() + ".wirelineSize()";
+        }
+        else if (null != variableList){
+            size = classRef.getName() + ".wirelineSize()";
+        }
+        else if(null != primitive){
+            size =  TypeMapper.getSize(primitive);
+        }else if(null != fixedList){
+            size =  TypeMapper.getSize(fixedList.getPrimitive());
+        }
+        
+       return size;
     }
 }

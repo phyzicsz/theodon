@@ -16,7 +16,7 @@
 package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.datamodel.api.DisAttribute;
-import com.squareup.javapoet.ClassName;
+import com.phyzicsz.dis.datamodel.api.DisPrimitive;
 import com.squareup.javapoet.TypeName;
 
 /**
@@ -25,13 +25,8 @@ import com.squareup.javapoet.TypeName;
  */
 public class TypeMapper {
 
-    public static TypeName typeMapper(final DisAttribute attr) throws ClassNotFoundException {
-
-        if (null != attr.getClassRef()) {
-            return TypeName.OBJECT;
-        }
-        String type = attr.getPrimitive().getType();
-        switch (type) {
+    public static TypeName typeMapper(final DisPrimitive primitive) {
+        switch (primitive.getType()) {
             case "unsigned short":
                 return TypeName.INT;
             case "unsigned byte":
@@ -53,17 +48,12 @@ public class TypeMapper {
             case "byte":
                 return TypeName.BYTE;
             default:
-                return ClassName.bestGuess(type);
+                return null;
         }
     }
 
-    public static String getSize(final DisAttribute attr) {
-        if (null != attr.getClassRef()) {
-            return (attr.getName() + ".wirelineSize()");
-        }
-        
-        String type = attr.getPrimitive().getType();
-        switch (type) {
+    public static String getSize(final DisPrimitive primitive) {
+        switch (primitive.getType()) {
             case "unsigned short":
                 return "2";
             case "unsigned byte":
@@ -85,7 +75,7 @@ public class TypeMapper {
             case "byte":
                 return "1";
             default:
-                return (attr.getName() + ".wirelineSize()");
+                return "";
         }
     }
 

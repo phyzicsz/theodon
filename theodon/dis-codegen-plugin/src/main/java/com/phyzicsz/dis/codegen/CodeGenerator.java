@@ -63,6 +63,9 @@ public class CodeGenerator {
         for (DisClass disClass : classes.getClasses()) {
             try {
                 LOGGER.info("generating class {}: ", disClass.getName());
+                if(disClass.getName().contains("Modulation")){
+                    int i = 0;
+                }
                 DisClassGenerator generator = new DisClassGenerator();
                 JavaFile javaFile = generator.generate(javaPackage,disClass);
                 

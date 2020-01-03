@@ -38,20 +38,14 @@ public class MethodGenerator {
         MethodSpec.Builder method = MethodSpec.constructorBuilder()
                 .addModifiers(Modifier.PUBLIC);
 
-        //dis.getAttributes().forEach((attr) -> {
-        for (DisAttribute attr : dis.getAttributes())
-            try {
-            TypeName type = TypeMapper.typeMapper(attr);
+        for (DisAttribute attr : dis.getAttributes()) {
+            TypeName type = attr.getType();
             if (null == attr.getFixedList() && (null == attr.getVariableList())) {
                 if (!type.isPrimitive()) {
                     method.addStatement("$L = new $L()", attr.getName(), type);
                 }
             }
-        } catch (ClassNotFoundException ex) {
-
         }
-
-        //});
         return method.build();
     }
 
@@ -82,9 +76,21 @@ public class MethodGenerator {
         return method;
     }
 
+    public static MethodSpec wirelineSize() {
+        LOGGER.info("wirelineSize method spec");
+
+        return MethodSpec
+                .methodBuilder("wirelineSize")
+                .returns(TypeName.INT)
+                .addModifiers(Modifier.PUBLIC)
+                .addAnnotation(Override.class)
+                .addStatement("throw new UnsupportedOperationException(\"Not supported yet.\")")
+                .build();
+    }
+
     public static MethodSpec wirelineSize(DisClass dis) {
         LOGGER.info("wirelineSize method spec");
-        
+
         MethodSpec.Builder method = MethodSpec
                 .methodBuilder("wirelineSize")
                 .returns(TypeName.INT)
@@ -92,21 +98,21 @@ public class MethodGenerator {
                 .addModifiers(Modifier.PUBLIC)
                 .addAnnotation(Override.class);
 
-        if (!dis.getParent().equals("root") && !dis.getParent().isEmpty()) {
+        if (null != dis.getParent() && !dis.getParent().equals("root")) {
             method.addStatement("wirelineSize += super.wirelineSize()");
         }
         //loop once to write the base size
-        dis.getAttributes().forEach((attr) -> {
-            String size = TypeMapper.getSize(attr);
-            //if (!attr.getIsCollection()) {
+
+//        dis.getAttributes().forEach((attr) -> {
+//            String size = attr.getTypeSize();
+        //if (!attr.getIsCollection()) {
 //                if (null != attr.getFixedList()){ 
 //                    method.addStatement("wirelineSize += $L * $L; //$L", size, attr.getFixedList(),attr.getName());
 //                } else {
-            method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
+//            method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
 //                }
-            //}
-        });
-
+        //}
+//        });
         //loop again to get the collections...
 //        dis.getAttributes().forEach((attr) -> {
 //            //if (attr.getIsCollection()) {
@@ -120,9 +126,22 @@ public class MethodGenerator {
                 .build();
     }
 
+    public static MethodSpec serializer() {
+        LOGGER.info("serializer method spec");
+
+        return MethodSpec
+                .methodBuilder("serialize")
+                .returns(TypeName.VOID)
+                .addParameter(ByteBuffer.class, "buffer")
+                .addModifiers(Modifier.PUBLIC)
+                .addAnnotation(Override.class)
+                .addStatement("throw new UnsupportedOperationException(\"Not supported yet.\")")
+                .build();
+    }
+
     public static MethodSpec serializer(DisClass dis) {
         LOGGER.info("serializer method spec");
-        
+
         MethodSpec.Builder builder = MethodSpec
                 .methodBuilder("serialize")
                 .returns(TypeName.VOID)
@@ -130,7 +149,7 @@ public class MethodGenerator {
                 .addModifiers(Modifier.PUBLIC)
                 .addAnnotation(Override.class);
 
-        if (!dis.getParent().equals("root") && !dis.getParent().isEmpty()) {
+        if (null != dis.getParent() && !dis.getParent().equals("root")) {
             builder.addStatement("super.serialize(buffer)");
         }
 
@@ -151,9 +170,22 @@ public class MethodGenerator {
         return builder.build();
     }
 
+    public static MethodSpec deserializer() {
+        LOGGER.info("deserializer method spec");
+
+        return MethodSpec
+                .methodBuilder("deserialize")
+                .returns(TypeName.VOID)
+                .addParameter(ByteBuffer.class, "buffer")
+                .addModifiers(Modifier.PUBLIC)
+                .addAnnotation(Override.class)
+                .addStatement("throw new UnsupportedOperationException(\"Not supported yet.\")")
+                .build();
+    }
+
     public static MethodSpec deserializer(DisClass dis) {
         LOGGER.info("deserializer method spec");
-        
+
         MethodSpec.Builder builder = MethodSpec
                 .methodBuilder("deserialize")
                 .returns(TypeName.VOID)
@@ -161,7 +193,7 @@ public class MethodGenerator {
                 .addModifiers(Modifier.PUBLIC)
                 .addAnnotation(Override.class);
 
-        if (!dis.getParent().equals("root") && !dis.getParent().isEmpty()) {
+        if (null != dis.getParent() && !dis.getParent().equals("root")) {
             builder.addStatement("super.deserialize(buffer)");
         }
 
@@ -184,7 +216,7 @@ public class MethodGenerator {
 
     public static MethodSpec equalsMethod(DisClass dis) {
         LOGGER.info("equals method spec");
-        
+
         MethodSpec.Builder method = MethodSpec
                 .methodBuilder("equals")
                 .returns(TypeName.BOOLEAN)

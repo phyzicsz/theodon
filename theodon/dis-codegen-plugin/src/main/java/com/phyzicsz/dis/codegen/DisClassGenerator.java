@@ -48,10 +48,27 @@ public class DisClassGenerator {
                 .addModifiers(Modifier.PUBLIC)
                 .addJavadoc(idl.getComment());
         
-        if(!idl.getParent().equals("root") && !idl.getParent().isEmpty()){
+        if(null != idl.getParent() && !idl.getParent().equals("root")){
             mainBuilder.superclass(ClassName.get(javaPackage,idl.getParent()));
         }
 
+        //check if there are no attributes
+        //if there are none, will need to inject unimplemented methods of
+        //acbstract base class
+        if(null == idl.getAttributes()){
+            MethodSpec wireline = MethodGenerator.wirelineSize();
+            MethodSpec serializer = MethodGenerator.serializer();
+            MethodSpec deserializer = MethodGenerator.deserializer();
+
+            mainBuilder.addMethod(wireline)
+                    .addMethod(serializer)
+                    .addMethod(deserializer);
+            
+            return JavaFile.builder(javaPackage, mainBuilder.build())
+                .addFileComment(insertHeader(idl.getComment()))
+                .build();
+        }
+        
         for (DisAttribute attr : idl.getAttributes()) {
             FieldSpec field = FieldGenerator.field(attr);
             MethodSpec getter = MethodGenerator.getter(field);

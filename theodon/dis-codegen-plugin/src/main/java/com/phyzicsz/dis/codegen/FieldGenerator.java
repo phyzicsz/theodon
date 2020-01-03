@@ -30,11 +30,8 @@ import javax.lang.model.element.Modifier;
 public class FieldGenerator {
 
     public static FieldSpec field(DisAttribute attr) throws ClassNotFoundException {
+        TypeName type = attr.getType();
         
-        //check to see if type is a classref
-        TypeName type = TypeMapper.typeMapper(attr);
-        
-
         //check if fixed list
         if ((null != attr.getFixedList())) {
 
