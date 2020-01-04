@@ -15,7 +15,6 @@
  */
 package com.phyzicsz.dis.codegen;
 
-import com.phyzicsz.dis.datamodel.api.AbstractDisObject;
 import com.phyzicsz.dis.datamodel.api.DisAttribute;
 import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.squareup.javapoet.ClassName;
@@ -44,7 +43,7 @@ public class DisClassGenerator {
         
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName())
                 .addSuperinterface(Serializable.class)
-                .addSuperinterface(AbstractDisObject.class)
+                .addSuperinterface(ClassName.get(javaPackage,"AbstractDisObject"))
                 .addModifiers(Modifier.PUBLIC)
                 .addJavadoc(idl.getComment());
         

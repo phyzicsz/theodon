@@ -59,16 +59,16 @@ public class CodeGenerator {
         DisClasses classes = (DisClasses)xstream.fromXML(url);
         LOGGER.info("parsed {} classes: ", classes.getClasses().size());
         
+        LOGGER.info("generating base interface {}: ", "AbstractDisObject");
+        DisInterfaceGenerator interfaceGenerator = new DisInterfaceGenerator();
+        JavaFile javaFile = interfaceGenerator.generate(javaPackage);
+        interfaceGenerator.writeClassFile(outputPath, javaFile);       
         
+        DisClassGenerator generator = new DisClassGenerator();
         for (DisClass disClass : classes.getClasses()) {
             try {
                 LOGGER.info("generating class {}: ", disClass.getName());
-                if(disClass.getName().contains("Modulation")){
-                    int i = 0;
-                }
-                DisClassGenerator generator = new DisClassGenerator();
-                JavaFile javaFile = generator.generate(javaPackage,disClass);
-                
+                javaFile = generator.generate(javaPackage,disClass);
                 generator.writeClassFile(outputPath, javaFile);
             } catch (IOException ex) {
                 LOGGER.error("Error Writing File: ", ex);
