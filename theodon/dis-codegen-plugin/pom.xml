@@ -10,9 +10,9 @@
     <packaging>maven-plugin</packaging>
     <name>Theodon: DIS Maven Plugin</name>
 
-    <prerequisites>
+<!--    <prerequisites>
         <maven>3.0.5</maven>
-    </prerequisites>
+    </prerequisites>-->
 
     <properties>
         <opendis.version>v4.15</opendis.version>

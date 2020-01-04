@@ -17,11 +17,8 @@ package com.phyzicsz.dis.codegen;
 
 import java.io.File;
 import org.apache.maven.plugin.testing.AbstractMojoTestCase;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-
 import org.junit.Test;
+
 
 /**
  *

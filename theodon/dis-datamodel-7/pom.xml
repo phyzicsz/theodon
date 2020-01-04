@@ -11,27 +11,21 @@
     <name>Theodon: DIS Datamodel v7</name>
     
     <dependencies>
-<!--        <dependency>
-            <groupId>com.phyzicsz</groupId>
-            <artifactId>dis-generation-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
-         <dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
-        
 
         
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
          <dependency>
            <groupId>com.github.open-dis</groupId>
