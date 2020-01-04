@@ -35,7 +35,9 @@ public class DisInterfaceGenerator {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DisInterfaceGenerator.class);
     
-    public JavaFile generate(String javaPackage) throws ClassNotFoundException {
+    private JavaFile javaFile;
+    
+    public DisInterfaceGenerator generate(String javaPackage) throws ClassNotFoundException {
 
         
         TypeSpec.Builder mainBuilder = TypeSpec.interfaceBuilder("AbstractDisObject")
@@ -56,10 +58,11 @@ public class DisInterfaceGenerator {
                         .build())
                 .addJavadoc("Abstract base interface for DIS Objects");
 
-        return JavaFile.builder(javaPackage, mainBuilder.build())
+        javaFile =  JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader())
                 .build();
-
+        
+        return this;
     }
 
     private String insertHeader() {
@@ -78,10 +81,11 @@ public class DisInterfaceGenerator {
         return sb.toString();
     }
     
-     public void writeClassFile(File outputPath, JavaFile javaFile) throws IOException{
+     public DisInterfaceGenerator writeClassFile(File outputPath) throws IOException{
         LOGGER.info("Writing file {}", javaFile.toJavaFileObject().getName());
         Path file = outputPath.toPath();
         file.toFile().mkdirs();
         javaFile.writeTo(file); 
+        return this;
     }
 }

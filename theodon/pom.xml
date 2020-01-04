@@ -54,6 +54,7 @@
         
         <!-- test dependancies -->
         <junit.version>4.12</junit.version>
+        <junit.jupiter.version>5.5.2</junit.jupiter.version>
         
         <!-- maven build dependancies -->
         <maven.build.help.plugin.version>3.0.0</maven.build.help.plugin.version>
@@ -79,9 +80,9 @@
                 <version>${logback.version}</version>
             </dependency>
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

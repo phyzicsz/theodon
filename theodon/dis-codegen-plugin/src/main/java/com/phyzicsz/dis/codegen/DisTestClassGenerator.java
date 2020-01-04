@@ -20,7 +20,12 @@ import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
 import javax.lang.model.element.Modifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -28,7 +33,11 @@ import javax.lang.model.element.Modifier;
  */
 public class DisTestClassGenerator {
 
-    public JavaFile generate(String javaPackage, DisClass idl) {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DisInterfaceGenerator.class);
+    
+    private JavaFile javaFile;
+
+    public DisTestClassGenerator generate(String javaPackage, DisClass idl) {
 
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName() + "Test")
                 .addModifiers(Modifier.PUBLIC)
@@ -41,10 +50,12 @@ public class DisTestClassGenerator {
                 .addMethod(wireline);
 
         ClassName assertEquals = ClassName.get("org.junit", "Assert");
-        return JavaFile.builder(javaPackage, mainBuilder.build())
+        javaFile =  JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
                 .addStaticImport(assertEquals, "assertEquals")
                 .build();
+        
+        return this;
     }
 
     private String insertHeader(String content) {
@@ -62,6 +73,14 @@ public class DisTestClassGenerator {
                 .append("\n")
                 .append(content);
         return sb.toString();
+    }
+
+    public DisTestClassGenerator writeClassFile(File outputPath) throws IOException {
+        LOGGER.info("Writing file {}", javaFile.toJavaFileObject().getName());
+        Path file = outputPath.toPath();
+        file.toFile().mkdirs();
+        javaFile.writeTo(file);
+        return this;
     }
 
 }

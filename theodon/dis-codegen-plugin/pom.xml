@@ -10,11 +10,12 @@
     <packaging>maven-plugin</packaging>
     <name>Theodon: DIS Maven Plugin</name>
 
-<!--    <prerequisites>
+    <!--    <prerequisites>
         <maven>3.0.5</maven>
     </prerequisites>-->
 
     <properties>
+        <commons.io.version>2.5</commons.io.version>
         <opendis.version>v4.15</opendis.version>
         <javapoet.version>1.11.1</javapoet.version>
         <xstream.version>1.4.11.1</xstream.version>
@@ -31,6 +32,11 @@
     </properties>
     
     <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
@@ -52,9 +58,15 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.github.open-dis</groupId>

@@ -16,10 +16,13 @@
 package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.datamodel.api.DisClass;
+import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeName;
 import javax.lang.model.element.Modifier;
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 
 
 /**
@@ -42,11 +45,14 @@ public class TestMethodGenerator {
                 .methodBuilder("wirelineSizeTest")
                 .returns(TypeName.VOID)
                 .addStatement("edu.nps.moves.dis7.$L openDis = new edu.nps.moves.dis7.$L()",dis.getName(),dis.getName())
-                .addStatement("com.phyzicsz.dis7.$L dis = new $L()",dis.getName(),dis.getName())
+                .addStatement("$L dis = new $L()",dis.getName(),dis.getName())
                 .addStatement("int openDisSize = openDis.getMarshalledSize()")
                 .addStatement("int localSize = dis.wirelineSize()")
                 .addStatement("assertEquals(openDisSize,localSize)")
                 .addModifiers(Modifier.PUBLIC)
+                .addAnnotation(AnnotationSpec.builder(DisplayName.class)
+                        .addMember("value", "$S", "Verify the marshalled size of the object")
+                        .build())
                 .addAnnotation(Test.class);
         
         return method.build();

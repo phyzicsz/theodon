@@ -38,9 +38,12 @@ public class DisClassGenerator {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DisClassGenerator.class);
     
-    public JavaFile generate(String javaPackage, DisClass idl) throws ClassNotFoundException {
+    private JavaFile javaFile;
+    
+    
+    
+    public DisClassGenerator generate(String javaPackage, DisClass idl) throws ClassNotFoundException {
 
-        
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName())
                 .addSuperinterface(Serializable.class)
                 .addSuperinterface(ClassName.get(javaPackage,"AbstractDisObject"))
@@ -63,9 +66,11 @@ public class DisClassGenerator {
                     .addMethod(serializer)
                     .addMethod(deserializer);
             
-            return JavaFile.builder(javaPackage, mainBuilder.build())
+            javaFile = JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
                 .build();
+            
+            return this;
         }
         
         for (DisAttribute attr : idl.getAttributes()) {
@@ -89,11 +94,11 @@ public class DisClassGenerator {
                 .addMethod(deserializer)
                 .addMethod(equals);
        
-        return JavaFile.builder(javaPackage, mainBuilder.build())
+        javaFile =  JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
-                
                 .build();
-
+        
+        return this;
     }
 
     private String insertHeader(String content) {
@@ -113,10 +118,11 @@ public class DisClassGenerator {
         return sb.toString();
     }
     
-     public void writeClassFile(File outputPath, JavaFile javaFile) throws IOException{
+     public DisClassGenerator writeClassFile(File outputPath) throws IOException{
         LOGGER.info("Writing file {}", javaFile.toJavaFileObject().getName());
         Path file = outputPath.toPath();
         file.toFile().mkdirs();
         javaFile.writeTo(file); 
+        return this;
     }
 }

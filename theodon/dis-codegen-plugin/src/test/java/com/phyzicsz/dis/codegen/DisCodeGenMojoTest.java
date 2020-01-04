@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 phyzicsz.
+ * Copyright 2020 pborawski.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import java.io.File;
 import org.apache.maven.plugin.testing.AbstractMojoTestCase;
 import org.junit.Test;
 
-
 /**
  *
  * @author phyzicsz
@@ -32,6 +31,7 @@ public class DisCodeGenMojoTest extends AbstractMojoTestCase {
 
     /**
      * Test of execute method, of class DisCodeGenMojo.
+     * @throws java.lang.Exception
      */
     @Test
     public void testExecute() throws Exception {
