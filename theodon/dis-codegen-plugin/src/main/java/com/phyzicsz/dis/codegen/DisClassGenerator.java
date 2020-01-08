@@ -53,6 +53,15 @@ public class DisClassGenerator {
         if(null != idl.getParent() && !idl.getParent().equals("root")){
             mainBuilder.superclass(ClassName.get(javaPackage,idl.getParent()));
         }
+        
+        if(null != idl.getIsAbstract() && idl.getIsAbstract()){
+            mainBuilder.addModifiers(Modifier.ABSTRACT);
+            javaFile = JavaFile.builder(javaPackage, mainBuilder.build())
+                    .addFileComment(insertHeader(idl.getComment()))
+                    .build();
+
+            return this;
+        }
 
         //check if there are no attributes
         //if there are none, will need to inject unimplemented methods of

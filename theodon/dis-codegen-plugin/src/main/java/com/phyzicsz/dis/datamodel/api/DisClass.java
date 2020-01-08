@@ -20,7 +20,6 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  *
@@ -37,6 +36,10 @@ public class DisClass {
 
     @XStreamAsAttribute
     private String comment;
+    
+    @XStreamAsAttribute
+    @XStreamAlias("isabstract")
+    private Boolean isAbstract = false;
 
     @XStreamImplicit(itemFieldName="attribute")
     private List<DisAttribute> attributes = new ArrayList<>();
@@ -68,6 +71,16 @@ public class DisClass {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    public Boolean getIsAbstract() {
+        return isAbstract;
+    }
+
+    public void setIsAbstract(Boolean isAbstract) {
+        this.isAbstract = isAbstract;
+    }
+    
+    
 
     public void setAttribute(DisAttribute attribute) {
         this.attributes.add(attribute);

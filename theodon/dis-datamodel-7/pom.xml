@@ -44,7 +44,8 @@
                 <version>1.0-SNAPSHOT</version>
                 <configuration>
                     <outputDirectory>target/generated-sources/src</outputDirectory>
-                    <testOutputDirectory>src/test/java</testOutputDirectory>
+                    <!--<testOutputDirectory>src/test/java</testOutputDirectory>-->
+                    <testOutputDirectory>target/generated-test-sources/src</testOutputDirectory>
                     <javaPackage>com.phyzics.dis7</javaPackage>
                 </configuration>
                 <executions>

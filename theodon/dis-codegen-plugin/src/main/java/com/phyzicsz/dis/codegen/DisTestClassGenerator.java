@@ -42,6 +42,15 @@ public class DisTestClassGenerator {
         TypeSpec.Builder mainBuilder = TypeSpec.classBuilder(idl.getName() + "Test")
                 .addModifiers(Modifier.PUBLIC)
                 .addJavadoc(idl.getComment());
+        
+        if (null != idl.getIsAbstract() && idl.getIsAbstract()) {
+            
+            javaFile = JavaFile.builder(javaPackage, mainBuilder.build())
+                    .addFileComment(insertHeader(idl.getComment()))
+                    .build();
+
+            return this;
+        }
 
         MethodSpec constructor = TestMethodGenerator.constructor();
         MethodSpec wireline = TestMethodGenerator.wirelineSizeTest(idl);
