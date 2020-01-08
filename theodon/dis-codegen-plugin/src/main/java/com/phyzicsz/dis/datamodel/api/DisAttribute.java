@@ -130,7 +130,11 @@ public class DisAttribute {
         if (null != classRef) {
             type =  ClassName.bestGuess(classRef.getName());
         }else if (null != list){
-            type =  TypeMapper.typeMapper(list.getPrimitive());
+            if(null != list.getClassRef()){
+                type =  ClassName.bestGuess(list.getClassRef().getName());
+            }else{
+                type =  TypeMapper.typeMapper(list.getPrimitive());
+            }
         }
         else if (null != variableList){
             type =  ClassName.bestGuess(variableList.getClassRef().getName());
@@ -148,6 +152,12 @@ public class DisAttribute {
         String size = "";
         if (null != classRef) {
             size = name + ".wirelineSize()";
+        }else if (null != list){
+            if(null != list.getClassRef()){
+                size = name + ".wirelineSize()";
+            }else{
+                size =  TypeMapper.getSize(list.getPrimitive());
+            }
         }
         else if (null != variableList){
             size = variableList.getCountFieldName() + ".wirelineSize()";

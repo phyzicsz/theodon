@@ -102,16 +102,19 @@ public class MethodGenerator {
             method.addStatement("wirelineSize += super.wirelineSize()");
         }
         
-        //loop once to write the base size
+
         for(DisAttribute attr: dis.getAttributes()){
-//            if(null == attr){
-//                continue;
-//            }
+            
             String size = attr.getTypeSize();
             if(null == attr.getVariableList()){
                 method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
             }else{
-                int i = 0;
+                
+                
+                method.beginControlFlow("for (int i = 0; i < $L.size(); i++)", attr.getName())
+                        .addStatement("$L listElement = $L.get(i)", attr.getType(), attr.getName())
+                        .addStatement("wirelineSize += listElement.wirelineSize()")
+                        .endControlFlow();
             }
         }
 
