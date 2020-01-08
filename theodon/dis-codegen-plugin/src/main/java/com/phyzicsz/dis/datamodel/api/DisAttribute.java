@@ -36,6 +36,9 @@ public class DisAttribute {
 
     protected DisPrimitive primitive;
     
+    @XStreamAlias("list")
+    private DisList list;
+
     @XStreamAlias("fixedlist")
     private DisFixedList fixedList;
     
@@ -88,8 +91,16 @@ public class DisAttribute {
 
     public void setClassRef(DisClassRef classRef) {
         this.classRef = classRef;
-    }    
+    } 
 
+    public DisList getList() {
+        return list;
+    }
+
+    public void setList(DisList list) {
+        this.list = list;
+    }
+    
     public DisFixedList getFixedList() {
         return fixedList;
     }
@@ -118,6 +129,8 @@ public class DisAttribute {
         TypeName type = null;
         if (null != classRef) {
             type =  ClassName.bestGuess(classRef.getName());
+        }else if (null != list){
+            type =  TypeMapper.typeMapper(list.getPrimitive());
         }
         else if (null != variableList){
             type =  ClassName.bestGuess(variableList.getClassRef().getName());
@@ -134,10 +147,10 @@ public class DisAttribute {
     public String getTypeSize(){
         String size = "";
         if (null != classRef) {
-            size = classRef.getName() + ".wirelineSize()";
+            size = name + ".wirelineSize()";
         }
         else if (null != variableList){
-            size = classRef.getName() + ".wirelineSize()";
+            size = variableList.getCountFieldName() + ".wirelineSize()";
         }
         else if(null != primitive){
             size =  TypeMapper.getSize(primitive);

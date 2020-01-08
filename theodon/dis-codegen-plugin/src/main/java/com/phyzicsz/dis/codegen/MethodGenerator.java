@@ -101,7 +101,19 @@ public class MethodGenerator {
         if (null != dis.getParent() && !dis.getParent().equals("root")) {
             method.addStatement("wirelineSize += super.wirelineSize()");
         }
+        
         //loop once to write the base size
+        for(DisAttribute attr: dis.getAttributes()){
+//            if(null == attr){
+//                continue;
+//            }
+            String size = attr.getTypeSize();
+            if(null == attr.getVariableList()){
+                method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
+            }else{
+                int i = 0;
+            }
+        }
 
 //        dis.getAttributes().forEach((attr) -> {
 //            String size = attr.getTypeSize();

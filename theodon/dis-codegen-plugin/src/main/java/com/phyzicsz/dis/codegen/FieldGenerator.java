@@ -47,9 +47,9 @@ public class FieldGenerator {
         } else if (null != attr.getVariableList()) {
             ClassName list = ClassName.get("java.util", "List");
             ClassName arrayList = ClassName.get("java.util", "ArrayList");
-            TypeName listOfTypes = ParameterizedTypeName.get(list, type);
+            TypeName types = ParameterizedTypeName.get(arrayList, type);
 
-            FieldSpec field = FieldSpec.builder(listOfTypes, attr.getName())
+            FieldSpec field = FieldSpec.builder(types, attr.getName())
                     .addModifiers(Modifier.PROTECTED)
                     .initializer("new $T<>()", arrayList)
                     .build();

@@ -71,6 +71,11 @@ public class CodeGenerator {
                 .writeClassFile(outputPath);     
         
         for (DisClass disClass : classes.getClasses()) {
+            
+            if(disClass.getName().contains("DataQuery"))
+            {
+                int i = 0;
+            }
             try {
                 LOGGER.info("generating class {}: ", disClass.getName());
                 new DisClassGenerator()
