@@ -17,6 +17,7 @@ package com.phyzicsz.dis.codegen;
 
 import com.phyzicsz.dis.datamodel.api.DisAttribute;
 import com.phyzicsz.dis.datamodel.api.DisClass;
+import com.phyzicsz.dis.datamodel.api.DisInitialValue;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeName;
@@ -37,15 +38,21 @@ public class MethodGenerator {
         LOGGER.info("construcor method spec");
         MethodSpec.Builder method = MethodSpec.constructorBuilder()
                 .addModifiers(Modifier.PUBLIC);
-
-        for (DisAttribute attr : dis.getAttributes()) {
-            TypeName type = attr.getType();
-            if (null == attr.getFixedList() && (null == attr.getVariableList())) {
-                if (!type.isPrimitive()) {
-                    method.addStatement("$L = new $L()", attr.getName(), type);
-                }
+        
+        if(null != dis.getInitialValue()){
+            for (DisInitialValue initialValue : dis.getInitialValue()) {
+                method.addStatement("$L = $L", initialValue.getName(), initialValue.getInitialValue());
             }
         }
+
+//        for (DisAttribute attr : dis.getAttributes()) {
+//            TypeName type = attr.getType();
+//            if (null == attr.getFixedList() && (null == attr.getVariableList())) {
+//                if (!type.isPrimitive()) {
+//                    method.addStatement("$L = new $L()", attr.getName(), type);
+//                }
+//            }
+//        }
         return method.build();
     }
 

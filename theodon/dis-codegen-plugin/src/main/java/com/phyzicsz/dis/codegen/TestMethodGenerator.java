@@ -47,13 +47,44 @@ public class TestMethodGenerator {
                 .addStatement("edu.nps.moves.dis7.$L openDis = new edu.nps.moves.dis7.$L()",dis.getName(),dis.getName())
                 .addStatement("$L dis = new $L()",dis.getName(),dis.getName())
                 .addStatement("int openDisSize = openDis.getMarshalledSize()")
-                .addStatement("int localSize = dis.wirelineSize()")
-                .addStatement("assertEquals(openDisSize,localSize)")
+                .addStatement("int disSize = dis.wirelineSize()")
+                .addStatement("assertEquals(openDisSize,disSize)")
                 .addModifiers(Modifier.PUBLIC)
                 .addAnnotation(AnnotationSpec.builder(DisplayName.class)
                         .addMember("value", "$S", "Verify the marshalled size of the object")
                         .build())
                 .addAnnotation(Test.class);
+        
+        return method.build();
+    }
+     
+      public static MethodSpec pduTypeTest(DisClass dis) {
+       
+           MethodSpec.Builder method;
+           if (null != dis.getParent() && !dis.getParent().equals("root")){
+               method = MethodSpec
+                       .methodBuilder("pduTypeTest")
+                       .returns(TypeName.VOID)
+                       .addStatement("edu.nps.moves.dis7.$L openDis = new edu.nps.moves.dis7.$L()", dis.getName(), dis.getName())
+                       .addStatement("$L dis = new $L()", dis.getName(), dis.getName())
+                       .addStatement("short openDisType = openDis.getPduType()")
+                       .addStatement("short disSize = dis.getPduType()")
+                       .addStatement("assertEquals(openDisType,disSize)")
+                       .addModifiers(Modifier.PUBLIC)
+                       .addAnnotation(AnnotationSpec.builder(DisplayName.class)
+                               .addMember("value", "$S", "Vefify the PDU type")
+                               .build())
+                       .addAnnotation(Test.class);
+            }else{
+                 method = MethodSpec
+                       .methodBuilder("pduTypeTest")
+                       .returns(TypeName.VOID)
+                       .addModifiers(Modifier.PUBLIC)
+                       .addAnnotation(AnnotationSpec.builder(DisplayName.class)
+                               .addMember("value", "$S", "Vefify the PDU type")
+                               .build())
+                       .addAnnotation(Test.class);
+            }
         
         return method.build();
     }

@@ -23,7 +23,7 @@
                     <outputDirectory>target/generated-sources/src</outputDirectory>
                     <testOutputDirectory>target/generated-test-sources/src</testOutputDirectory>
                     <javaPackage>com.phyzics.dis7</javaPackage>
-                    <generateTestSources>false</generateTestSources>
+                    <generateTestSources>true</generateTestSources>
                 </configuration>
                 <executions>
                     <execution>

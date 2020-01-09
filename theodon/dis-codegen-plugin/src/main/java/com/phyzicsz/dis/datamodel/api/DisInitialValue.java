@@ -15,14 +15,20 @@
  */
 package com.phyzicsz.dis.datamodel.api;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+
 /**
  *
  * @author pborawski
  */
 public class DisInitialValue {
     
+    @XStreamAsAttribute
     private String name;
     
+    @XStreamAlias("value")
+    @XStreamAsAttribute
     private String initialValue;
 
     public String getName() {

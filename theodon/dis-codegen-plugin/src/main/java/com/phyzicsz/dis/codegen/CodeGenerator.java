@@ -76,7 +76,7 @@ public class CodeGenerator {
         
         for (DisClass disClass : classes.getClasses()) {
             
-            if(disClass.getName().contains("EntityManagementFamilyPdu"))
+            if(disClass.getName().contains("AcknowledgePdu"))
             {
                 int i = 0;
             }

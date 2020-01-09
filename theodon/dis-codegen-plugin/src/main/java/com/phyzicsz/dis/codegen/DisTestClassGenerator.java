@@ -54,9 +54,11 @@ public class DisTestClassGenerator {
 
         MethodSpec constructor = TestMethodGenerator.constructor();
         MethodSpec wireline = TestMethodGenerator.wirelineSizeTest(idl);
+        MethodSpec pduType = TestMethodGenerator.pduTypeTest(idl);
 
         mainBuilder.addMethod(constructor)
-                .addMethod(wireline);
+                .addMethod(wireline)
+                .addMethod(pduType);
 
         ClassName assertEquals = ClassName.get("org.junit", "Assert");
         javaFile =  JavaFile.builder(javaPackage, mainBuilder.build())
