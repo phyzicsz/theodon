@@ -23,7 +23,6 @@ import com.thoughtworks.xstream.io.xml.StaxDriver;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,12 +34,17 @@ public class CodeGenerator {
     private static final Logger LOGGER = LoggerFactory.getLogger(CodeGenerator.class);
     private final String javaPackage;
     private final File outputPath;
+    private final Boolean generateTestSources;
     private final File testOutputPath;
     private static final String DIS_INPUT_FILE = "dis/dis7.xml";
    
-    public CodeGenerator(final String javaPackage, final File outputPath,final File testOutputPath){
+    public CodeGenerator(final String javaPackage, 
+            final File outputPath,
+            final Boolean generateTestSources,
+            final File testOutputPath){
         this.javaPackage = javaPackage;
         this.outputPath = outputPath;
+        this.generateTestSources = generateTestSources;
         this.testOutputPath = testOutputPath;
                
     }
@@ -82,10 +86,12 @@ public class CodeGenerator {
                         .generate(javaPackage, disClass)
                         .writeClassFile(outputPath);
                 
-                LOGGER.info("generating test class {}: ", disClass.getName());
-                new DisTestClassGenerator()
-                        .generate(javaPackage, disClass)
-                        .writeClassFile(testOutputPath);
+                if(generateTestSources){
+                    LOGGER.info("generating test class {}: ", disClass.getName());
+                    new DisTestClassGenerator()
+                            .generate(javaPackage, disClass)
+                            .writeClassFile(testOutputPath);
+                }
             } catch (IOException ex) {
                 LOGGER.error("Error Writing File: ", ex);
             }

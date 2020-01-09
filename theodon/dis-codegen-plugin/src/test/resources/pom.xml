@@ -23,12 +23,13 @@
                     <outputDirectory>target/generated-sources/src</outputDirectory>
                     <testOutputDirectory>target/generated-test-sources/src</testOutputDirectory>
                     <javaPackage>com.phyzics.dis7</javaPackage>
+                    <generateTestSources>false</generateTestSources>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>idl</id>
+                        <id>dis</id>
                         <goals>
-                            <goal>idl-protocol</goal>
+                            <goal>dis-protocol</goal>
                         </goals>
                     </execution>
                 </executions>
