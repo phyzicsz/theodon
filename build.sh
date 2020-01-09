@@ -1,3 +1,3 @@
 cd theodon
-mvn clean compile
+mvn clean package
 
