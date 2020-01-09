@@ -76,15 +76,22 @@ public class MethodGenerator {
         return method;
     }
 
-    public static MethodSpec wirelineSize() {
+    public static MethodSpec wirelineSize(Boolean hasSuperclass) {
         LOGGER.info("wirelineSize method spec");
 
-        return MethodSpec
+        MethodSpec.Builder method = MethodSpec
                 .methodBuilder("wirelineSize")
                 .returns(TypeName.INT)
                 .addModifiers(Modifier.PUBLIC)
                 .addAnnotation(Override.class)
-                .addStatement("throw new UnsupportedOperationException(\"Not supported yet.\")")
+                //.addStatement("throw new UnsupportedOperationException(\"Not supported yet.\")")
+                .addStatement("int wirelineSize = 0");
+
+        if (hasSuperclass) {
+            method.addStatement("wirelineSize += super.wirelineSize()");
+        }
+
+        return method.addStatement("return wirelineSize")
                 .build();
     }
 
@@ -106,15 +113,16 @@ public class MethodGenerator {
         for(DisAttribute attr: dis.getAttributes()){
             
             String size = attr.getTypeSize();
-            if(null == attr.getVariableList()){
-                method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
-            }else{
-                
-                
+            if(null != attr.getFixedList()){
+                method.addStatement("wirelineSize += $L; //$L", attr.getFixedList().getLength(), attr.getName());
+            }
+            else if(null != attr.getVariableList()){
                 method.beginControlFlow("for (int i = 0; i < $L.size(); i++)", attr.getName())
                         .addStatement("$L listElement = $L.get(i)", attr.getType(), attr.getName())
                         .addStatement("wirelineSize += listElement.wirelineSize()")
                         .endControlFlow();
+            }else{
+                method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
             }
         }
 

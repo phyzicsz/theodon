@@ -72,7 +72,7 @@ public class CodeGenerator {
         
         for (DisClass disClass : classes.getClasses()) {
             
-            if(disClass.getName().contains("DataQuery"))
+            if(disClass.getName().contains("EntityManagementFamilyPdu"))
             {
                 int i = 0;
             }

@@ -67,7 +67,13 @@ public class DisClassGenerator {
         //if there are none, will need to inject unimplemented methods of
         //acbstract base class
         if(null == idl.getAttributes()){
-            MethodSpec wireline = MethodGenerator.wirelineSize();
+            MethodSpec wireline;
+            if (null != idl.getParent() && !idl.getParent().equals("root")){
+                wireline = MethodGenerator.wirelineSize(true);
+            }else{
+                wireline = MethodGenerator.wirelineSize(false);
+            }
+            
             MethodSpec serializer = MethodGenerator.serializer();
             MethodSpec deserializer = MethodGenerator.deserializer();
 

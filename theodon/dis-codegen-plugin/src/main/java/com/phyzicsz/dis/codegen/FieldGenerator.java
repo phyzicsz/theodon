@@ -38,14 +38,14 @@ public class FieldGenerator {
             TypeName typeName = ArrayTypeName.of(type);
             FieldSpec.Builder field = FieldSpec.builder(typeName, attr.getName())
                     .addModifiers(Modifier.PROTECTED);
-            field.initializer("new $T[$L]", type, attr.getFixedList());
+            field.initializer("new $T[$L]", type, attr.getFixedList().getLength());
             if (!type.isPrimitive()) {
                 field.initializer("new $T()", type);
             }
             return field.build();
 
         } else if (null != attr.getVariableList()) {
-            ClassName list = ClassName.get("java.util", "List");
+            //ClassName list = ClassName.get("java.util", "List");
             ClassName arrayList = ClassName.get("java.util", "ArrayList");
             TypeName types = ParameterizedTypeName.get(arrayList, type);
 

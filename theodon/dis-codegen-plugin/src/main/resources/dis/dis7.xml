@@ -3670,6 +3670,14 @@
     <class name="CreateEntityPdu" inheritsFrom="SimulationManagementFamilyPdu" comment="Section 7.5.2. Create a new entity. COMPLETE">
 
         <initialValue name="pduType" value="11"/>
+        
+        <attribute name="originatingID" comment="Identifier for the request ">
+            <classRef name="EntityID"/>
+        </attribute>
+        
+        <attribute name="receivingID" comment="Identifier for the request ">
+            <classRef name="EntityID"/>
+        </attribute>
 
         <attribute name="requestID" comment="Identifier for the request.  See 6.2.75">
             <primitive type="unsigned int"/>
@@ -3682,6 +3690,14 @@
     <class name="RemoveEntityPdu" inheritsFrom="SimulationManagementFamilyPdu" comment="Section 7.5.3 The removal of an entity from an exercise shall be communicated with a Remove Entity PDU. COMPLETE">
 
         <initialValue name="pduType" value="12"/>
+        
+        <attribute name="originatingID" comment="Identifier for originating entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
+        
+        <attribute name="receivingID" comment="Identifier for receiving entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
 
         <attribute name="requestID" comment="This field shall identify the specific and unique start/resume request being made by the SM">
             <primitive type="unsigned int"/>
@@ -3693,6 +3709,14 @@
     <class name="StartResumePdu" inheritsFrom="SimulationManagementFamilyPdu" comment="Section 7.5.4. Start or resume an exercise. COMPLETE">
 
         <initialValue name="pduType" value="13"/>
+        
+        <attribute name="originatingID" comment="Identifier for originating entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
+        
+        <attribute name="receivingID" comment="Identifier for receiving entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
 
         <attribute name="realWorldTime" comment="This field shall specify the real-world time (UTC) at which the entity is to start/resume in the exercise. This information shall be used by the participating simulation applications to start/resume an exercise synchronously. This field shall be represented by a Clock Time record (see 6.2.16).">
             <classRef name="ClockTime"/>
@@ -3711,6 +3735,14 @@
     <class name="StopFreezePdu" inheritsFrom="SimulationManagementFamilyPdu" comment="Section 7.5.5. Stop or freeze an enity (or exercise). COMPLETE">
 
         <initialValue name="pduType" value="14"/>
+        
+        <attribute name="originatingID" comment="Identifier for originating entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
+        
+        <attribute name="receivingID" comment="Identifier for receiving entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
 
         <attribute name="realWorldTime" comment="real-world(UTC) time at which the entity shall stop or freeze in the exercise">
             <classRef name="ClockTime"/>
@@ -3737,6 +3769,14 @@
     <class name="AcknowledgePdu" inheritsFrom="SimulationManagementFamilyPdu" comment="Section 7.5.6. Acknowledge the receipt of a start/resume, stop/freeze, or RemoveEntityPDU. COMPLETE">
 
         <initialValue name="pduType" value="15"/>
+        
+        <attribute name="originatingID" comment="Identifier for originating entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
+        
+        <attribute name="receivingID" comment="Identifier for receiving entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
 
         <attribute name="acknowledgeFlag" comment="type of message being acknowledged">
             <primitive type="unsigned short"/>
@@ -3755,6 +3795,14 @@
     <class name="ActionRequestPdu" inheritsFrom="SimulationManagementFamilyPdu" comment="Section 7.5.7. Request from simulation manager to a managed entity to perform a specified action. COMPLETE">
 
         <initialValue name="pduType" value="16"/>
+        
+        <attribute name="originatingID" comment="Identifier for originating entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
+        
+        <attribute name="receivingID" comment="Identifier for receiving entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
 
         <attribute name="requestID" comment="identifies the request being made by the simulaton manager">
             <primitive type="unsigned int"/>
@@ -3790,6 +3838,14 @@
     <class name="ActionResponsePdu" inheritsFrom="SimulationManagementFamilyPdu" comment="Section 7.5.8. response to an action request PDU. COMPLETE">
 
         <initialValue name="pduType" value="17"/>
+        
+        <attribute name="originatingID" comment="Identifier for originating entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
+        
+        <attribute name="receivingID" comment="Identifier for receiving entity(or simulation) ">
+            <classRef name="EntityID"/>
+        </attribute>
 
         <attribute name="requestID" comment="Request ID that is unique">
             <primitive type="unsigned int"/>
@@ -4264,8 +4320,10 @@
     </class>
 
 
-    <class name="RadioCommunicationsFamilyPdu" inheritsFrom="Pdu"
-           comment=" Abstract superclass for radio communications PDUs. Section 7.7">
+    <class name="RadioCommunicationsFamilyPdu" 
+           inheritsFrom="Pdu"
+           comment=" Abstract superclass for radio communications PDUs. Section 7.7"
+           isabstract="true">
   
         <initialValue name="protocolFamily" value="4"/> 
   
