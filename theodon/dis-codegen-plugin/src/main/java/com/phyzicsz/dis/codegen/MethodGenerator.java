@@ -15,6 +15,7 @@
  */
 package com.phyzicsz.dis.codegen;
 
+import static com.phyzicsz.dis.codegen.HashCodeGenerator.oddRandomNumberInRange;
 import com.phyzicsz.dis.datamodel.api.DisAttribute;
 import com.phyzicsz.dis.datamodel.api.DisClass;
 import com.phyzicsz.dis.datamodel.api.DisInitialValue;
@@ -22,6 +23,8 @@ import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeName;
 import java.nio.ByteBuffer;
+import java.util.Objects;
+import java.util.Random;
 import javax.lang.model.element.Modifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,21 +41,13 @@ public class MethodGenerator {
         LOGGER.info("construcor method spec");
         MethodSpec.Builder method = MethodSpec.constructorBuilder()
                 .addModifiers(Modifier.PUBLIC);
-        
-        if(null != dis.getInitialValue()){
+
+        if (null != dis.getInitialValue()) {
             for (DisInitialValue initialValue : dis.getInitialValue()) {
                 method.addStatement("$L = $L", initialValue.getName(), initialValue.getInitialValue());
             }
         }
 
-//        for (DisAttribute attr : dis.getAttributes()) {
-//            TypeName type = attr.getType();
-//            if (null == attr.getFixedList() && (null == attr.getVariableList())) {
-//                if (!type.isPrimitive()) {
-//                    method.addStatement("$L = new $L()", attr.getName(), type);
-//                }
-//            }
-//        }
         return method.build();
     }
 
@@ -115,43 +110,22 @@ public class MethodGenerator {
         if (null != dis.getParent() && !dis.getParent().equals("root")) {
             method.addStatement("wirelineSize += super.wirelineSize()");
         }
-        
 
-        for(DisAttribute attr: dis.getAttributes()){
-            
+        for (DisAttribute attr : dis.getAttributes()) {
+
             String size = attr.getTypeSize();
-            if(null != attr.getFixedList()){
+            if (null != attr.getFixedList()) {
                 method.addStatement("wirelineSize += $L; //$L", attr.getFixedList().getLength(), attr.getName());
-            }
-            else if(null != attr.getVariableList()){
+            } else if (null != attr.getVariableList()) {
                 method.beginControlFlow("for (int i = 0; i < $L.size(); i++)", attr.getName())
                         .addStatement("$L listElement = $L.get(i)", attr.getType(), attr.getName())
                         .addStatement("wirelineSize += listElement.wirelineSize()")
                         .endControlFlow();
-            }else{
+            } else {
                 method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
             }
         }
 
-//        dis.getAttributes().forEach((attr) -> {
-//            String size = attr.getTypeSize();
-        //if (!attr.getIsCollection()) {
-//                if (null != attr.getFixedList()){ 
-//                    method.addStatement("wirelineSize += $L * $L; //$L", size, attr.getFixedList(),attr.getName());
-//                } else {
-//            method.addStatement("wirelineSize += $L; //$L", size, attr.getName());
-//                }
-        //}
-//        });
-        //loop again to get the collections...
-//        dis.getAttributes().forEach((attr) -> {
-//            //if (attr.getIsCollection()) {
-//                method.beginControlFlow("for (int i = 0; i < $L.size(); i++)", attr.getName())
-//                        .addStatement("$L listElement = $L.get(i)", attr.getPrimitive().getType(), attr.getName())
-//                        .addStatement("wirelineSize += listElement.wirelineSize()")
-//                        .endControlFlow();
-//            //}
-//        });
         return method.addStatement("return wirelineSize")
                 .build();
     }
@@ -268,11 +242,31 @@ public class MethodGenerator {
 
         method.addStatement("final $L other = ($L)obj", dis.getName(), dis.getName());
 
-//        dis.getAttributes().forEach((attr) -> {
-//            method.beginControlFlow("if (!java.util.Objects.equals(this.$L,other.$L))", attr.getName(), attr.getName())
-//                    .addStatement("return false")
-//                    .endControlFlow();
-//        });
+        for (DisAttribute attr : dis.getAttributes()) {
+            TypeName objectType = TypeName.get(Objects.class);
+            method.beginControlFlow("if (!$T.equals(this.$L,other.$L))", objectType, attr.getName(), attr.getName())
+                    .addStatement("return false")
+                    .endControlFlow();
+        }
+
         return method.addStatement("return true").build();
     }
+
+    public static MethodSpec hashCodeMethod(DisClass dis) {
+        LOGGER.info("hashCode method spec");
+
+        MethodSpec.Builder method = MethodSpec
+                .methodBuilder("hashCode")
+                .returns(TypeName.INT)
+                .addModifiers(Modifier.PUBLIC)
+                .addAnnotation(Override.class);
+
+        Integer hash = HashCodeGenerator.oddRandomNumberInRange(1, 10);
+        Integer thash = HashCodeGenerator.oddRandomNumberInRange(1, 100);
+
+        method.addStatement("int hash = $L", hash);
+
+        return method.addStatement("return hash").build();
+    }
+
 }

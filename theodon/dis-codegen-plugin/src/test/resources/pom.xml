@@ -27,7 +27,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>dis</id>
+                        <id>dis-generation</id>
                         <goals>
                             <goal>dis-protocol</goal>
                         </goals>

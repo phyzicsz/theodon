@@ -102,12 +102,14 @@ public class DisClassGenerator {
         MethodSpec serializer = MethodGenerator.serializer(idl);
         MethodSpec deserializer = MethodGenerator.deserializer(idl);
         MethodSpec equals = MethodGenerator.equalsMethod(idl);
+        MethodSpec hashCode = MethodGenerator.hashCodeMethod(idl);
         
         mainBuilder.addMethod(constructor)
                 .addMethod(wireline)
                 .addMethod(serializer)
                 .addMethod(deserializer)
-                .addMethod(equals);
+                .addMethod(equals)
+                .addMethod(hashCode);
        
         javaFile =  JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))

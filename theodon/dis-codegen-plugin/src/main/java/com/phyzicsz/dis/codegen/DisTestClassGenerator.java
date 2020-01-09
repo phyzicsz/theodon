@@ -60,7 +60,7 @@ public class DisTestClassGenerator {
                 .addMethod(wireline)
                 .addMethod(pduType);
 
-        ClassName assertEquals = ClassName.get("org.junit", "Assert");
+        ClassName assertEquals = ClassName.get("org.junit.jupiter.api", "Assertions");
         javaFile =  JavaFile.builder(javaPackage, mainBuilder.build())
                 .addFileComment(insertHeader(idl.getComment()))
                 .addStaticImport(assertEquals, "assertEquals")

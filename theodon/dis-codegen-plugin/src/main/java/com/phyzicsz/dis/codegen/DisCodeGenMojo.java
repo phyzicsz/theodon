@@ -77,7 +77,9 @@ public class DisCodeGenMojo extends AbstractMojo {
             required = false) 
     private String javaPackage;
     
-    
+    /**
+     * @parameter property="generateTestSources" default-value="false"
+     */
     @Parameter(name = "generateTestSources",
             defaultValue = "false",
             readonly = false,
@@ -87,6 +89,11 @@ public class DisCodeGenMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        LOGGER.info("Generating Code:");
+        LOGGER.info("javaPackage:{}:", javaPackage);
+        LOGGER.info("outputDirectory:{}:", outputDirectory);
+        LOGGER.info("generateTestSources:{}:", generateTestSources);
+        LOGGER.info("testOutputDirectory:{}:", testOutputDirectory);
         try {
             new CodeGenerator(
                     javaPackage,

@@ -52,7 +52,7 @@ public class HashCodeGenerator {
                 .append("\n");
     } 
 
-    private int oddRandomNumberInRange(int min, int max) {
+    public static int oddRandomNumberInRange(int min, int max) {
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
         }
