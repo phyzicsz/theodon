@@ -2,7 +2,7 @@ language: java
 before_install:
 - chmod +x build.sh
 script:
-- ./build.sh
+- "./build.sh"
 jdk:
 - openjdk11
 branches:
@@ -12,5 +12,8 @@ branches:
 addons:
   sonarcloud:
     organization: phyzicsz
-    token:
-      secure: "0pUXe/Zfu/J0oyQTgOcEhujlsO5tqmsp5iDPZghtsRkWoK/fSulChj3R4kdgAkTHsJE58St9OhmllaH3ktaIxFo9YXUT3xxGXohCkrIyR5DkwrGrwBkzKAxhxw/y44Xo+oRkVwr39p6YUpStgBUPdL1MEyyv9ePQVk2YE+MWNAFSeE7hogQB6SGG0Hy3ndQM/P3DHRy26eNqXr3NTSAZpv00n5+cr2BqDLVJsimq3JjM6qHSlL6s/solHV4WsOZOOSTBIvb2AjwcMcDr4UiVMpLfNMUTo1s0tYFBYDKpqhIoAPsQ3W14cKfuwv7+fXhlpX6VcFKM1mUPQy+KTF5tcI4nx4Yb/ZKYZjCK2nuN7LWtLr3q2rlks9PUxS97z2c0hAsYFONq8hvtfTOGkwEjAtjEOc4l9OkjMofq3KZ/IHiQ0KhU9zLRrywuLN3Niq1DaCccJJ+pQ60i2FrFl8ETgCmlqlJbj1YxqWhyrSuR1gZwO9wH8B1QX2l77JkmaWEpOoqq3wpt+i7t+OV3d8qMYgEuUL/aABL/6cpjUQkqMG602LLHsNcq333wA5xZBpgVIOsLeZpnC5jlJ/rKRebhERSRfk5Y5docabSTS8G0TlkzwKDXnuiSbsuWFXqMgJbTQFtO7tn1ai1d5fyvg7WgRq04d2zKcsE9MdvYNakaT7k="
+    
+env:
+  global:
+  - secure: Ed408RhuKQ2ZpDvCB9nj5ZBI5KoObSoY0TspE/J+jPv4uyt4PUQH9UOb0ZBjjtTHDKOicr0EFe2SfbvUcW2rXU/banlE7ZAMJH2cCeF9C9YI+57tGK3+hQ7gXUc3jDa2IG6XDjWoP1S3cCCPkfLAXluY4pxo7LdA0BDWP3oAQRNj8sWzIbHolgJD8+Q2d6x965o8HPBFrZfZpg7r+Bxd452y+Q6LmSXK10Rou+E09WSJCDqn2gwQTEjepvuOn460a3/P6/s3hK2HmyYJBuW1vuFaNm5oJiw6bST0vTtoLUh3jxquAAOW0rUq1dou3b9Qm8xdMOdQO7XLSbWSfvFjJWQ0LBMjsKctiRf2loE2ABXhJJ9t4Z3+jp92iYGHZr/4y5RYHNhHbGnvo2FYTeSkrrzfZoP2eF0+NhzEEA13Z/B/fRkYQMprWtTQd12+BKZwJZfKmvbZlze5ec4VCBWVG7Mnf7/RZmTYYZsJJ5w9hJwszT4YwIbbCCWUot/wuvvfQO7rV4lpzy3u7fE0UpWFJxH+tTcb+xJgdIOhTV5MPEYer84U2LryzFKnbr1bkKyC6k9gka5McdIN3fqfIWl+SC6reLrasPNEdptFh0wkKlsLCO2c5Fcx2ildAuR1b6y2Y8r1+6BhICF2kw78QrXDz5OG9IILfZ9U4UKvxVJQeJI=
+
