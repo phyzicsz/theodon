@@ -1,20 +1,17 @@
 language: java
 before_install:
-  - chmod +x build.sh
-script: ./build.sh
+- chmod +x build.sh
+script:
+- build.sh
 jdk:
-  - openjdk11
+- openjdk11
 branches:
   only:
-    - master
-    - development
+  - master
+  - development
 addons:
   sonarcloud:
-    organization: "phyzicsz"
+    organization: phyzicsz
     token:
-      secure: "**************************" # encrypted value of your token
-
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+      secure: "FCvFy0j3ljnMwcneJnkMrVnJOWtdFQUrLBZpb7Mszg9FGnbqB7VNvqvqnOYM9Dv7bifuJbOHc3n1KK7QU6fFaU3LH4u9IJsRKDT62Rn5YPZvNDpWRD4XxmK+UjZ7yI/ZgPisq5a5npHmD/NiqCWD79YQ1AyahQSCXxYYG6PehBe0vR2Ixjh345kMQ0KIwwKs8Qb7hzvdvUNXjqOdBNSoR5Wx4BkQXZvOXBgvq1yfEFA7oeVrHPnQXfK9WUtCRvGwg8OfYpiqaL8ZA1VHO6NgXOgt9Gw/kqWIkrdvzb+4yVNdTWKbudBuoJadAnP4Y7EIcTg241ZiLCdJVWnadLsh7t9YX4YzaXTeQUGD/3q5RyooGJwPaPrhKF7gaFkGBqFU6cg2ve0XoQbB28HVv4IiJNAXsNZvtJntFrEhEIs5gfURQxqZgJFUCZDO2ALg+udSGTaBNfw7dRo0xd1VO/Gb8pgOGeOXNfb5R4Y8OpaHvznXSo3bLk29PkQuSmkNhxQT3Z5XzXUtL7R18pzr8bsyChI9dxrJAHSc4AyFCfyd+sSgstQ2ro6uz9Te801XnXjpqDoKV09kxZuNFRNe459k10zekciOW2ti9j6CwJ5kCD8gt8ILF1Udnrl9usfDdk0MOAZ5QU4HdJEHI87n0Wcmen85ZCgjAT5vgJFLpCciN4w="
 
