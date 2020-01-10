@@ -55,6 +55,7 @@
         <!-- test dependancies -->
         <junit.version>4.12</junit.version>
         <junit.jupiter.version>5.5.2</junit.jupiter.version>
+        <jacoco.version>0.8.5</jacoco.version>
         
         <!-- maven build dependancies -->
         <maven.build.help.plugin.version>3.0.0</maven.build.help.plugin.version>
@@ -124,5 +125,34 @@
         <module>dis-codegen-plugin</module>
         <module>dis-datamodel-7</module>
     </modules>
+    
+     <profiles>
+        <profile>
+            <id>coverage</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco.version}</version>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report</id>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
    
 </project>
